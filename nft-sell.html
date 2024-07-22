@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List item for sale</title>
+    <link rel="shortcut icon" href="./img/gear.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="nav-brand">
+                    <i id="nav-menu-icon">
+                        <hr>
+                        <hr>
+                    </i>
+                    <h3>NFTs Art</h3>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="#" class="nav-link">Collection</a></li>
+                    <li><a href="roadmap.html" class="nav-link">Road Map</a></li>
+                    <li><a href="#" class="nav-link">Our Clans</a></li>
+                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="nft-create.html"><button class="btn-green">Create</button></a>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="img/avatar.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="nft-form-section">
+            <div class="container">
+                <div class="nft-form-container">
+                    <h2 class="section-title">List Item for Sale</h2>
+                    <form class="nft-form" id="nft-sell-form">
+                        <div class="image-preview">
+                            <h4 class="image-preview-title">Preview</h4>
+                            <h3 class="nft-sell-name">Human Leaf #0121</h3>
+                            <div class="nft-form-image">
+                                <img src="./img/image4.jpeg" alt="">
+                            </div>
+                            <div class="nft-sell-price">
+                                <p>Price</p>
+                                <h4 id="price-display">0 ETH</h4>
+                            </div>
+                        </div>
+                        <div class="create-item">
+                            <div class="form-inputs">
+                                <div class="form-control">
+                                    <label for="price" class="form-label">Price</label>
+                                    <div class="nft-sell-price-inputs">
+                                        <select id="currency" name="currency" class="form-select">
+                                            <option class="form-option" value="ETH">ETH</option>
+                                            <option class="form-option" value="BTC">BTC</option>
+                                        </select>
+                                        <input type="number" id="price-input" name="price" class="form-input"
+                                            placeholder="Type here...">
+                                    </div>
+                                </div>
+                                <div class="form-control">
+                                    <label for="schedule-time" class="form-label">Schedule Listing</label>
+                                    <select id="schedule-time" name="schedule-time" class="form-select">
+                                        <option class="form-option" value="3-month">3 Month</option>
+                                        <option class="form-option" value="6-month" selected>6 Month</option>
+                                        <option class="form-option" value="1-year">1 Year</option>
+                                        <option class="form-option" value="2-year">2 Year</option>
+                                        <option class="form-option" value="5-year">5 Year</option>
+                                    </select>
+                                </div>
+                                <div class="form-control-dates">
+                                    <div class="form-control">
+                                        <label for="start-time" class="form-label">Starting</label>
+                                        <input type="date" id="start-time" class="form-input">
+                                    </div>
+                                    <div class="form-control">
+                                        <label for="end-time" class="form-label">Ending</label>
+                                        <input type="date" id="end-time" class="form-input" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-checkboxes">
+                                <div class="form-info">
+                                    <label class="form-label">
+                                        Service Fee
+                                        <i class="fa-solid fa-circle-info"></i>
+                                    </label>
+                                    <h5>2.5%</h5>
+                                </div>
+                                <div class="form-checkbox">
+                                    <div class="form-checkbox-label">
+                                        <label for="marketplace" class="form-label">Reserve for specific buyer</label>
+                                    </div>
+                                    <input type="checkbox" class="form-checkbox-input hidden">
+                                    <div class="checkbox-icon">
+                                        <i></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-buttons">
+                                <button class="form-button btn-green" id="complete-listing-btn">Complete Listing</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="popup-section" id="listing-popup">
+            <div class="popup">
+                <div class="popup-header">
+                    <h3 class="popup-title">Complete Your Listing</h3>
+                    <p class="popup-desc">Sign a message using your wallet <br> to continue</p>
+                </div>
+                <div class="popup-card">
+                    <div class="popup-card-image">
+                        <img src="./img/image4.jpeg" alt="" class="nft-image">
+                    </div>
+                    <div class="popup-card-desc">
+                        <h4 class="nft-name">Human Leaf #0121</h4>
+                        <div class="nft-detail">
+                            <div class="nft-highest-bid">
+                                <p>Highest bid</p>
+                                <h4 id="popup-price"></h4>
+                            </div>
+                            <div class="nft-time">
+                                <span id="popup-end-time"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup-buttons">
+                    <button class="btn-green">Sign</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="popup-section" id="completed-popup">
+            <div class="popup">
+                <div class="popup-header">
+                    <h3 class="popup-title">Your NFT is Listed!</h3>
+                    <p class="popup-desc">Awesome! You've listed <span>Human Leaf #0121</span></p>
+                </div>
+                <div class="popup-card">
+                    <div class="popup-card-image">
+                        <img src="./img/image4.jpeg" alt="" class="nft-image">
+                    </div>
+                    <div class="popup-card-desc">
+                        <h4 class="nft-name">Human Leaf #0121</h4>
+                        <div class="nft-detail">
+                            <div class="nft-highest-bid">
+                                <p>Highest bid</p>
+                                <h4 id="popup-price">0.56 ETH</h4>
+                            </div>
+                            <div class="nft-time">
+                                <span id="popup-end-time">04:45:32</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup-share">
+                    <div class="popup-nft-link">
+                        <p>0x38682823...4T93</p>
+                        <i class="fa-solid fa-copy"></i>
+                    </div>
+                    <div class="popup-share-via">
+                        <hr>
+                        <p>Or Share Via</p>
+                        <hr>
+                    </div>
+                    <div class="popup-share-icons">
+                        <i class="fa-brands fa-discord"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                </div>
+                <div id="popup-close-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer">
+                <div class="footer-logo-desc">
+                    <h3 class="footer-logo">NFTs Art</h3>
+                    <h4 class="footer-desc">Create sell, and collect <br> NFT digital art</h4>
+                </div>
+                <div class="footer-links">
+                    <ul class="footer-menu">
+                        <li><a href="#" class="footer-link">Collection</a></li>
+                        <li><a href="#" class="footer-link">Road Map</a></li>
+                        <li><a href="#" class="footer-link">Our Clans</a></li>
+                        <li><a href="#" class="footer-link">FAQ</a></li>
+                    </ul>
+                    <ul class="footer-social">
+                        <li><i class="fa-brands fa-discord"></i></li>
+                        <li><i class="fa-brands fa-twitter"></i></li>
+                        <li><i class="fa-brands fa-facebook"></i></li>
+                    </ul>
+                    <div class="footer-rights">
+                        <p>2024. all right Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

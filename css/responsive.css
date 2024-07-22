@@ -1,0 +1,129 @@
+@media screen and (max-width: 1200px) {
+    .nav-links {
+        gap: 36px;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    :root {
+        --popular-collection-cards-gap: 24px;
+        --popular-collection-cards-count: 2;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 120px;
+        z-index: 1000;
+        transition: 300ms;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .nav-link {
+        font-size: 24px;
+    }
+
+    #nav-menu-icon {
+        display: block;
+    }
+
+    .auction,
+    .auction-detail-section .auction {
+        grid-template-columns: 100%;
+    }
+
+    .newsletter-faq {
+        flex-direction: column;
+        gap: 80px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    :root {
+        --phases-gap: 22px;
+        --popular-collection-cards-gap: 24px;
+        --popular-collection-cards-count: 2;
+    }
+
+    .roadmap .phase-title {
+        font-size: 20px;
+    }
+
+    .roadmap .phase-desc {
+        font-size: 12px;
+    }
+
+    .footer {
+        gap: 24px;
+        flex-direction: column;
+    }
+
+    .footer-links {
+        align-items: flex-start;
+    }
+
+    .hero-title {
+        width: 340px;
+        font-size: 34px;
+        line-height: 46px;
+    }
+
+    .gear-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .hero-card {
+        width: 180px;
+        height: 280px;
+    }
+
+    .hero-card:first-of-type,
+    .hero-card:last-of-type {
+        width: 160px;
+        height: 240px;
+    }
+
+    .hero-card:first-of-type {
+        transform: rotate(-15deg) translate(25px, 45px);
+    }
+
+    .hero-card:last-of-type {
+        transform: rotate(15deg) translate(-25px, 45px);
+    }
+
+    .btn-green,
+    .btn-outline-green {
+        padding: 16px 24px;
+        border-radius: 32px;
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    .auction-buttons {
+        gap: 16px;
+    }
+
+    .auction-button {
+        width: 140px;
+    }
+
+    .sales-nfts-table th {
+        font-size: 12px;
+    }
+
+    .sales-nfts-table td {
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.06px;
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+}

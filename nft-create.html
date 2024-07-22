@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create new item</title>
+    <link rel="shortcut icon" href="./img/gear.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="nav-brand">
+                    <i id="nav-menu-icon">
+                        <hr>
+                        <hr>
+                    </i>
+                    <h3>NFTs Art</h3>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="#" class="nav-link">Collection</a></li>
+                    <li><a href="roadmap.html" class="nav-link">Road Map</a></li>
+                    <li><a href="#" class="nav-link">Our Clans</a></li>
+                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="nft-create.html"><button class="btn-green">Create</button></a>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="img/avatar.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="nft-form-section">
+            <div class="container">
+                <div class="nft-form-container">
+                    <h2 class="section-title">Create New Item</h2>
+                    <form class="nft-form">
+                        <div class="image-preview">
+                            <h4 class="image-preview-title">Preview</h4>
+                            <div class="nft-form-image">
+                                <img id="uploaded-image" class="hidden" src="">
+                                <div id="no-new-image">
+                                    <i class="fa-regular fa-image"></i>
+                                    <p>Upload file to preview your brand <br> new NFT</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="create-item">
+                            <div class="form-inputs">
+                                <div class="form-control">
+                                    <label for="blockchain" class="form-label">Blockchain</label>
+                                    <select name="blockchain" id="blockchain" class="form-select">
+                                        <option class="form-option" value="eth">Ethereum</option>
+                                        <option class="form-option" value="btc">Bitcoin</option>
+                                    </select>
+                                </div>
+                                <div class="form-control">
+                                    <label for="image" class="form-label">Upload image</label>
+                                    <div class="upload-image">
+                                        <input type="file" id="upload-image-input" accept="image/*" class="hidden" />
+                                        <button type="button" class="btn-outline-green" onclick="document.getElementById('upload-image-input').click();">Upload Image</button>
+                                        <p class="form-text-grey">PNG, GIF, WEBP, JPEG. Max 100mb.</p>
+                                    </div>
+                                </div>
+                                <div class="form-control">
+                                    <label for="name" class="form-label">Name of NFTs</label>
+                                    <input type="text" name="name" class="form-input" placeholder="Type here...">
+                                </div>
+                                <div class="form-control">
+                                    <label for="description" class="form-label">Description</label>
+                                    <textarea name="description" class="form-textarea" placeholder="Type here..."></textarea>
+                                </div>
+                                <div class="form-control">
+                                    <label for="collection" class="form-label">Choose Collection </label>
+                                    <div class="form-collections">
+                                        <div class="add-collection">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </div>
+                                        <div class="form-collection">
+                                            <img src="./img/image1.jpeg" alt="" class="form-collection-image">
+                                            <div class="form-collection-name">
+                                                <span>Human Leaf</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-checkboxes">
+                                <div class="form-checkbox">
+                                    <div class="form-checkbox-label">
+                                        <label for="marketplace" class="form-label">Put on marketplace</label>
+                                        <p class="form-text-grey">
+                                            Put your new NFT on Rarible's marketplace
+                                        </p>
+                                    </div>
+                                    <input type="checkbox" class="form-checkbox-input hidden">
+                                    <div class="checkbox-icon">
+                                        <i></i>
+                                    </div>
+                                </div>
+                                <div class="form-checkbox">
+                                    <div class="form-checkbox-label">
+                                        <label for="marketplace" class="form-label">Unlock once purchased</label>
+                                        <p class="form-text-grey">
+                                            Content will be unlocked after successful transaction
+                                        </p>
+                                    </div>
+                                    <input type="checkbox" class="form-checkbox-input hidden">
+                                    <div class="checkbox-icon">
+                                        <i></i>
+                                    </div>
+                                </div>
+                                <div class="form-checkbox">
+                                    <div class="form-checkbox-label">
+                                        <label for="marketplace" class="form-label">Free minting</label>
+                                        <p class="form-text-grey">
+                                            Buyer will pay gas fees for minting
+                                        </p>
+                                    </div>
+                                    <input type="checkbox" class="form-checkbox-input hidden">
+                                    <div class="checkbox-icon">
+                                        <i></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-buttons">
+                                <button type="submit" class="form-button btn-green">Create item</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer">
+                <div class="footer-logo-desc">
+                    <h3 class="footer-logo">NFTs Art</h3>
+                    <h4 class="footer-desc">Create sell, and collect <br> NFT digital art</h4>
+                </div>
+                <div class="footer-links">
+                    <ul class="footer-menu">
+                        <li><a href="#" class="footer-link">Collection</a></li>
+                        <li><a href="#" class="footer-link">Road Map</a></li>
+                        <li><a href="#" class="footer-link">Our Clans</a></li>
+                        <li><a href="#" class="footer-link">FAQ</a></li>
+                    </ul>
+                    <ul class="footer-social">
+                        <li><i class="fa-brands fa-discord"></i></li>
+                        <li><i class="fa-brands fa-twitter"></i></li>
+                        <li><i class="fa-brands fa-facebook"></i></li>
+                    </ul>
+                    <div class="footer-rights">
+                        <p>2024. all right Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
