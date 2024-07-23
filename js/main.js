@@ -1,36 +1,46 @@
-document.addEventListener('DOMContentLoaded', async function () {
+document.addEventListener('DOMContentLoaded', function () {
     const navMenuButton = document.querySelector("#nav-menu-icon");
     const navMenuIcons = navMenuButton.querySelectorAll('hr');
-    const main = document.querySelector("main");
-    const footer = document.querySelector("footer");
     const navMenu = document.querySelector(".nav-links");
+    const toggleButton = document.getElementById('theme-toggle');
+    const toggleButtonIcon = toggleButton.querySelector('i');
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        toggleButtonIcon.classList.toggle('fa-moon');
+        toggleButtonIcon.classList.toggle('fa-circle-half-stroke');
+    }
 
     navMenuButton.addEventListener("click", () => {
         navMenu.classList.toggle("active");
-        main.classList.toggle("blur");
-        footer.classList.toggle("blur");
+        document.querySelector("main").classList.toggle("blur");
+        document.querySelector("footer").classList.toggle("blur");
         navMenuIcons.forEach((hr, key) => hr.classList.toggle(`rotated-hr${key + 1}`));
     });
 
+    toggleButton.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        toggleButtonIcon.classList.toggle('fa-moon');
+        toggleButtonIcon.classList.toggle('fa-circle-half-stroke');
+    });
 
-    function truncateText(text, length) {
-        return text.length > length ? text.slice(0, length) + '...' : text;
-    }
-
-    const ethToUsdRate = await fetchEthToUsdRate();
-    async function fetchEthToUsdRate() {
-        try {
-            const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd');
-            const data = await response.json();
-            return data.ethereum.usd;
-        } catch (error) {
-            console.error('Error fetching ETH to USD rate:', error);
-            return 3497.43;
-        }
-    }
+    
+    let ethToUsdRate = 3497.43;
+    fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd')
+        .then(res => res.json())
+        .then(data => ethToUsdRate = data.ethereum.usd)
+        .catch(error => console.error("cannot fetch eth to usd api" + error));
 
     function convertEthToUsd(ethAmount) {
         return ethAmount * ethToUsdRate;
+    }
+
+    function truncateText(text, length) {
+        return text.length > length ? text.slice(0, length) + '...' : text;
     }
 
     document.querySelectorAll('.auto-scroll').forEach((scrollbar, key) => {
@@ -55,7 +65,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 }
             }
         }, 30)
-    })
+    });
 
     document.querySelectorAll('.dropdown').forEach(dropdown => {
         const dropdownContent = dropdown.querySelector('.dropdown-content');
@@ -67,11 +77,11 @@ document.addEventListener('DOMContentLoaded', async function () {
         dropdownContent.style.height = toggle ? "0px" : dropdownContent.scrollHeight + "px";
 
         dropdownButton.addEventListener('click', () => {
-            let toggle = dropdownContent.style.height !== "0px";
+            toggle = dropdownContent.style.height !== "0px";
             dropdownIcon.style.transform = `rotate(${toggle ? 0 : 180}deg)`;
             dropdownContent.style.height = toggle ? "0px" : dropdownContent.scrollHeight + "px";
         });
-    })
+    });
 
     document.querySelectorAll('.show-more').forEach(moreButton => {
         const textElement = moreButton.parentElement.querySelector('.extra-content');
@@ -110,25 +120,14 @@ document.addEventListener('DOMContentLoaded', async function () {
         });
     });
 
-    document.querySelectorAll('.form-checkbox').forEach(checkbox => {
-        const checkboxIcon = checkbox.querySelector('.checkbox-icon');
-        const checkboxInput = checkbox.querySelector('.form-checkbox-input');
-
-        checkboxIcon.addEventListener('click', () => {
-            checkboxIcon.classList.toggle('checked');
-            let isChecked = checkboxIcon.classList.contains('checked');
-            checkboxInput.checked = isChecked;
-        });
-    });
-
     document.querySelectorAll('.eth').forEach(eth => {
         const usd = eth.parentElement.querySelector('.usd');
         const usdAmount = convertEthToUsd(parseFloat(eth.textContent));
         usd.textContent = `$${usdAmount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
     });
 
-    const imageInput = document.getElementById('upload-image-input');
-    if (imageInput) {
+    if (document.getElementById('nft-create-form')) {
+        const imageInput = document.getElementById('upload-image-input');
         imageInput.addEventListener('change', (event) => {
             const file = event.target.files[0];
             if (file) {
@@ -153,6 +152,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         const endTimeInput = document.getElementById('end-time');
         const popupEndTime = document.getElementById('popup-end-time');
         const popupPrice = document.getElementById('popup-price');
+
         const today = new Date().toISOString().split('T')[0];
         startTimeInput.setAttribute('min', today);
         startTimeInput.value = today;
@@ -193,9 +193,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             document.getElementById('completed-popup').classList.remove('active');
         });
     }
+
+    
 });
-
-
-
-
 

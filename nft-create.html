@@ -32,6 +32,9 @@
                     <li><a href="faq.html" class="nav-link">FAQ</a></li>
                 </ul>
                 <div class="nav-buttons">
+                    <div id="theme-toggle">
+                        <i class="fa-solid fa-moon"></i>
+                    </div>
                     <a href="nft-create.html"><button class="btn-green">Create</button></a>
                     <div class="avatar">
                         <a href="#"><img class="avatar-img" src="img/avatar.jpeg" alt=""></a>
@@ -52,7 +55,7 @@
             <div class="container">
                 <div class="nft-form-container">
                     <h2 class="section-title">Create New Item</h2>
-                    <form class="nft-form">
+                    <form class="nft-form"  id="nft-create-form">
                         <div class="image-preview">
                             <h4 class="image-preview-title">Preview</h4>
                             <div class="nft-form-image">
@@ -111,33 +114,29 @@
                                             Put your new NFT on Rarible's marketplace
                                         </p>
                                     </div>
-                                    <input type="checkbox" class="form-checkbox-input hidden">
-                                    <div class="checkbox-icon">
-                                        <i></i>
-                                    </div>
+                                    <input type="checkbox" id="marketplace" class="form-checkbox-input hidden">
+                                    <label class="checkbox-icon" for="marketplace"></label>
                                 </div>
                                 <div class="form-checkbox">
                                     <div class="form-checkbox-label">
-                                        <label for="marketplace" class="form-label">Unlock once purchased</label>
+                                        <label for="unlock-purchased" class="form-label">Unlock once purchased</label>
                                         <p class="form-text-grey">
                                             Content will be unlocked after successful transaction
                                         </p>
                                     </div>
-                                    <input type="checkbox" class="form-checkbox-input hidden">
-                                    <div class="checkbox-icon">
-                                        <i></i>
-                                    </div>
+                                    <input type="checkbox" id="unlock-purchased" class="form-checkbox-input hidden">
+                                    <label class="checkbox-icon" for="unlock-purchased"></label>
                                 </div>
                                 <div class="form-checkbox">
                                     <div class="form-checkbox-label">
-                                        <label for="marketplace" class="form-label">Free minting</label>
+                                        <label for="free-minting" class="form-label">Free minting</label>
                                         <p class="form-text-grey">
                                             Buyer will pay gas fees for minting
                                         </p>
                                     </div>
-                                    <input type="checkbox" class="form-checkbox-input hidden">
-                                    <div class="checkbox-icon">
-                                        <i></i>
+                                    <div>
+                                        <input type="checkbox" id="free-minting" class="form-checkbox-input">
+                                        <label class="checkbox-icon" for="free-minting"></label>
                                     </div>
                                 </div>
                             </div>

@@ -2,15 +2,50 @@
 
 
 :root {
-    --Text-Colors-Black: #151517;
+    --text-color-black-1: #151517;
+    --text-color-black-2: #090909;
+    --text-primary-color: #171717;
+    --background-primary-color: #FEFEFE;
+    --background-color-white: #FEFEFE;
+    --light-cyan: #52B4C1;
+    --light-green: #DCF06B;
+    --Neutral-1-02: #11315B;
+    --Neutral-1-04: #6E84AB;
+    --Grayscale-10: #F9F9F9;
+    --Grayscale-40: #D1D8DD;
+    --Grayscale-60: #8E8E8E;
+    --Grayscale-70: #78828A;
+    --Grayscale-80: #e9e9e9;
+    --Additional-Colors-Line: #E9EBED;
+    --Additional-Colors-White: #FFF;
     --phases-gap: 32px;
     --popular-collection-cards-gap: 24px;
     --popular-collection-cards-count: 4;
 }
 
+:root[data-theme='dark'] {
+    --background-primary-color: #171717;
+    --text-primary-color: #FEFEFE;
+    --Grayscale-80: #464646;
+    --Grayscale-40: #363636;
+    --Grayscale-10: #252525;    
+    --Additional-Colors-Line: #595a5a;
+    --Neutral-1-02: #6E84AB;
+}
+
+:root[data-theme='light'] {
+    --background-primary-color: #FEFEFE;
+    --text-primary-color: #171717;
+    --Grayscale-80: #e9e9e9;
+    --Grayscale-40: #FEFEFE;
+    --Grayscale-10: #F9F9F9;
+    --Additional-Colors-Line: #E9EBED;
+    --Neutral-1-02: #11315B;
+}
+ 
 ::selection {
-    background-color: #52B4C1;
-    color: white;
+    background-color: var(--light-cyan);
+    color: var(--Additional-Colors-White);
 }
 
 * {
@@ -24,7 +59,8 @@
 body {
     font-style: normal;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #FEFEFE;
+    background-color: var(--background-primary-color);
+    color: var(--text-primary-color);
 }
 
 .container {
@@ -34,7 +70,7 @@ body {
 }
 
 .section-title {
-    color: #090909;
+    color: var(--text-primary-color);
     font-size: 48px;
     font-weight: 700;
     line-height: 56px;
@@ -42,7 +78,7 @@ body {
 }
 
 .section-desc {
-    color: #171717;
+    color: var(--text-primary-color);
     text-align: center;
     font-size: 16px;
     font-weight: 400;
@@ -58,8 +94,6 @@ body {
     gap: 8px;
     padding: 24px 48px;
     border-radius: 32px;
-    background-color: #DCF06B;
-    color: #171717;
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
@@ -69,15 +103,21 @@ body {
     transition: 300ms;
 }
 
+.btn-green{
+    background-color: var(--light-green);
+    color: var(--text-color-black-1);
+}
+
 .btn-outline-green {
-    border: 1px solid #DCF06B;
-    background-color: #FEFEFE;
+    background-color: var(--background-primary-color);
+    border: 1px solid var(--light-green);
+    color: var(--text-primary-color);
 }
 
 .btn-green:disabled,
 .btn-outline-green:disabled {
-    color: #9CA4AB;
-    background: #F9F9F9;
+    color: var(--Grayscale-60);
+    background: var(--Grayscale-10);
     border: none;
 }
 
@@ -92,7 +132,7 @@ body {
     height: 100%;
     border-radius: 50%;
     box-shadow: 6px 12px 24px 0px rgba(102, 146, 204, 0.08);
-    border: 2px solid #FFF;
+    border: 2px solid var(--Additional-Colors-White);
     object-fit: cover;
 }
 
@@ -124,7 +164,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #171717;
+    color: var(--text-color-black-1);
 }
 
 .auto-scroll {
@@ -165,7 +205,7 @@ footer {
 }
 
 i {
-    color: #171717;
+    color: var(--text-primary-color);
 }
 
 
@@ -196,7 +236,7 @@ header {
 }
 
 .nav-brand h3 {
-    color: #52B4C1;
+    color: var(--light-cyan);
     font-size: 32px;
     font-weight: 700;
     line-height: 40px;
@@ -211,7 +251,7 @@ header {
 }
 
 .nav-link {
-    color: #171717;
+    color: var(--text-primary-color);
     font-size: 16px;
     font-weight: 600;
     line-height: 26px;
@@ -250,7 +290,7 @@ header {
     margin: 10px 0;
     border: 0px;
     padding: 0px;
-    background-color: #171717;
+    background-color: var(--text-primary-color);
     transition: 200ms;
 }
 
@@ -268,17 +308,36 @@ header {
     transform: rotate(45deg);
 }
 
+#theme-toggle{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+#theme-toggle i {
+    color: var(--text-primary-color);
+}
+
+#theme-toggle:hover{
+    background-color: var(--Grayscale-80);
+}
+
 
 /* 
  *  FOOTER
  */
 
 footer {
-    background: #FEFEFE;
+    padding: 80px 0;
+    background: var(--background-primary-color);
 }
 
 .footer {
-    padding: 80px 0;
     display: flex;
     justify-content: space-between;
 }
@@ -291,7 +350,7 @@ footer {
 }
 
 .footer-logo {
-    color: #171717;
+    color: var(--text-primary-color);
     font-size: 32px;
     font-weight: 700;
     line-height: 40px;
@@ -299,12 +358,11 @@ footer {
 }
 
 .footer-desc {
-    color: #171717;
+    color: var(--text-primary-color);
     font-size: 24px;
     font-weight: 700;
     line-height: 32px;
     letter-spacing: 0.12px;
-    /* width: 260px; */
 }
 
 .footer-links {
@@ -315,7 +373,7 @@ footer {
 }
 
 .footer-link {
-    color: #171717;
+    color: var(--text-primary-color);
     font-size: 16px;
     font-weight: 600;
     line-height: 26px;
@@ -334,11 +392,11 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 12px;
-    color: #171717;
+    color: var(--text-primary-color);
 }
 
 .footer-rights p {
-    color: #8E8E8E;
+    color: var(--Grayscale-60);
     font-size: 12px;
     font-weight: 400;
     line-height: 18px;
@@ -352,7 +410,7 @@ footer {
  */
 
 .hero-section {
-    background: #FEFEFE;
+    background: var(--background-primary-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -371,7 +429,7 @@ footer {
 
 .hero-title {
     width: 660px;
-    color: #171717;
+    color: var(--text-primary-color);
     text-align: center;
     font-size: 64px;
     font-weight: 700;
@@ -381,7 +439,7 @@ footer {
 }
 
 .hero-title span {
-    color: #52B4C1;
+    color: var(--light-cyan);
     text-decoration-line: underline;
 }
 
@@ -415,21 +473,21 @@ footer {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    border: 1px solid #FEFEFE;
+    border: 1px solid var(--background-primary-color);
     box-shadow: 0px 12px 32px 0px rgba(23, 23, 23, 0.08);
     object-fit: cover;
     margin-left: -12px;
 }
 
 .more-avatar {
-    background-color: #FAFAFA;
+    background-color: #fafafa;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .more-avatar span {
-    color: #151517;
+    color: var(--text-color-black-1);
     font-size: 12px;
     font-weight: 400;
     line-height: 18px;
@@ -438,7 +496,7 @@ footer {
 }
 
 .hero-cards-section {
-    background: #FEFEFE;
+    background: var(--background-primary-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -452,7 +510,7 @@ footer {
     justify-content: center;
     gap: 12px;
     border-radius: 16px;
-    background: #FEFEFE;
+    background: var(--background-primary-color);
     box-shadow: 0px 48px 64px 0px rgba(23, 23, 23, 0.08);
     width: 250px;
     height: 350px;
@@ -492,14 +550,14 @@ footer {
 }
 
 .hero-card .artist-name {
-    color: #171717;
+    color: var(--text-primary-color);
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
 }
 
 .hero-card .artist-subinfo {
-    color: rgba(23, 23, 23, 0.48);
+    color: var(--Grayscale-60);
     font-size: 14px;
     font-weight: 400;
     line-height: 22px;
@@ -528,7 +586,7 @@ footer {
  */
 
 .roadmap-section {
-    background: #171717;
+    background: black;
     padding-top: 160px;
     padding-bottom: 120px;
     margin-top: -80px;
@@ -549,7 +607,7 @@ footer {
 }
 
 .roadmap .section-title {
-    color: #FEFEFE;
+    color: var(--background-color-white);
 }
 
 .roadmap .section-desc {
@@ -583,7 +641,7 @@ footer {
 .roadmap-circle {
     width: 16px;
     height: 16px;
-    background-color: #FEFEFE;
+    background-color: var(--background-color-white);
     border-radius: 50%;
     outline: 4px solid rgba(254, 254, 254, 0.24);
 }
@@ -608,7 +666,7 @@ footer {
 }
 
 .roadmap .phase-title {
-    color: #FEFEFE;
+    color: var(--background-color-white);
     font-size: 32px;
     font-weight: 700;
     line-height: 40px;
@@ -616,11 +674,11 @@ footer {
 }
 
 .roadmap .phase-state-completed {
-    color: #52B4C1;
+    color: var(--light-cyan);
 }
 
 .roadmap .phase-state-onprogress {
-    color: #DCF06B;
+    color: var(--light-green);
 }
 
 .roadmap .phase-desc {
@@ -725,7 +783,7 @@ footer {
 }
 
 .extra-content {
-    color: #66707A;
+    color: var(--Grayscale-60);
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -734,7 +792,7 @@ footer {
 }
 
 .show-more {
-    color: #151517;
+    color: var(--text-primary-color);
     font-weight: 600;
     cursor: pointer;
 }
@@ -752,7 +810,7 @@ footer {
 }
 
 .auction-action-text {
-    color: #66707A;
+    color: var(--Grayscale-60);
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
@@ -800,7 +858,7 @@ footer {
 }
 
 .auction-text-black {
-    color: var(--Text-Colors-Black, #171717);
+    color: var(--text-primary-color);
     font-size: 18px;
     font-weight: 700;
     line-height: 26px;
@@ -808,7 +866,7 @@ footer {
 }
 
 .auction-text-grey {
-    color: #78828A;
+    color: var(--Grayscale-70);
     font-size: 12px;
     font-weight: 400;
     line-height: 16px;
@@ -828,14 +886,14 @@ footer {
 }
 
 .nft-auction-category {
-    color: #78828A;
+    color: var(--Grayscale-70);
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
 }
 
 .nft-auction-name {
-    color: #171717;
+    color: var(--text-primary-color);
     font-size: 40px;
     font-weight: 700;
     line-height: 48px;
@@ -847,8 +905,8 @@ footer {
     justify-content: center;
     gap: 62px;
     border-radius: 16px;
-    border: 1px solid #E9EBED;
-    background: #F9F9F9;
+    border: 1px solid var(--Additional-Colors-Line);
+    background: var(--Grayscale-10);
 }
 
 .auction-detail {
@@ -902,7 +960,7 @@ footer {
 
 .nft-auction-creator-name,
 .auction-term {
-    color: #171717;
+    color: var(--text-primary-color);
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
@@ -918,7 +976,7 @@ footer {
 .term-check-icon {
     width: 24px;
     height: 24px;
-    background-color: #DCF06B;
+    background-color: var(--light-green);
     border-radius: 50%;
     position: relative;
     cursor: pointer;
@@ -926,7 +984,6 @@ footer {
 
 .term-check-icon .fa-check {
     font-size: 12px;
-    color: #171717;
 }
 
 .auction-buttons {
@@ -964,7 +1021,7 @@ footer {
 }
 
 .chart-title h3 {
-    color: var(--Text-Colors-Black, #151517);
+    color: var(--text-primary-color);
     font-size: 20px;
     font-weight: 600;
     line-height: 28px;
@@ -977,7 +1034,6 @@ footer {
     align-items: center;
     align-self: stretch;
     border-radius: 16px;
-    background: #FFF;
     gap: 40px;
 }
 
@@ -989,7 +1045,7 @@ footer {
 }
 
 .chart-subtitle h4 {
-    color: var(--Neutral-1-02, #11315B);
+    color: var(--Neutral-1-02);
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
@@ -998,10 +1054,10 @@ footer {
 
 .chart-select {
     border-radius: 16px;
-    border: 1px solid #F1F3F4;
-    background: #F9F9F9;
+    border: 1px solid var(--Additional-Colors-Line);
+    background: var(--Grayscale-10);
     padding: 8px;
-    color: var(--Neutral-1-02, #11315B);
+    color: var(--Neutral-1-02);
     font-size: 14px;
     font-weight: 600;
     line-height: 24px;
@@ -1011,8 +1067,8 @@ footer {
 }
 
 .chart-select option {
-    background: #F9F9F9;
-    color: var(--Neutral-1-02, #11315B);
+    background: var(--Grayscale-10);
+    color: var(--Neutral-1-02);
 }
 
 .price-history-chart {
@@ -1030,7 +1086,7 @@ footer {
 }
 
 .chart-text {
-    color: #78828A;
+    color: var(--Grayscale-70);
     font-size: 12px;
     font-weight: 400;
     line-height: 16px;
@@ -1059,7 +1115,7 @@ footer {
 .price-history-chart .line {
     height: 1px;
     align-self: stretch;
-    background-color: #E9EBED;
+    background-color: var(--Grayscale-10);
 }
 
 .price-history-chart .chart {
@@ -1085,7 +1141,7 @@ footer {
     width: 100%;
     max-width: 650px;
     stroke-width: 1.5px;
-    stroke: #171717;
+    stroke: var(--text-primary-color);
     position: absolute;
 }
 
@@ -1098,7 +1154,7 @@ footer {
 }
 
 .sales-nfts-table th {
-    color: #78828A;
+    color: var(--Grayscale-70);
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
@@ -1107,7 +1163,7 @@ footer {
 }
 
 .sales-nfts-table tbody tr {
-    background: #F9F9F9;
+    background: var(--Grayscale-10);
 }
 
 tr td:first-child {
@@ -1125,7 +1181,7 @@ tr td:last-child {
 }
 
 .sales-nfts-table td {
-    color: var(--Neutral-1-02, #11315B);
+    color: var(--Neutral-1-02);
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
@@ -1166,7 +1222,7 @@ tr.spacing td {
 }
 
 .see-all {
-    color: #090909;
+    color: var(--text-primary-color);
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
@@ -1193,12 +1249,11 @@ tr.spacing td {
     justify-content: center;
     gap: 16px;
     border-radius: 16px;
-    background: #FEFEFE;
+    background: var(--background-primary-color);
     box-shadow: 6px 12px 24px 0px rgba(102, 146, 204, 0.08);
 }
 
 .nft-name {
-    color: var(--Text-Colors-Black, #151517);
     font-size: 20px;
     font-weight: 600;
     line-height: 28px;
@@ -1223,7 +1278,7 @@ tr.spacing td {
     align-items: center;
     justify-content: space-between;
     border-radius: 12px;
-    background: #F9F9F9;
+    background: var(--Grayscale-10);
     width: 100%;
 }
 
@@ -1235,7 +1290,7 @@ tr.spacing td {
 }
 
 .nft-highest-bid p {
-    color: #8E8E8E;
+    color: var(--Grayscale-60);
     font-size: 14px;
     font-weight: 400;
     line-height: 18px;
@@ -1243,7 +1298,7 @@ tr.spacing td {
 }
 
 .nft-highest-bid h4 {
-    color: var(--Text-Colors-Black, #151517);
+    color: var(--text-primary-color);
     font-size: 20px;
     font-weight: 700;
     line-height: 28px;
@@ -1256,12 +1311,12 @@ tr.spacing td {
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    background: #DCF06B;
+    background: var(--light-green);
     backdrop-filter: blur(10px);
 }
 
 .nft-time span {
-    color: #151517;
+    color: var(--text-color-black-1);
     font-size: 12px;
     font-weight: 600;
     line-height: 20px;
@@ -1314,7 +1369,7 @@ tr.spacing td {
 
 .top-collector-place,
 .top-collector-name {
-    color: var(--Text-Colors-Black, #151517);
+    color: var(--text-primary-color);
     font-size: 18px;
     font-weight: 700;
     line-height: 26px;
@@ -1334,7 +1389,7 @@ tr.spacing td {
 }
 
 .top-collector-eth .eth-value {
-    color: var(--Neutral-1-04, #6E84AB);
+    color: var(--Neutral-1-04);
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -1369,7 +1424,7 @@ tr.spacing td {
 }
 
 .newsletter .section-desc {
-    color: var(--Grayscale-70, #78828A);
+    color: var(--Grayscale-70);
     text-align: left;
 }
 
@@ -1395,16 +1450,16 @@ tr.spacing td {
 }
 
 .get-in-touch-input {
-    color: #8E8E8E;
+    color: var(--Grayscale-60);
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
     letter-spacing: 0.08px;
     border-radius: 32px;
-    border: 1px solid #E9EBED;
-    outline: none;
-    background-color: #F9F9F9;
+    border: 1px solid var(--Additional-Colors-Line);
+    background-color: var(--Grayscale-10);
     padding: 16px 16px 16px 45px;
+    outline: none;
 }
 
 .get-in-touch-button {
@@ -1420,7 +1475,7 @@ tr.spacing td {
 }
 
 .faq-title {
-    color: #171717;
+    color: var(--text-primary-color);
     font-size: 24px;
     font-weight: 700;
     line-height: 32px;
@@ -1449,7 +1504,6 @@ tr.spacing td {
 }
 
 .faq-question h4 {
-    color: var(--Text-Colors-Black, #151517);
     font-size: 20px;
     font-weight: 600;
     line-height: 28px;
@@ -1458,15 +1512,19 @@ tr.spacing td {
 
 .arrow-icon {
     font-size: 24px;
-    color: #171717;
     transition: 0.3s;
 }
 
 .faq-answer {
-    color: #8E8E8E;
+    color: var(--Grayscale-60);
     text-align: left;
     width: 95%;
 }
+
+
+/* 
+ *  JOIN
+ */
 
 .join-section {
     display: flex;
@@ -1520,7 +1578,8 @@ tr.spacing td {
     justify-content: center;
     align-items: center;
     border-radius: 32px;
-    border: 1px solid #F0F0F0;
+    border: 1px solid var(--Additional-Colors-Line);
+    background-color: var(--Grayscale-40);
 }
 
 .partner img {
@@ -1563,7 +1622,6 @@ tr.spacing td {
 }
 
 .image-preview-title {
-    color: #090909;
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
@@ -1571,7 +1629,6 @@ tr.spacing td {
 }
 
 .nft-sell-name {
-    color: var(--Text-Colors-Black, #151517);
     font-size: 20px;
     font-weight: 600;
     line-height: 28px;
@@ -1583,7 +1640,7 @@ tr.spacing td {
     height: 400px;
     flex-shrink: 0;
     border-radius: 24px;
-    background: #F9F9F9;
+    background: var(--Grayscale-10);
 }
 
 .nft-form-image img {
@@ -1608,7 +1665,7 @@ tr.spacing td {
 }
 
 #no-new-image p {
-    color: #8E8E8E;
+    color: var(--Grayscale-60);
     text-align: center;
     font-size: 14px;
     font-weight: 400;
@@ -1623,7 +1680,7 @@ tr.spacing td {
 }
 
 .nft-sell-price p {
-    color: #8E8E8E;
+    color: var(--Grayscale-60);
     font-size: 14px;
     font-weight: 400;
     line-height: 18px;
@@ -1631,7 +1688,6 @@ tr.spacing td {
 }
 
 .nft-sell-price h4 {
-    color: var(--Text-Colors-Black, #151517);
     font-size: 20px;
     font-weight: 700;
     line-height: 28px;
@@ -1664,7 +1720,6 @@ tr.spacing td {
 }
 
 .form-label {
-    color: #090909;
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
@@ -1675,30 +1730,30 @@ tr.spacing td {
 .form-textarea {
     padding: 12px 16px;
     border-radius: 24px;
-    border: 1px solid var(--Additional-Colors-Line, #E9EBED);
-    background: var(--Grayscale-10, #F9F9F9);
+    border: 1px solid var(--Additional-Colors-Line);
+    background: var(--Grayscale-10);
     outline: none;
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
     letter-spacing: 0.07px;
     width: 100%;
-    color: #090909;
+    color: var(--text-primary-color);
 }
 
 .form-input::placeholder,
 .form-textarea::placeholder {
-    color: var(--Grayscale-60, #9CA4AB);
+    color: var(--Grayscale-60);
 }
 
 .form-select {
     width: 100%;
     padding: 12px 16px;
     border-radius: 24px;
-    border: 1px solid #E9EBED;
-    background: #F9F9F9;
+    border: 1px solid var(--Additional-Colors-Line);
+    background: var(--Grayscale-10);
+    color: var(--text-primary-color);
     outline: none;
-    color: #090909;
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
@@ -1708,7 +1763,6 @@ tr.spacing td {
 .form-option {
     padding: 6px 0px;
     gap: 12px;
-    color: #090909;
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
@@ -1723,11 +1777,11 @@ tr.spacing td {
     align-items: center;
     gap: 12px;
     border-radius: 24px;
-    border: 1.5px dashed #E9EBED;
+    border: 1.5px dashed var(--Additional-Colors-Line);
 }
 
 .form-text-grey {
-    color: #8E8E8E;
+    color: var(--Grayscale-60);
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
@@ -1770,7 +1824,7 @@ tr.spacing td {
     justify-content: center;
     align-items: center;
     border-radius: 16px;
-    border: 1px solid #E9EBED;
+    border: 1px solid var(--Additional-Colors-Line);
 }
 
 .form-collection {
@@ -1793,7 +1847,7 @@ tr.spacing td {
     align-items: center;
     gap: 8px;
     border-radius: 6px;
-    background: rgba(255, 255, 255, 0.16);
+    background: var(--Grayscale-60);
     backdrop-filter: blur(10px);
     position: absolute;
     bottom: 4px;
@@ -1801,7 +1855,7 @@ tr.spacing td {
 }
 
 .form-collection-name span {
-    color: #FEFEFE;
+    color: var(--text-color-black-1);
     text-align: center;
     font-size: 10px;
     font-weight: 400;
@@ -1833,6 +1887,12 @@ tr.spacing td {
     gap: 8px;
 }
 
+.form-checkbox-input{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
 .checkbox-icon {
     display: flex;
     justify-content: flex-start;
@@ -1842,30 +1902,31 @@ tr.spacing td {
     padding-right: 20px;
     flex-shrink: 0;
     border-radius: 1000px;
-    background: var(--Additional-Colors-Line, #E9EBED);
+    background: var(--Additional-Colors-Line);
     transition: 250ms;
 }
 
-.checkbox-icon i {
-    width: 24px;
-    height: 24px;
+.checkbox-icon::after {
+    content: "";
+    width: 20px;
+    height: 20px;
     flex-shrink: 0;
     border-radius: 1000px;
-    border: 2px solid var(--Additional-Colors-Line, #E9EBED);
-    background: var(--Grayscale-40, #D1D8DD);
+    border: 2px solid var(--Additional-Colors-Line);
+    background: #D1D8DD;
     transition: 250ms;
 }
 
-.checkbox-icon.checked {
-    background: #52B4C1;
+.form-checkbox-input:checked + .checkbox-icon{
+    background: var(--light-cyan);
     padding-left: 20px;
     padding-right: 0;
     justify-content: flex-end;
 }
 
-.checkbox-icon.checked i {
-    border-color: #52B4C1;
-    background: var(--Additional-Colors-White, #FFF);
+.form-checkbox-input:checked + .checkbox-icon::after{
+    border-color: var(--light-cyan);
+    background: var(--Additional-Colors-White);
 }
 
 .form-info .form-label {
@@ -1875,7 +1936,6 @@ tr.spacing td {
 }
 
 .form-info h5 {
-    color: #090909;
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
@@ -1894,7 +1954,7 @@ tr.spacing td {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
@@ -1913,7 +1973,7 @@ tr.spacing td {
     align-items: center;
     gap: 48px;
     border-radius: 20px;
-    background: #FFF;
+    background: var(--background-primary-color);
     width: 500px;
     transition: 300ms;
     scale: 0;
@@ -1933,7 +1993,7 @@ tr.spacing td {
 }
 
 .popup-title {
-    color: #090909;
+    color: var(--text-primary-color);
     text-align: center;
     font-size: 32px;
     font-weight: 700;
@@ -1942,7 +2002,7 @@ tr.spacing td {
 }
 
 .popup-desc {
-    color: #8E8E8E;
+    color: var(--Grayscale-60);
     text-align: center;
     font-size: 16px;
     font-weight: 400;
@@ -1951,7 +2011,7 @@ tr.spacing td {
 }
 
 .popup-desc span {
-    color: #090909;
+    color: var(--text-primary-color);
     font-weight: 600;
 }
 
@@ -1993,8 +2053,8 @@ tr.spacing td {
 .popup-nft-link p {
     padding: 8px 12px;
     border-radius: 16px;
-    background: #F9F9F9;
-    color: #8E8E8E;
+    background: var(--Grayscale-10);
+    color: var(--Grayscale-60);
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
@@ -2015,7 +2075,7 @@ tr.spacing td {
     width: 80px;
     height: 1px;
     border-radius: 4px;
-    background: #E9EBED;
+    background: var(--Additional-Colors-Line);
     border: none;
 }
 
@@ -2042,6 +2102,6 @@ tr.spacing td {
     left: -20px;
     top: -20px;
     border-radius: 50%;
-    background: var(--Grayscale-10, #F9F9F9);
+    background: var(--Grayscale-10);
     cursor: pointer;
 }
