@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create new item</title>
+    <title>Login</title>
     <link rel="shortcut icon" href="./img/gear.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -73,98 +73,103 @@
         <section class="form-section">
             <div class="container">
                 <div class="form-container">
-                    <h2 class="section-title">Create New Item</h2>
-                    <form class="form" id="nft-create-form">
-                        <div class="form-preview">
-                            <h4 class="form-subtitle">Preview</h4>
-                            <div class="nft-form-image">
-                                <img id="uploaded-image" class="hidden" src="">
-                                <div id="no-new-image">
-                                    <i class="fa-regular fa-image"></i>
-                                    <p>Upload file to preview your brand <br> new NFT</p>
+                    <h2 class="section-title">Register</h2>
+                    <form class="form" id="register-form">
+                        <div class="form-previews">
+                            <div class="form-preview">
+                                <h4 class="form-subtitle">Preview</h4>
+                                <div class="avatar-preview" id="avatarPreview">
+                                    <div class="avatar">
+                                        <img class="avatar-img" src="img/avatar.jpeg" alt="">
+                                    </div>
+                                    <h3 class="register-fullname" id="previewFullname"></h3>
                                 </div>
                             </div>
-                        </div>
+                            <div class="form-preview">
+                                <h4 class="form-subtitle">Choose avatar</h4>
+                                <div class="new-avatars" id="avatarSelection">
+                                    <div class="avatar">
+                                        <img class="avatar-img" src="img/avatar.jpeg" alt="">
+                                    </div>
+                                    <div class="avatar">
+                                        <img class="avatar-img" src="img/avatar2.jpeg" alt="">
+                                    </div>
+                                    <div class="avatar">
+                                        <img class="avatar-img" src="img/avatar3.jpeg" alt="">
+                                    </div>
+                                    <div class="avatar">
+                                        <img class="avatar-img" src="img/avatar4.jpeg" alt="">
+                                    </div>
+                                    <div class="avatar">
+                                        <img class="avatar-img" src="img/avatar.jpeg" alt="">
+                                    </div>
+                                    <div class="avatar">
+                                        <img class="avatar-img" src="img/avatar2.jpeg" alt="">
+                                    </div>
+                                    <div class="avatar">
+                                        <img class="avatar-img" src="img/avatar3.jpeg" alt="">
+                                    </div>
+                                    <div class="avatar">
+                                        <img class="avatar-img" src="img/avatar4.jpeg" alt="">
+                                    </div>
+                                    <div class="avatar">
+                                        <img class="avatar-img" src="img/avatar.jpeg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
                         <div class="form-inputs-container">
                             <div class="form-inputs">
                                 <div class="form-control">
-                                    <label for="blockchain" class="form-label">Blockchain</label>
-                                    <select name="blockchain" id="blockchain" class="form-select">
-                                        <option class="form-option" value="eth">Ethereum</option>
-                                        <option class="form-option" value="btc">Bitcoin</option>
-                                    </select>
+                                    <input type="text" id="fullNameInput" name="fullname" class="form-input"
+                                        placeholder="Full name">
                                 </div>
                                 <div class="form-control">
-                                    <label for="image" class="form-label">Upload image</label>
-                                    <div class="upload-image">
-                                        <input type="file" id="upload-image-input" accept="image/*" class="hidden" />
-                                        <button type="button" class="btn-outline-green" onclick="document.getElementById('upload-image-input').click();">Upload Image</button>
-                                        <p class="form-text-grey">PNG, GIF, WEBP, JPEG. Max 100mb.</p>
-                                    </div>
+                                    <input type="text" id="username" name="username" class="form-input"
+                                        placeholder="Username">
                                 </div>
                                 <div class="form-control">
-                                    <label for="name" class="form-label">Name of NFTs</label>
-                                    <input type="text" name="name" class="form-input" placeholder="Type here...">
+                                    <input type="password" id="password" name="password" class="form-input"
+                                        placeholder="Password">
                                 </div>
                                 <div class="form-control">
-                                    <label for="description" class="form-label">Description</label>
-                                    <textarea name="description" class="form-textarea" placeholder="Type here..."></textarea>
-                                </div>
-                                <div class="form-control">
-                                    <label for="collection" class="form-label">Choose Collection </label>
-                                    <div class="form-collections">
-                                        <div class="add-collection">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </div>
-                                        <div class="form-collection">
-                                            <img src="./img/image1.jpeg" alt="" class="form-collection-image">
-                                            <div class="form-collection-name">
-                                                <span>Human Leaf</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-checkboxes">
-                                <div class="form-checkbox">
-                                    <div class="form-checkbox-label">
-                                        <label for="marketplace" class="form-label">Put on marketplace</label>
-                                        <p class="form-text-grey">
-                                            Put your new NFT on Rarible's marketplace
-                                        </p>
-                                    </div>
-                                    <input type="checkbox" id="marketplace" class="form-checkbox-input hidden">
-                                    <label class="checkbox-icon" for="marketplace"></label>
-                                </div>
-                                <div class="form-checkbox">
-                                    <div class="form-checkbox-label">
-                                        <label for="unlock-purchased" class="form-label">Unlock once purchased</label>
-                                        <p class="form-text-grey">
-                                            Content will be unlocked after successful transaction
-                                        </p>
-                                    </div>
-                                    <input type="checkbox" id="unlock-purchased" class="form-checkbox-input hidden">
-                                    <label class="checkbox-icon" for="unlock-purchased"></label>
-                                </div>
-                                <div class="form-checkbox">
-                                    <div class="form-checkbox-label">
-                                        <label for="free-minting" class="form-label">Free minting</label>
-                                        <p class="form-text-grey">
-                                            Buyer will pay gas fees for minting
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" id="free-minting" class="form-checkbox-input">
-                                        <label class="checkbox-icon" for="free-minting"></label>
-                                    </div>
+                                    <input type="password" id="password2" name="password2" class="form-input"
+                                        placeholder="Confirm Password">
                                 </div>
                             </div>
                             <div class="form-buttons">
-                                <button type="submit" class="form-button btn-green">Create item</button>
+                                <button type="submit" class="form-button btn-green">Register</button>
+                            </div>
+                            <div class="form-checkboxes">
+                                <div class="form-info">
+                                    <label class="form-label">Have an account already?</label>
+                                    <h5 id="login-btn">Log in</h5>
+                                </div>
                             </div>
                         </div>
                     </form>
                 </div>
+            </div>
+        </section>
+
+        <section class="popup-section" id="login-popup">
+            <div class="popup">
+                <h2 class="popup-title">Login</h2>
+                <form class="login-form">
+                    <div class="login-form-input">
+                        <input type="text" placeholder="Username" class="form-input" required>
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="login-form-input">
+                        <input type="password" placeholder="Password" class="form-input" required>
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <button type="submit" class="btn-green">Login</button>
+                    <button type="button" class="btn-outline-green">Forgot Password?</button>
+                    <div class="register-link">
+                        <p>Don't have an account? <span id="register-btn">Register</span></p>
+                    </div>
+                </form>
             </div>
         </section>
     </main>

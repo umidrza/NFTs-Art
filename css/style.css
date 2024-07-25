@@ -12,40 +12,29 @@
     --Neutral-1-02: #11315B;
     --Neutral-1-04: #6E84AB;
     --Grayscale-10: #F9F9F9;
-    --Grayscale-40: #D1D8DD;
+    --Grayscale-40: #FEFEFE;
     --Grayscale-60: #8E8E8E;
     --Grayscale-70: #78828A;
     --Grayscale-80: #e9e9e9;
     --Additional-Colors-Line: #E9EBED;
-    --Additional-Colors-White: #FFF;
     --phases-gap: 32px;
     --popular-collection-cards-gap: 24px;
     --popular-collection-cards-count: 4;
 }
 
 :root[data-theme='dark'] {
-    --background-primary-color: #171717;
+    --background-primary-color: #000000;
     --text-primary-color: #FEFEFE;
     --Grayscale-80: #464646;
-    --Grayscale-40: #363636;
-    --Grayscale-10: #252525;    
+    --Grayscale-40: #b9b9b9;
+    --Grayscale-10: #252525;
     --Additional-Colors-Line: #595a5a;
     --Neutral-1-02: #6E84AB;
 }
 
-:root[data-theme='light'] {
-    --background-primary-color: #FEFEFE;
-    --text-primary-color: #171717;
-    --Grayscale-80: #e9e9e9;
-    --Grayscale-40: #FEFEFE;
-    --Grayscale-10: #F9F9F9;
-    --Additional-Colors-Line: #E9EBED;
-    --Neutral-1-02: #11315B;
-}
- 
 ::selection {
     background-color: var(--light-cyan);
-    color: var(--Additional-Colors-White);
+    color: var(--background-color-white);
 }
 
 * {
@@ -61,11 +50,12 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--background-primary-color);
     color: var(--text-primary-color);
+    padding-top: 100px;
 }
 
 .container {
-    width: 1440px;
-    max-width: 90%;
+    width: 1260px;
+    max-width: 95%;
     margin: 0 auto;
 }
 
@@ -92,7 +82,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 8px;
-    padding: 24px 48px;
+    padding: 16px 32px;
     border-radius: 32px;
     font-size: 16px;
     font-weight: 600;
@@ -103,7 +93,7 @@ body {
     transition: 300ms;
 }
 
-.btn-green{
+.btn-green {
     background-color: var(--light-green);
     color: var(--text-color-black-1);
 }
@@ -132,7 +122,7 @@ body {
     height: 100%;
     border-radius: 50%;
     box-shadow: 6px 12px 24px 0px rgba(102, 146, 204, 0.08);
-    border: 2px solid var(--Additional-Colors-White);
+    border: 2px solid var(--background-color-white);
     object-fit: cover;
 }
 
@@ -180,14 +170,9 @@ body {
 }
 
 .dropdown-content {
-    transition: 0.5s;
+    transition: 500ms;
     height: 0;
     overflow: hidden !important;
-}
-
-.blur {
-    filter: blur(100px);
-    pointer-events: none;
 }
 
 .active {
@@ -199,14 +184,6 @@ body {
     display: none !important;
 }
 
-main,
-footer {
-    transition: 300ms;
-}
-
-i {
-    color: var(--text-primary-color);
-}
 
 
 /* 
@@ -216,9 +193,10 @@ i {
 header {
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(10px);
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 1000;
+    width: 100%;
 }
 
 .navbar {
@@ -250,6 +228,12 @@ header {
     gap: 56px;
 }
 
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 .nav-link {
     color: var(--text-primary-color);
     font-size: 16px;
@@ -276,6 +260,30 @@ header {
 .navbar .avatar-icons {
     bottom: 0;
     right: 0;
+}
+
+.nav-menu{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    transition: 300ms;
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nav-menu-buttons{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.nav-menu-links{
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+    padding-bottom: 32px;
 }
 
 #nav-menu-icon {
@@ -308,7 +316,7 @@ header {
     transform: rotate(45deg);
 }
 
-#theme-toggle{
+#theme-toggle {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -319,11 +327,7 @@ header {
     cursor: pointer;
 }
 
-#theme-toggle i {
-    color: var(--text-primary-color);
-}
-
-#theme-toggle:hover{
+#theme-toggle:hover {
     background-color: var(--Grayscale-80);
 }
 
@@ -1594,26 +1598,37 @@ tr.spacing td {
  *  NFT FORM
  */
 
-.nft-form-section {
+.form-section {
     padding: 60px 0 120px;
     width: 85%;
     margin: 0 auto;
 }
 
-.nft-form-container {
+.form-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 56px;
 }
 
-.nft-form {
-    display: flex;
+.form {
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    grid-template-rows: 1fr;
     align-items: flex-start;
     gap: 80px;
+    width: 100%;
 }
 
-.image-preview {
+.form-previews{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.form-preview {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1621,14 +1636,15 @@ tr.spacing td {
     gap: 16px;
 }
 
-.image-preview-title {
+.form-subtitle {
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
     letter-spacing: 0.08px;
 }
 
-.nft-sell-name {
+.nft-sell-name,
+.register-fullname {
     font-size: 20px;
     font-weight: 600;
     line-height: 28px;
@@ -1636,8 +1652,8 @@ tr.spacing td {
 }
 
 .nft-form-image {
-    width: 340px;
-    height: 400px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     flex-shrink: 0;
     border-radius: 24px;
     background: var(--Grayscale-10);
@@ -1645,7 +1661,7 @@ tr.spacing td {
 
 .nft-form-image img {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 24px;
 }
@@ -1657,7 +1673,7 @@ tr.spacing td {
     align-items: center;
     gap: 12px;
     width: 100%;
-    height: 90%;
+    height: 100%; 
 }
 
 #no-new-image i {
@@ -1694,12 +1710,27 @@ tr.spacing td {
     letter-spacing: 0.1px;
 }
 
-.create-item {
+.avatar-preview{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.new-avatars{
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.new-avatars .avatar {
+    cursor: pointer;
+}
+
+.form-inputs-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 48px;
-    width: 580px;
 }
 
 .form-inputs {
@@ -1887,7 +1918,7 @@ tr.spacing td {
     gap: 8px;
 }
 
-.form-checkbox-input{
+.form-checkbox-input {
     width: 0;
     height: 0;
     visibility: hidden;
@@ -1917,16 +1948,16 @@ tr.spacing td {
     transition: 250ms;
 }
 
-.form-checkbox-input:checked + .checkbox-icon{
+.form-checkbox-input:checked+.checkbox-icon {
     background: var(--light-cyan);
     padding-left: 20px;
     padding-right: 0;
     justify-content: flex-end;
 }
 
-.form-checkbox-input:checked + .checkbox-icon::after{
+.form-checkbox-input:checked+.checkbox-icon::after {
     border-color: var(--light-cyan);
-    background: var(--Additional-Colors-White);
+    background: var(--background-color-white);
 }
 
 .form-info .form-label {
@@ -1935,14 +1966,20 @@ tr.spacing td {
     gap: 8px;
 }
 
-.form-info h5 {
+#login-btn {
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
+    color: var(--text-primary-color);
+    cursor: pointer;
+}
+
+#login-btn:hover{
+    text-decoration: underline;
 }
 
 .form-button {
-    padding: 24px 48px;
+    padding: 16px 48px;
 }
 
 
@@ -2090,7 +2127,7 @@ tr.spacing td {
     cursor: pointer;
 }
 
-#popup-close-btn {
+.popup-close-btn {
     width: 40px;
     height: 40px;
     display: flex;
@@ -2104,4 +2141,63 @@ tr.spacing td {
     border-radius: 50%;
     background: var(--Grayscale-10);
     cursor: pointer;
+}
+
+
+/* 
+ *  LOGIN 
+ */
+
+
+.login-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+}
+
+.login-form-input {
+    position: relative;
+    width: 100%;
+    height: 50px;
+}
+
+.login-form-input i {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+.login-form .forgot-password {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    font-size: 14.5px;
+}
+
+.login-form button{
+    padding: 12px 24px;
+    width: 100%;
+}
+
+.login-form .register-link {
+    font-size: 14.5px;
+    text-align: center;
+}
+
+#register-btn {
+    color: var(--text-primary-color);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#register-btn:hover {
+    text-decoration: underline;
+}
+
+.avatar-preview .avatar{
+    width: 50px;
+    height: 50px;
 }

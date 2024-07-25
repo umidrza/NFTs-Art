@@ -1,24 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const navMenuButton = document.querySelector("#nav-menu-icon");
+    const navMenuButton = document.getElementById("nav-menu-icon");
     const navMenuIcons = navMenuButton.querySelectorAll('hr');
-    const navMenu = document.querySelector(".nav-links");
-    const toggleButton = document.getElementById('theme-toggle');
-    const toggleButtonIcon = toggleButton.querySelector('i');
+    const navMenu = document.getElementById("nav-menu");
 
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        toggleButtonIcon.classList.toggle('fa-moon');
-        toggleButtonIcon.classList.toggle('fa-circle-half-stroke');
-    }
-
-    navMenuButton.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-        document.querySelector("main").classList.toggle("blur");
-        document.querySelector("footer").classList.toggle("blur");
+    navMenuButton.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        let isActive = navMenu.classList.contains('active');
+        navMenu.style.height = isActive ? navMenu.scrollHeight + "px" : "0px";
         navMenuIcons.forEach((hr, key) => hr.classList.toggle(`rotated-hr${key + 1}`));
     });
 
+
+    const toggleButton = document.getElementById('theme-toggle');
+    const toggleButtonIcon = toggleButton.querySelector('i');
     toggleButton.addEventListener('click', () => {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -28,7 +22,14 @@ document.addEventListener('DOMContentLoaded', function () {
         toggleButtonIcon.classList.toggle('fa-circle-half-stroke');
     });
 
-    
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        toggleButtonIcon.classList.toggle('fa-moon');
+        toggleButtonIcon.classList.toggle('fa-circle-half-stroke');
+    }
+
+
     let ethToUsdRate = 3497.43;
     fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd')
         .then(res => res.json())
@@ -126,6 +127,12 @@ document.addEventListener('DOMContentLoaded', function () {
         usd.textContent = `$${usdAmount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
     });
 
+    document.querySelectorAll('.popup-close-btn').forEach(popupCloseBtn => {
+        popupCloseBtn.addEventListener('click', () => {
+            popupCloseBtn.closest('.popup-section').classList.remove('active');
+        });
+    });
+
     if (document.getElementById('nft-create-form')) {
         const imageInput = document.getElementById('upload-image-input');
         imageInput.addEventListener('change', (event) => {
@@ -188,12 +195,40 @@ document.addEventListener('DOMContentLoaded', function () {
             popupEndTime.textContent = endTimeInput.value;
             popupPrice.textContent = priceDisplay.textContent;
         });
-
-        document.getElementById('popup-close-btn').addEventListener('click', () => {
-            document.getElementById('completed-popup').classList.remove('active');
-        });
     }
 
-    
+    if (document.getElementById('register-form')) {
+        const loginBtn = document.getElementById('login-btn');
+        const registerBtn = document.getElementById('register-btn');
+        const loginPopup = document.getElementById('login-popup');
+
+        loginBtn.addEventListener('click', () => {
+            loginPopup.classList.add('active');
+        });
+
+        registerBtn.addEventListener('click', () => {
+            loginPopup.classList.remove('active');
+        });
+
+
+        const avatars = document.querySelectorAll('#avatarSelection .avatar-img');
+        const previewAvatar = document.querySelector('#avatarPreview .avatar-img');
+
+        avatars.forEach(avatar => {
+            avatar.addEventListener('click', () =>{
+                const newSrc = avatar.src;
+                previewAvatar.src = newSrc;
+            });
+        });
+
+
+        const fullNameInput = document.getElementById('fullNameInput');
+        const previewFullname = document.getElementById('previewFullname');
+
+        fullNameInput.addEventListener('input', () => {
+            const fullName = fullNameInput.value;
+            previewFullname.textContent = fullName;
+        });
+    }
 });
 
