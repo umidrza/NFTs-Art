@@ -10,31 +10,33 @@
     --background-color-white: #FEFEFE;
     --light-cyan: #52B4C1;
     --light-green: #DCF06B;
-    --Neutral-1-02: #11315B;
-    --Neutral-1-04: #6E84AB;
+    --neutral-1: #11315B;
+    --neutral-2: #6E84AB;
     --neutral-3: #21204A;
-    --Grayscale-10: #F9F9F9;
-    --Grayscale-40: #FEFEFE;
-    --Grayscale-60: #8E8E8E;
-    --Grayscale-70: #78828A;
-    --Grayscale-80: #e9e9e9;
-    --Additional-Colors-Line: #E9EBED;
+    --grayscale-0-90: #FEFEFE;
+    --grayscale-10-95: #F9F9F9;
+    --grayscale-30-90: #E3E9ED;
+    --grayscale-60: #9CA4AB;
+    --grayscale-70: #78828A;
+    --line-color: #E9EBED;
     --phases-gap: 32px;
     --popular-collection-cards-gap: 24px;
     --popular-collection-cards-count: 4;
     --nft-cards-count: 3;
     --nft-cards-gap: 16px;
+    --collection-cards-count: 3;
+    --collection-cards-gap: 24px;
 }
 
 :root[data-theme='dark'] {
     --background-primary-color: #000000;
     --text-primary-color: #FEFEFE;
     --text-secondary-color: #FEFEFE;
-    --Grayscale-80: #464646;
-    --Grayscale-40: #444444;
-    --Grayscale-10: #252525;
-    --Additional-Colors-Line: #595a5a;
-    --Neutral-1-02: #6E84AB;
+    --grayscale-30-90: #434E58;
+    --grayscale-0-90: #444444;
+    --grayscale-10-95: #0b0b11;
+    --line-color: #4A4A65;
+    --neutral-1: #6E84AB;
     --neutral-3: #3e3ea0;
 }
 
@@ -116,8 +118,8 @@ body:has(header) {
 
 .btn-green:disabled,
 .btn-outline-green:disabled {
-    color: var(--Grayscale-60);
-    background: var(--Grayscale-10);
+    color: var(--grayscale-60);
+    background: var(--grayscale-10-95);
     border: none;
 }
 
@@ -157,7 +159,7 @@ body:has(header) {
     background: url(/static/img/star.svg) 50% / cover no-repeat;
 }
 
-.fa-check {
+.check-icon {
     font-size: 10px;
     text-align: center;
     position: absolute;
@@ -342,7 +344,7 @@ header .avatar-icons {
 }
 
 #theme-toggle:hover {
-    background-color: var(--Grayscale-80);
+    background-color: var(--grayscale-30-90);
 }
 
 
@@ -414,7 +416,7 @@ footer {
 }
 
 .footer-rights p {
-    color: var(--Grayscale-60);
+    color: var(--grayscale-60);
     font-size: 12px;
     font-weight: 400;
     line-height: 18px;
@@ -575,7 +577,7 @@ footer {
 }
 
 .hero-card .artist-subinfo {
-    color: var(--Grayscale-60);
+    color: var(--grayscale-60);
     font-size: 14px;
     font-weight: 400;
     line-height: 22px;
@@ -803,7 +805,7 @@ footer {
 }
 
 .extra-content {
-    color: var(--Grayscale-60);
+    color: var(--grayscale-60);
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -830,7 +832,7 @@ footer {
 }
 
 .auction-action-text {
-    color: var(--Grayscale-60);
+    color: var(--grayscale-60);
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
@@ -886,7 +888,7 @@ footer {
 }
 
 .auction-text-grey {
-    color: var(--Grayscale-70);
+    color: var(--grayscale-70);
     font-size: 12px;
     font-weight: 400;
     line-height: 16px;
@@ -906,7 +908,7 @@ footer {
 }
 
 .nft-auction-category {
-    color: var(--Grayscale-70);
+    color: var(--grayscale-70);
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
@@ -925,8 +927,8 @@ footer {
     justify-content: center;
     gap: 62px;
     border-radius: 16px;
-    border: 1px solid var(--Additional-Colors-Line);
-    background: var(--Grayscale-10);
+    border: 1px solid var(--line-color);
+    background: var(--grayscale-10-95);
 }
 
 .auction-detail {
@@ -1002,7 +1004,7 @@ footer {
     cursor: pointer;
 }
 
-.term-check-icon .fa-check {
+.term-check-icon .check-icon {
     font-size: 12px;
 }
 
@@ -1065,7 +1067,7 @@ footer {
 }
 
 .chart-subtitle h4 {
-    color: var(--Neutral-1-02);
+    color: var(--neutral-1);
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
@@ -1074,10 +1076,10 @@ footer {
 
 .chart-select {
     border-radius: 16px;
-    border: 1px solid var(--Additional-Colors-Line);
-    background: var(--Grayscale-10);
+    border: 1px solid var(--line-color);
+    background: var(--grayscale-10-95);
     padding: 8px;
-    color: var(--Neutral-1-02);
+    color: var(--neutral-1);
     font-size: 14px;
     font-weight: 600;
     line-height: 24px;
@@ -1087,8 +1089,8 @@ footer {
 }
 
 .chart-select option {
-    background: var(--Grayscale-10);
-    color: var(--Neutral-1-02);
+    background: var(--grayscale-10-95);
+    color: var(--neutral-1);
 }
 
 .price-history-chart {
@@ -1106,7 +1108,7 @@ footer {
 }
 
 .chart-text {
-    color: var(--Grayscale-70);
+    color: var(--grayscale-70);
     font-size: 12px;
     font-weight: 400;
     line-height: 16px;
@@ -1135,7 +1137,7 @@ footer {
 .price-history-chart .line {
     height: 1px;
     align-self: stretch;
-    background-color: var(--Grayscale-10);
+    background-color: var(--grayscale-10-95);
 }
 
 .price-history-chart .chart {
@@ -1174,7 +1176,7 @@ footer {
 }
 
 .sales-nfts-table th {
-    color: var(--Grayscale-70);
+    color: var(--grayscale-70);
     font-size: 12px;
     font-weight: 600;
     line-height: 20px;
@@ -1183,7 +1185,7 @@ footer {
 }
 
 .sales-nfts-table tbody tr {
-    background: var(--Grayscale-10);
+    background: var(--grayscale-10-95);
 }
 
 tr td:first-child {
@@ -1201,7 +1203,7 @@ tr td:last-child {
 }
 
 .sales-nfts-table td {
-    color: var(--Neutral-1-02);
+    color: var(--neutral-1);
     font-size: 14px;
     font-weight: 600;
     line-height: 24px;
@@ -1274,6 +1276,7 @@ tr.spacing td {
     justify-content: center;
     align-items: center;
     gap: 48px;
+    counter-reset: top-collectors;
 }
 
 .top-collectors-list {
@@ -1307,6 +1310,14 @@ tr.spacing td {
     gap: 4px;
 }
 
+.top-collector-place {
+    counter-increment: top-collectors;
+}
+
+.top-collector-place::before {
+    content: counter(top-collectors) ". ";
+}
+
 .top-collector-place,
 .top-collector-name {
     color: var(--text-primary-color);
@@ -1329,7 +1340,7 @@ tr.spacing td {
 }
 
 .top-collector-eth .eth-value {
-    color: var(--Neutral-1-04);
+    color: var(--neutral-2);
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -1365,7 +1376,7 @@ tr.spacing td {
 }
 
 .newsletter .section-desc {
-    color: var(--Grayscale-70);
+    color: var(--grayscale-70);
     text-align: left;
 }
 
@@ -1391,14 +1402,14 @@ tr.spacing td {
 }
 
 .get-in-touch-input {
-    color: var(--Grayscale-60);
+    color: var(--grayscale-60);
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
     letter-spacing: 0.08px;
     border-radius: 32px;
-    border: 1px solid var(--Additional-Colors-Line);
-    background-color: var(--Grayscale-10);
+    border: 1px solid var(--line-color);
+    background-color: var(--grayscale-10-95);
     padding: 16px 16px 16px 45px;
     outline: none;
 }
@@ -1458,7 +1469,7 @@ tr.spacing td {
 }
 
 .faq-answer {
-    color: var(--Grayscale-60);
+    color: var(--grayscale-60);
     text-align: left;
     width: 95%;
 }
@@ -1520,8 +1531,8 @@ tr.spacing td {
     justify-content: center;
     align-items: center;
     border-radius: 32px;
-    border: 1px solid var(--Additional-Colors-Line);
-    background-color: var(--Grayscale-40);
+    border: 1px solid var(--grayscale-30-90);
+    background-color: var(--grayscale-0-90);
 }
 
 .partner img {
@@ -1537,14 +1548,32 @@ tr.spacing td {
  */
 
 
-.collection-detail-section {
+.collection-section {
     padding: 56px 0 120px;
 }
 
-.collection-detail {
+.nft-collections {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px;
+    width: 100%;
+}
+
+.nft-collections-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+}
+
+.collection-cards-filters {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
     align-items: flex-start;
     gap: 56px;
+    width: 100%;
 }
 
 .collection-creators-filters {
@@ -1552,7 +1581,6 @@ tr.spacing td {
     flex-direction: column;
     align-items: flex-start;
     gap: 56px;
-    width: 265px;
 }
 
 .collection-creators {
@@ -1642,7 +1670,7 @@ tr.spacing td {
 }
 
 .collection-creator-stat p {
-    color: var(--Grayscale-60);
+    color: var(--grayscale-60);
     font-size: 12px;
     font-weight: 400;
     line-height: 16px;
@@ -1657,7 +1685,7 @@ tr.spacing td {
     letter-spacing: 0.07px;
 }
 
-.collection-creator-detail .btn-green {
+.collection-card-btn {
     padding: 8px 24px;
 }
 
@@ -1727,14 +1755,20 @@ tr.spacing td {
     width: 24px;
     height: 24px;
     flex-shrink: 0;
-    border: 1px solid var(--Additional-Colors-Line);
+    border: 1px solid var(--line-color);
     position: relative;
     border-radius: 50%;
     cursor: pointer;
 }
 
-.filter-check-icon .fa-check {
+.filter-check-icon .check-icon {
     color: var(--text-primary-color);
+    opacity: 0;
+}
+
+.collection-select-filter {
+    display: flex;
+    gap: 16px;
 }
 
 .filter-select {
@@ -1742,7 +1776,7 @@ tr.spacing td {
     padding: 8px;
     gap: 4px;
     border-radius: 16px;
-    border: 1px solid var(--Additional-Colors-Line);
+    border: 1px solid var(--line-color);
     outline: none;
     background: var(--background-primary-color);
     color: var(--text-secondary-color);
@@ -1757,7 +1791,7 @@ tr.spacing td {
     height: 48px;
     padding: 8px;
     border-radius: 16px;
-    border: 1px solid var(--Additional-Colors-Line);
+    border: 1px solid var(--line-color);
     background: var(--background-primary-color);
     color: var(--text-secondary-color);
     font-size: 14px;
@@ -1769,11 +1803,11 @@ tr.spacing td {
 }
 
 .filter-input::placeholder {
-    color: var(--Grayscale-60);
+    color: var(--grayscale-60);
 }
 
 .filter-input-text {
-    color: var(--Grayscale-60);
+    color: var(--grayscale-60);
     font-size: 14px;
     font-weight: 400;
     line-height: 18px;
@@ -1781,13 +1815,11 @@ tr.spacing td {
 }
 
 
-.collection-cards-search {
+.collection-cards-pagination {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 40px;
-    width: 879px;
-
 }
 
 .collection-search {
@@ -1812,7 +1844,7 @@ tr.spacing td {
     align-items: center;
     flex: 1 0 0;
     border-radius: 16px;
-    border: 1px solid var(--Additional-Colors-Line);
+    border: 1px solid var(--line-color);
     background: var(--background-primary-color);
     color: var(--text-secondary-color);
     font-size: 14px;
@@ -1841,7 +1873,7 @@ tr.spacing td {
     align-items: center;
     gap: 4px;
     border-radius: 16px;
-    background: var(--Grayscale-10);
+    background: var(--grayscale-10-95);
 }
 
 .grid-switch label {
@@ -1888,6 +1920,123 @@ tr.spacing td {
     height: 4px;
     border-radius: 1px;
 }
+
+.collection-cards {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--collection-cards-gap);
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.collection-card {
+    display: flex;
+    width: calc(100% / var(--collection-cards-count) - var(--collection-cards-gap) + var(--collection-cards-gap) / var(--collection-cards-count));
+    height: 270px;
+    padding: 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 12px;
+    background: var(--background-primary-color);
+    box-shadow: 6px 12px 24px 0px rgba(86, 115, 150, 0.08);
+}
+
+.collection-card-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.collection-card-title {
+    display: flex;
+    width: 100%;
+    height: 44px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.collection-card-name {
+    color: var(--neutral-3);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.08px;
+}
+
+.collection-card-creator {
+    color: #9D9BB9;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.06px;
+}
+
+.collection-card-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    width: 100%;
+}
+
+.collection-card-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 66px);
+    gap: 8px;
+    width: 100%;
+    height: 140px;
+}
+
+.collection-card-image {
+    background: var(--Neutral-1-07, rgba(215, 214, 220, 0.20));
+    border-radius: 8px;
+}
+
+.collection-card-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.collection-card-image:nth-of-type(1) {
+    grid-row: span 2;
+}
+
+.collection-card-image:nth-of-type(2) {
+    grid-column: span 2;
+}
+
+.collection-card-image:nth-of-type(4) {
+    position: relative;
+}
+
+.collection-more-image {
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: 0.1px;
+    background: rgba(21, 21, 23, 0.48);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .collection-nft-cards {
     display: flex;
@@ -1937,7 +2086,7 @@ tr.spacing td {
     align-items: center;
     justify-content: space-between;
     border-radius: 12px;
-    background: var(--Grayscale-10);
+    background: var(--grayscale-10-95);
     width: 100%;
 }
 
@@ -1949,7 +2098,7 @@ tr.spacing td {
 }
 
 .nft-highest-bid p {
-    color: var(--Grayscale-60);
+    color: var(--grayscale-60);
     font-size: 14px;
     font-weight: 400;
     line-height: 18px;
@@ -1982,7 +2131,7 @@ tr.spacing td {
     letter-spacing: 0.06px;
 }
 
-.collection-pagination{
+.collection-pagination {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1990,7 +2139,7 @@ tr.spacing td {
     padding: 0 10px;
 }
 
-.icon-box{
+.icon-box {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -2001,11 +2150,11 @@ tr.spacing td {
     cursor: pointer;
 }
 
-.icon-box:hover{
-    background-color: var(--Grayscale-80);
+.icon-box:hover {
+    background-color: var(--grayscale-30-90);
 }
 
-.pagination{
+.pagination {
     display: flex;
     align-items: center;
     gap: 24px;
@@ -2075,7 +2224,7 @@ tr.spacing td {
     aspect-ratio: 1 / 1;
     flex-shrink: 0;
     border-radius: 24px;
-    background: var(--Grayscale-10);
+    background: var(--grayscale-10-95);
 }
 
 .nft-form-image img {
@@ -2100,7 +2249,7 @@ tr.spacing td {
 }
 
 #no-new-image p {
-    color: var(--Grayscale-60);
+    color: var(--grayscale-60);
     text-align: center;
     font-size: 14px;
     font-weight: 400;
@@ -2115,7 +2264,7 @@ tr.spacing td {
 }
 
 .nft-sell-price p {
-    color: var(--Grayscale-60);
+    color: var(--grayscale-60);
     font-size: 14px;
     font-weight: 400;
     line-height: 18px;
@@ -2178,8 +2327,8 @@ tr.spacing td {
 .form-textarea {
     padding: 12px 16px;
     border-radius: 24px;
-    border: 1px solid var(--Additional-Colors-Line);
-    background: var(--Grayscale-10);
+    border: 1px solid var(--line-color);
+    background: var(--grayscale-10-95);
     outline: none;
     font-size: 14px;
     font-weight: 400;
@@ -2204,7 +2353,7 @@ tr.spacing td {
     transition: 300ms ease-in-out all;
     cursor: pointer;
     pointer-events: none;
-    color: var(--Grayscale-60);
+    color: var(--grayscale-60);
 }
 
 .form-input-box .form-input:focus+.form-label,
@@ -2228,8 +2377,8 @@ tr.spacing td {
     width: 100%;
     padding: 12px 16px;
     border-radius: 24px;
-    border: 1px solid var(--Additional-Colors-Line);
-    background: var(--Grayscale-10);
+    border: 1px solid var(--line-color);
+    background: var(--grayscale-10-95);
     color: var(--text-primary-color);
     outline: none;
     font-size: 14px;
@@ -2255,11 +2404,11 @@ tr.spacing td {
     align-items: center;
     gap: 12px;
     border-radius: 24px;
-    border: 1.5px dashed var(--Additional-Colors-Line);
+    border: 1.5px dashed var(--line-color);
 }
 
 .form-text-grey {
-    color: var(--Grayscale-60);
+    color: var(--grayscale-60);
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
@@ -2302,7 +2451,7 @@ tr.spacing td {
     justify-content: center;
     align-items: center;
     border-radius: 16px;
-    border: 1px solid var(--Additional-Colors-Line);
+    border: 1px solid var(--line-color);
 }
 
 .form-collection {
@@ -2325,7 +2474,7 @@ tr.spacing td {
     align-items: center;
     gap: 8px;
     border-radius: 6px;
-    background: var(--Grayscale-60);
+    background: var(--grayscale-60);
     backdrop-filter: blur(10px);
     position: absolute;
     bottom: 4px;
@@ -2380,7 +2529,7 @@ tr.spacing td {
     padding-right: 20px;
     flex-shrink: 0;
     border-radius: 1000px;
-    background: var(--Additional-Colors-Line);
+    background: var(--line-color);
     transition: 250ms;
 }
 
@@ -2390,7 +2539,7 @@ tr.spacing td {
     height: 20px;
     flex-shrink: 0;
     border-radius: 1000px;
-    border: 2px solid var(--Additional-Colors-Line);
+    border: 2px solid var(--line-color);
     background: #D1D8DD;
     transition: 250ms;
 }
@@ -2431,7 +2580,8 @@ tr.spacing td {
 
 .form-warning {
     text-align: left;
-    color: rgb(255, 93, 93);
+    color: #FFCD1A;
+    /* color: #EB3F5E; */
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
@@ -2495,7 +2645,7 @@ tr.spacing td {
 }
 
 .popup-desc {
-    color: var(--Grayscale-60);
+    color: var(--grayscale-60);
     text-align: center;
     font-size: 16px;
     font-weight: 400;
@@ -2546,8 +2696,8 @@ tr.spacing td {
 .popup-nft-link p {
     padding: 8px 12px;
     border-radius: 16px;
-    background: var(--Grayscale-10);
-    color: var(--Grayscale-60);
+    background: var(--grayscale-10-95);
+    color: var(--grayscale-60);
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
@@ -2568,7 +2718,7 @@ tr.spacing td {
     width: 80px;
     height: 1px;
     border-radius: 4px;
-    background: var(--Additional-Colors-Line);
+    background: var(--line-color);
     border: none;
 }
 
@@ -2595,7 +2745,7 @@ tr.spacing td {
     left: -20px;
     top: -20px;
     border-radius: 50%;
-    background: var(--Grayscale-10);
+    background: var(--grayscale-10-95);
     cursor: pointer;
 }
 

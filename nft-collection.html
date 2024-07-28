@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Collections</title>
+    <link rel="shortcut icon" href="/static/img/gear.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <a href="index.html" class="nav-brand">
+                    <h3>NFTs Art</h3>
+                </a>
+                <ul class="nav-links">
+                    <li class="nav-item"><a href="#" class="nav-link">Collection</a></li>
+                    <li class="nav-item"><a href="roadmap.html" class="nav-link">Road Map</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Our Clans</a></li>
+                    <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <div id="theme-toggle">
+                        <i class="fa-solid fa-moon"></i>
+                    </div>
+                    <a class="nav-button" href="nft-create.html"><button class="btn-green">Create</button></a>
+                    <div class="avatar nav-button">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check check-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <i id="nav-menu-icon">
+                        <hr>
+                        <hr>
+                    </i>
+                </div>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <div class="nav-menu-buttons">
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check check-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="nft-create.html"><button class="btn-green">Create</button></a>
+                </div>
+                <ul class="nav-menu-links">
+                    <li class="nav-item"><a href="#" class="nav-link">Collection</a></li>
+                    <li class="nav-item"><a href="roadmap.html" class="nav-link">Road Map</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Our Clans</a></li>
+                    <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="collection-section">
+            <div class="container">
+                <div class="nft-collections">
+                    <div class="nft-collections-title">
+                        <h2 class="section-title">Get Popular Collection</h2>
+                    </div>
+                    <div class="nft-collections-container">
+                        <div class="collection-search">
+                            <div class="collection-search-input">
+                                <input type="text" class="search-input" placeholder="Search collections">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <div class="collection-select-filter">
+                                <select name="blockchains" id="blockchains" class="filter-select">
+                                    <option value="all-blockchains">All blockchains</option>
+                                </select>
+                                <select name="sort-select" id="sort-select" class="filter-select">
+                                    <option value="name">Sort by name</option>
+                                    <option value="date">Sort by date</option>
+                                </select>
+                            </div>
+                            <div class="collection-grid-switches">
+                                <div class="grid-switch">
+                                    <input type="radio" name="switch" id="switch2" class="hidden" checked>
+                                    <label for="switch2">
+                                        <div class="switch2-icon"></div>
+                                        <div class="switch2-icon"></div>
+                                        <div class="switch2-icon"></div>
+                                        <div class="switch2-icon"></div>
+                                    </label>
+                                </div>
+                                <div class="grid-switch">
+                                    <input type="radio" name="switch" id="switch3" class="hidden">
+                                    <label for="switch3">
+                                        <div class="switch3-icon"></div>
+                                        <div class="switch3-icon"></div>
+                                        <div class="switch3-icon"></div>
+                                        <div class="switch3-icon"></div>
+                                        <div class="switch3-icon"></div>
+                                        <div class="switch3-icon"></div>
+                                        <div class="switch3-icon"></div>
+                                        <div class="switch3-icon"></div>
+                                        <div class="switch3-icon"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection-cards-filters">
+                            <div class="collection-filters">
+                                <div class="collection-filter">
+                                    <div class="collection-filter-title">
+                                        <h3>Categories</h3>
+                                    </div>
+                                    <div class="collection-filter-items">
+                                        <div class="collection-filter-item">
+                                            <h4 class="collection-filter-item-text">Top</h4>
+                                            <div class="filter-check-icon">
+                                                <i class="fa-solid fa-check check-icon"></i>
+                                            </div>
+                                        </div>
+                                        <div class="collection-filter-item">
+                                            <h4 class="collection-filter-item-text">Art</h4>
+                                            <div class="filter-check-icon">
+                                                <i class="fa-solid fa-check check-icon"></i>
+                                            </div>
+                                        </div>
+                                        <div class="collection-filter-item">
+                                            <h4 class="collection-filter-item-text">Collectibles</h4>
+                                            <div class="filter-check-icon">
+                                                <i class="fa-solid fa-check check-icon"></i>
+                                            </div>
+                                        </div>
+                                        <div class="collection-filter-item">
+                                            <h4 class="collection-filter-item-text">Domain Names</h4>
+                                            <div class="filter-check-icon">
+                                                <i class="fa-solid fa-check check-icon"></i>
+                                            </div>
+                                        </div>
+                                        <div class="collection-filter-item">
+                                            <h4 class="collection-filter-item-text">Music</h4>
+                                            <div class="filter-check-icon">
+                                                <i class="fa-solid fa-check check-icon"></i>
+                                            </div>
+                                        </div>
+                                        <div class="collection-filter-item">
+                                            <h4 class="collection-filter-item-text">Photography</h4>
+                                            <div class="filter-check-icon">
+                                                <i class="fa-solid fa-check check-icon"></i>
+                                            </div>
+                                        </div>
+                                        <div class="collection-filter-item">
+                                            <h4 class="collection-filter-item-text">Sports</h4>
+                                            <div class="filter-check-icon">
+                                                <i class="fa-solid fa-check check-icon"></i>
+                                            </div>
+                                        </div>
+                                        <div class="collection-filter-item">
+                                            <h4 class="collection-filter-item-text">Trading Cards</h4>
+                                            <div class="filter-check-icon">
+                                                <i class="fa-solid fa-check check-icon"></i>
+                                            </div>
+                                        </div>
+                                        <div class="collection-filter-item">
+                                            <h4 class="collection-filter-item-text">Virtual Worlds</h4>
+                                            <div class="filter-check-icon">
+                                                <i class="fa-solid fa-check check-icon"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collection-cards-pagination">
+                                <div class="collection-cards">
+                                    <div class="collection-card">
+                                        <div class="collection-card-desc">
+                                            <div class="collection-card-title">
+                                                <a href="collection-detail.html" class="collection-card-name">Human Life
+                                                    Collection</a>
+                                                <p class="collection-card-creator">@Lincoln</p>
+                                            </div>
+                                            <div class="collection-card-detail">
+                                                <div class="collection-creator-stats">
+                                                    <div class="collection-creator-stat">
+                                                        <p>Collections</p>
+                                                        <h5>348</h5>
+                                                    </div>
+                                                    <div class="collection-creator-stat">
+                                                        <p>Followers</p>
+                                                        <h5>1.5K</h5>
+                                                    </div>
+                                                </div>
+                                                <button class="btn-green collection-card-btn">Follow</button>
+                                            </div>
+                                        </div>
+                                        <div class="collection-card-images">
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image1.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image4.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image2.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image3.jpeg">
+                                                <p class="collection-more-image">+12</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="collection-card">
+                                        <div class="collection-card-desc">
+                                            <div class="collection-card-title">
+                                                <a href="collection-detail.html" class="collection-card-name">Human Life
+                                                    Collection</a>
+                                                <p class="collection-card-creator">@Lincoln</p>
+                                            </div>
+                                            <div class="collection-card-detail">
+                                                <div class="collection-creator-stats">
+                                                    <div class="collection-creator-stat">
+                                                        <p>Collections</p>
+                                                        <h5>348</h5>
+                                                    </div>
+                                                    <div class="collection-creator-stat">
+                                                        <p>Followers</p>
+                                                        <h5>1.5K</h5>
+                                                    </div>
+                                                </div>
+                                                <button class="btn-green collection-card-btn">Follow</button>
+                                            </div>
+                                        </div>
+                                        <div class="collection-card-images">
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image1.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image4.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image2.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image3.jpeg">
+                                                <p class="collection-more-image">+12</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="collection-card">
+                                        <div class="collection-card-desc">
+                                            <div class="collection-card-title">
+                                                <a href="collection-detail.html" class="collection-card-name">Human Life
+                                                    Collection</a>
+                                                <p class="collection-card-creator">@Lincoln</p>
+                                            </div>
+                                            <div class="collection-card-detail">
+                                                <div class="collection-creator-stats">
+                                                    <div class="collection-creator-stat">
+                                                        <p>Collections</p>
+                                                        <h5>348</h5>
+                                                    </div>
+                                                    <div class="collection-creator-stat">
+                                                        <p>Followers</p>
+                                                        <h5>1.5K</h5>
+                                                    </div>
+                                                </div>
+                                                <button class="btn-green collection-card-btn">Follow</button>
+                                            </div>
+                                        </div>
+                                        <div class="collection-card-images">
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image1.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image4.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image2.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image3.jpeg">
+                                                <p class="collection-more-image">+12</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="collection-card">
+                                        <div class="collection-card-desc">
+                                            <div class="collection-card-title">
+                                                <a href="collection-detail.html" class="collection-card-name">Human Life
+                                                    Collection</a>
+                                                <p class="collection-card-creator">@Lincoln</p>
+                                            </div>
+                                            <div class="collection-card-detail">
+                                                <div class="collection-creator-stats">
+                                                    <div class="collection-creator-stat">
+                                                        <p>Collections</p>
+                                                        <h5>348</h5>
+                                                    </div>
+                                                    <div class="collection-creator-stat">
+                                                        <p>Followers</p>
+                                                        <h5>1.5K</h5>
+                                                    </div>
+                                                </div>
+                                                <button class="btn-green collection-card-btn">Follow</button>
+                                            </div>
+                                        </div>
+                                        <div class="collection-card-images">
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image1.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image4.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image2.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image3.jpeg">
+                                                <p class="collection-more-image">+12</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="collection-card">
+                                        <div class="collection-card-desc">
+                                            <div class="collection-card-title">
+                                                <a href="collection-detail.html" class="collection-card-name">Human Life
+                                                    Collection</a>
+                                                <p class="collection-card-creator">@Lincoln</p>
+                                            </div>
+                                            <div class="collection-card-detail">
+                                                <div class="collection-creator-stats">
+                                                    <div class="collection-creator-stat">
+                                                        <p>Collections</p>
+                                                        <h5>348</h5>
+                                                    </div>
+                                                    <div class="collection-creator-stat">
+                                                        <p>Followers</p>
+                                                        <h5>1.5K</h5>
+                                                    </div>
+                                                </div>
+                                                <button class="btn-green collection-card-btn">Follow</button>
+                                            </div>
+                                        </div>
+                                        <div class="collection-card-images">
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image1.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image4.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image2.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image3.jpeg">
+                                                <p class="collection-more-image">+12</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="collection-card">
+                                        <div class="collection-card-desc">
+                                            <div class="collection-card-title">
+                                                <a href="collection-detail.html" class="collection-card-name">Human Life
+                                                    Collection</a>
+                                                <p class="collection-card-creator">@Lincoln</p>
+                                            </div>
+                                            <div class="collection-card-detail">
+                                                <div class="collection-creator-stats">
+                                                    <div class="collection-creator-stat">
+                                                        <p>Collections</p>
+                                                        <h5>348</h5>
+                                                    </div>
+                                                    <div class="collection-creator-stat">
+                                                        <p>Followers</p>
+                                                        <h5>1.5K</h5>
+                                                    </div>
+                                                </div>
+                                                <button class="btn-green collection-card-btn">Follow</button>
+                                            </div>
+                                        </div>
+                                        <div class="collection-card-images">
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image1.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image4.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image2.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image3.jpeg">
+                                                <p class="collection-more-image">+12</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="collection-card">
+                                        <div class="collection-card-desc">
+                                            <div class="collection-card-title">
+                                                <a href="collection-detail.html" class="collection-card-name">Human Life
+                                                    Collection</a>
+                                                <p class="collection-card-creator">@Lincoln</p>
+                                            </div>
+                                            <div class="collection-card-detail">
+                                                <div class="collection-creator-stats">
+                                                    <div class="collection-creator-stat">
+                                                        <p>Collections</p>
+                                                        <h5>348</h5>
+                                                    </div>
+                                                    <div class="collection-creator-stat">
+                                                        <p>Followers</p>
+                                                        <h5>1.5K</h5>
+                                                    </div>
+                                                </div>
+                                                <button class="btn-green collection-card-btn">Follow</button>
+                                            </div>
+                                        </div>
+                                        <div class="collection-card-images">
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image1.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image4.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image2.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image3.jpeg">
+                                                <p class="collection-more-image">+12</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="collection-card">
+                                        <div class="collection-card-desc">
+                                            <div class="collection-card-title">
+                                                <a href="collection-detail.html" class="collection-card-name">Human Life
+                                                    Collection</a>
+                                                <p class="collection-card-creator">@Lincoln</p>
+                                            </div>
+                                            <div class="collection-card-detail">
+                                                <div class="collection-creator-stats">
+                                                    <div class="collection-creator-stat">
+                                                        <p>Collections</p>
+                                                        <h5>348</h5>
+                                                    </div>
+                                                    <div class="collection-creator-stat">
+                                                        <p>Followers</p>
+                                                        <h5>1.5K</h5>
+                                                    </div>
+                                                </div>
+                                                <button class="btn-green collection-card-btn">Follow</button>
+                                            </div>
+                                        </div>
+                                        <div class="collection-card-images">
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image1.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image4.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image2.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image3.jpeg">
+                                                <p class="collection-more-image">+12</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="collection-card">
+                                        <div class="collection-card-desc">
+                                            <div class="collection-card-title">
+                                                <a href="collection-detail.html" class="collection-card-name">Human Life
+                                                    Collection</a>
+                                                <p class="collection-card-creator">@Lincoln</p>
+                                            </div>
+                                            <div class="collection-card-detail">
+                                                <div class="collection-creator-stats">
+                                                    <div class="collection-creator-stat">
+                                                        <p>Collections</p>
+                                                        <h5>348</h5>
+                                                    </div>
+                                                    <div class="collection-creator-stat">
+                                                        <p>Followers</p>
+                                                        <h5>1.5K</h5>
+                                                    </div>
+                                                </div>
+                                                <button class="btn-green collection-card-btn">Follow</button>
+                                            </div>
+                                        </div>
+                                        <div class="collection-card-images">
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image1.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image4.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image2.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image3.jpeg">
+                                                <p class="collection-more-image">+12</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="collection-card">
+                                        <div class="collection-card-desc">
+                                            <div class="collection-card-title">
+                                                <a href="collection-detail.html" class="collection-card-name">Human Life
+                                                    Collection</a>
+                                                <p class="collection-card-creator">@Lincoln</p>
+                                            </div>
+                                            <div class="collection-card-detail">
+                                                <div class="collection-creator-stats">
+                                                    <div class="collection-creator-stat">
+                                                        <p>Collections</p>
+                                                        <h5>348</h5>
+                                                    </div>
+                                                    <div class="collection-creator-stat">
+                                                        <p>Followers</p>
+                                                        <h5>1.5K</h5>
+                                                    </div>
+                                                </div>
+                                                <button class="btn-green collection-card-btn">Follow</button>
+                                            </div>
+                                        </div>
+                                        <div class="collection-card-images">
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image1.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image4.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image2.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image3.jpeg">
+                                                <p class="collection-more-image">+12</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="collection-card">
+                                        <div class="collection-card-desc">
+                                            <div class="collection-card-title">
+                                                <a href="collection-detail.html" class="collection-card-name">Human Life
+                                                    Collection</a>
+                                                <p class="collection-card-creator">@Lincoln</p>
+                                            </div>
+                                            <div class="collection-card-detail">
+                                                <div class="collection-creator-stats">
+                                                    <div class="collection-creator-stat">
+                                                        <p>Collections</p>
+                                                        <h5>348</h5>
+                                                    </div>
+                                                    <div class="collection-creator-stat">
+                                                        <p>Followers</p>
+                                                        <h5>1.5K</h5>
+                                                    </div>
+                                                </div>
+                                                <button class="btn-green collection-card-btn">Follow</button>
+                                            </div>
+                                        </div>
+                                        <div class="collection-card-images">
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image1.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image4.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image2.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image3.jpeg">
+                                                <p class="collection-more-image">+12</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="collection-card">
+                                        <div class="collection-card-desc">
+                                            <div class="collection-card-title">
+                                                <a href="collection-detail.html" class="collection-card-name">Human Life
+                                                    Collection</a>
+                                                <p class="collection-card-creator">@Lincoln</p>
+                                            </div>
+                                            <div class="collection-card-detail">
+                                                <div class="collection-creator-stats">
+                                                    <div class="collection-creator-stat">
+                                                        <p>Collections</p>
+                                                        <h5>348</h5>
+                                                    </div>
+                                                    <div class="collection-creator-stat">
+                                                        <p>Followers</p>
+                                                        <h5>1.5K</h5>
+                                                    </div>
+                                                </div>
+                                                <button class="btn-green collection-card-btn">Follow</button>
+                                            </div>
+                                        </div>
+                                        <div class="collection-card-images">
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image1.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image4.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image2.jpeg">
+                                            </a>
+                                            <a href="collection-detail.html" class="collection-card-image">
+                                                <img src="static/img/image3.jpeg">
+                                                <p class="collection-more-image">+12</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="collection-pagination">
+                                    <div class="icon-box">
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </div>
+                                    <div class="pagination">
+                                        <a href="#">1</a>
+                                        <a href="#">2</a>
+                                        <a href="#">3</a>
+                                    </div>
+                                    <div class="icon-box">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="top-collectors-section">
+            <h2 class="section-title">Our Top Collectors</h2>
+            <div class="top-collectors-list auto-scroll">
+                <div class="top-collector">
+                    <p class="top-collector-place"></p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar2.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check check-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-collector">
+                    <p class="top-collector-place"></p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar3.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check check-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-collector">
+                    <p class="top-collector-place"></p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check check-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-collector">
+                    <p class="top-collector-place"></p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar4.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check check-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-collector">
+                    <p class="top-collector-place"></p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check check-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-collector">
+                    <p class="top-collector-place"></p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar4.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check check-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top-collectors-list auto-scroll">
+                <div class="top-collector">
+                    <p class="top-collector-place"></p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar4.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check check-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-collector">
+                    <p class="top-collector-place"></p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar2.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check check-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-collector">
+                    <p class="top-collector-place"></p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check check-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-collector">
+                    <p class="top-collector-place"></p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar4.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check check-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-collector">
+                    <p class="top-collector-place"></p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar2.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check check-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-collector">
+                    <p class="top-collector-place"></p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar3.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check check-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer">
+                <div class="footer-logo-desc">
+                    <h3 class="footer-logo">NFTs Art</h3>
+                    <h4 class="footer-desc">Create sell, and collect <br> NFT digital art</h4>
+                </div>
+                <div class="footer-links">
+                    <ul class="footer-menu">
+                        <li><a href="#" class="footer-link">Collection</a></li>
+                        <li><a href="#" class="footer-link">Road Map</a></li>
+                        <li><a href="#" class="footer-link">Our Clans</a></li>
+                        <li><a href="#" class="footer-link">FAQ</a></li>
+                    </ul>
+                    <ul class="footer-social">
+                        <li><a href="#"><i class="fa-brands fa-discord"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    </ul>
+                    <div class="footer-rights">
+                        <p>2024. all right Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
