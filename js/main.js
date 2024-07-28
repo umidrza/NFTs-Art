@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
         navMenu.style.height = isActive ? navMenu.scrollHeight + "px" : "0px";
         navMenuIcons.forEach((hr, key) => hr.classList.toggle(`rotated-hr${key + 1}`));
     });
-
+    
 
     const toggleButton = document.getElementById('theme-toggle');
     const toggleButtonIcon = toggleButton.querySelector('i');
@@ -81,6 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
             toggle = dropdownContent.style.height !== "0px";
             dropdownIcon.style.transform = `rotate(${toggle ? 0 : 180}deg)`;
             dropdownContent.style.height = toggle ? "0px" : dropdownContent.scrollHeight + "px";
+            console.log(dropdownContent.scrollHeight);
         });
     });
 
@@ -201,23 +202,34 @@ document.addEventListener('DOMContentLoaded', function () {
         const loginBtn = document.getElementById('login-btn');
         const registerBtn = document.getElementById('register-btn');
         const loginPopup = document.getElementById('login-popup');
+        const isLoginActive = localStorage.getItem('isLoginActive');
+        if (isLoginActive === 'true'){
+            loginPopup.classList.add('active');
+        }
 
         loginBtn.addEventListener('click', () => {
             loginPopup.classList.add('active');
+            localStorage.setItem('isLoginActive', 'true');
         });
 
         registerBtn.addEventListener('click', () => {
             loginPopup.classList.remove('active');
+            localStorage.setItem('isLoginActive', 'false');
         });
 
 
-        const avatars = document.querySelectorAll('#avatarSelection .avatar-img');
-        const previewAvatar = document.querySelector('#avatarPreview .avatar-img');
+        const avatars = document.querySelectorAll('#avatar-selection .avatar-img');
+        const previewAvatar = document.querySelector('#avatar-preview .avatar-img');
+        const avatarInput = document.querySelector('#avatar-input');
+        previewAvatar.src = avatars[0].src;
+        avatarInput.value = avatars[0].getAttribute('data-avatar-id');
 
         avatars.forEach(avatar => {
             avatar.addEventListener('click', () =>{
-                const newSrc = avatar.src;
-                previewAvatar.src = newSrc;
+                const src = avatar.src;
+                const id = avatar.getAttribute('data-avatar-id');
+                previewAvatar.src = src;
+                avatarInput.value = id;
             });
         });
 
@@ -231,4 +243,3 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
-

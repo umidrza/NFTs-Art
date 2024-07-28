@@ -11,8 +11,9 @@
         --popular-collection-cards-count: 2;
     }
 
-    .nav-links, .nav-button {
-        display: none; 
+    .nav-links,
+    .nav-button {
+        display: none;
     }
 
     #nav-menu-icon {
@@ -21,8 +22,16 @@
 
     .auction,
     .auction-detail-section .auction,
-    .form{
+    .form {
         grid-template-columns: 100%;
+    }
+
+    .roadmap .phase-title {
+        font-size: 20px;
+    }
+
+    .roadmap .phase-desc {
+        font-size: 12px;
     }
 
     .newsletter-faq {
@@ -37,14 +46,6 @@
         --phases-gap: 22px;
         --popular-collection-cards-gap: 24px;
         --popular-collection-cards-count: 2;
-    }
-
-    .roadmap .phase-title {
-        font-size: 20px;
-    }
-
-    .roadmap .phase-desc {
-        font-size: 12px;
     }
 
     .footer {
@@ -90,26 +91,56 @@
     .btn-outline-green {
         padding: 16px 24px;
         border-radius: 32px;
-        font-size: 12px;
+        font-size: 14px;
         line-height: 12px;
+    }
+
+    .get-in-touch-button{
+        padding: 16px 32px;
+        font-size: 16px;
+        line-height: 24px;
     }
 
     .auction-buttons {
         gap: 16px;
     }
 
-    .auction-button {
-        width: 140px;
-    }
-
     .sales-nfts-table th {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .sales-nfts-table td {
         font-size: 12px;
-        line-height: 16px;
-        letter-spacing: 0.06px;
+    }
+
+    .roadmap-phases .phases {
+        flex-direction: column;
+    }
+
+    .roadmap-phases .phase {
+        align-items: flex-start;
+        text-align: left;
+        width: 100%;
+        gap: 6px;
+        margin-left: 50px;
+        text-align: left;
+    }
+
+    .roadmap-line {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 16px;
+        height: 85%;
+    }
+
+    .roadmap-line .roadmap-vector {
+        width: 1px;
+        height: 100%;
     }
 
     .notfound h2 {
@@ -119,11 +150,100 @@
 
 
 @media screen and (max-width: 576px) {
+    :root {
+        --phases-gap: 24px;
+        --popular-collection-cards-count: 1;
+    }
+
+    .btn-green,
+    .btn-outline-green {
+        padding: 16px 32px;
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    .hero-card {
+        width: 120px;
+        height: 180px;
+        padding: 6px;
+        gap: 6px;
+    }
+
+    .hero-card:first-of-type,
+    .hero-card:last-of-type {
+        width: 110px;
+        height: 150px;
+    }
+
+    .hero-card:first-of-type {
+        transform: rotate(-15deg) translate(10px, 35px);
+    }
+
+    .hero-card:last-of-type {
+        transform: rotate(15deg) translate(-10px, 35px);
+    }
+
+    .hero-card .artist-image {
+        width: 100%;
+        height: calc(100% - 45px);
+    }
+
+    .hero-card .artist-name {
+        font-size: 10px;
+        line-height: 6px;
+    }
+
+    .hero-card .artist-subinfo {
+        font-size: 9px;
+        line-height: 12px;
+    }
+
+    .sales-nfts-table th {
+        font-size: 8px;
+        padding: 6px;
+    }
+
+    .sales-nfts-table td {
+        font-size: 8px;
+        padding: 6px 8px;
+    }
+
+    .sales-nfts-table button {
+        font-size: 10px;
+        padding: 6px 16px;
+    }
+
+    .get-in-touch-input {
+        font-size: 12px;
+        padding: 10px 12px 10px 45px;
+    }
+
+    .join-buttons {
+        gap: 16px;
+    }
+
+    .roadmap-container {
+        grid-template-columns: 100%;
+    }
+
+    
+
+    .roadmap-container .phase {
+        margin-left: 50px;
+        grid-column: 1;
+        text-align: left;
+    }
+
+    .roadmap-indicator {
+        top: 15px;
+        left: 15px;
+    }
+
     .notfound h1 {
         font-size: 160px;
     }
 
-    .notfound h2{
+    .notfound h2 {
         font-size: 14px;
     }
 }

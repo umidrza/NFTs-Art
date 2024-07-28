@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection Detail</title>
+    <link rel="shortcut icon" href="/static/img/gear.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <a href="index.html" class="nav-brand">
+                    <h3>NFTs Art</h3>
+                </a>
+                <ul class="nav-links">
+                    <li class="nav-item"><a href="#" class="nav-link">Collection</a></li>
+                    <li class="nav-item"><a href="roadmap.html" class="nav-link">Road Map</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Our Clans</a></li>
+                    <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <div id="theme-toggle">
+                        <i class="fa-solid fa-moon"></i>
+                    </div>
+                    <a class="nav-button" href="nft-create.html"><button class="btn-green">Create</button></a>
+                    <div class="avatar nav-button">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <i id="nav-menu-icon">
+                        <hr>
+                        <hr>
+                    </i>
+                </div>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <div class="nav-menu-buttons">
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="nft-create.html"><button class="btn-green">Create</button></a>
+                </div>
+                <ul class="nav-menu-links">
+                    <li class="nav-item"><a href="#" class="nav-link">Collection</a></li>
+                    <li class="nav-item"><a href="roadmap.html" class="nav-link">Road Map</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Our Clans</a></li>
+                    <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="collection-detail-section">
+            <div class="container">
+                <div class="collection-detail">
+                    <div class="collection-creators-filters">
+                        <div class="collection-creators">
+                            <h2 class="collection-creators-title">The Best Collectors for NFTs</h2>
+                            <div class="collection-creator">
+                                <div class="avatar">
+                                    <img class="avatar-img" src="/static/img/avatar.jpeg" alt="">
+                                    <div class="avatar-icons">
+                                        <div class="verified-icon">
+                                            <i class="star-icon"></i>
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="collection-creator-desc">
+                                    <div class="collection-creator-info">
+                                        <h4 class="collection-creator-fullname">Lincoln George</h4>
+                                        <p class="collection-creator-username">@Lincoln</p>
+                                    </div>
+                                    <div class="collection-creator-detail">
+                                        <div class="collection-creator-stats">
+                                            <div class="collection-creator-stat">
+                                                <p>Collections</p>
+                                                <h5>348</h5>
+                                            </div>
+                                            <div class="collection-creator-stat">
+                                                <p>Followers</p>
+                                                <h5>1.5K</h5>
+                                            </div>
+                                        </div>
+                                        <button class="btn-green">Follow</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection-filters">
+                            <div class="collection-filter dropdown">
+                                <div class="collection-filter-title dropdown-btn">
+                                    <h3>Status</h3>
+                                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                                </div>
+                                <div class="collection-filter-items dropdown-content opened">
+                                    <div class="collection-filter-item">
+                                        <h4 class="collection-filter-item-text">Buy Now</h4>
+                                        <div class="filter-check-icon">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="collection-filter-item">
+                                        <h4 class="collection-filter-item-text">On Auction</h4>
+                                        <div class="filter-check-icon">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="collection-filter-item">
+                                        <h4 class="collection-filter-item-text">Buy With Card</h4>
+                                        <div class="filter-check-icon">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collection-filter dropdown">
+                                <div class="collection-filter-title dropdown-btn">
+                                    <h3>Price</h3>
+                                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                                </div>
+                                <div class="dropdown-content opened">
+                                    <div class="collection-filter-items-fd-row">
+                                        <select class="filter-select">
+                                            <option value="usd">Usd</option>
+                                            <option value="eth">Eth</option>
+                                        </select>
+                                        <input type="number" class="filter-input" placeholder="Min">
+                                        <p class="filter-input-text">To</p>
+                                        <input type="number" class="filter-input" placeholder="Max">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collection-filter dropdown">
+                                <div class="collection-filter-title dropdown-btn">
+                                    <h3>Quantity</h3>
+                                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                                </div>
+                                <div class="collection-filter-items dropdown-content opened">
+                                    <div class="collection-filter-item">
+                                        <h4 class="collection-filter-item-text">All Items</h4>
+                                        <div class="filter-check-icon">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="collection-filter-item">
+                                        <h4 class="collection-filter-item-text">Single Items</h4>
+                                        <div class="filter-check-icon">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="collection-filter-item">
+                                        <h4 class="collection-filter-item-text">Bundles</h4>
+                                        <div class="filter-check-icon">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collection-filter dropdown">
+                                <div class="collection-filter-title dropdown-btn">
+                                    <h3>Currency</h3>
+                                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                                </div>
+                                <div class="collection-filter-items dropdown-content opened">
+                                    <div class="collection-filter-item">
+                                        <h4 class="collection-filter-item-text">ETH</h4>
+                                        <div class="filter-check-icon">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="collection-filter-item">
+                                        <h4 class="collection-filter-item-text">WETH</h4>
+                                        <div class="filter-check-icon">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filters">
+
+                        </div>
+                    </div>
+                    <div class="collection-cards-search">
+                        <div class="collection-search">
+                            <div class="collection-search-input">
+                                <input type="text" class="search-input" placeholder="Search NFT">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <div class="collection-select-filter">
+                                <select name="search-select" id="search-select" class="filter-select">
+                                    <option value="low-to-high">Price: Low to high</option>
+                                    <option value="low-to-high">Price: High to low</option>
+                                </select>
+                            </div>
+                            <div class="collection-grid-switches">
+                                <div class="grid-switch">
+                                    <input type="radio" name="switch" id="switch1" class="hidden" checked>
+                                    <label for="switch1">
+                                        <div class="switch1-icon"></div>
+                                        <div class="switch1-icon"></div>
+                                    </label>
+                                </div>
+                                <div class="grid-switch">
+                                    <input type="radio" name="switch" id="switch2" class="hidden">
+                                    <label for="switch2">
+                                        <div class="switch2-icon"></div>
+                                        <div class="switch2-icon"></div>
+                                        <div class="switch2-icon"></div>
+                                        <div class="switch2-icon"></div>
+                                    </label>
+                                </div>
+                                <div class="grid-switch">
+                                    <input type="radio" name="switch" id="switch3" class="hidden">
+                                    <label for="switch3">
+                                        <div class="switch3-icon"></div>
+                                        <div class="switch3-icon"></div>
+                                        <div class="switch3-icon"></div>
+                                        <div class="switch3-icon"></div>
+                                        <div class="switch3-icon"></div>
+                                        <div class="switch3-icon"></div>
+                                        <div class="switch3-icon"></div>
+                                        <div class="switch3-icon"></div>
+                                        <div class="switch3-icon"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection-nft-cards">
+                            <div class="nft-card">
+                                <h4 class="nft-name">Human Leaf #0121</h4>
+                                <div class="nft-card-image">
+                                    <img src="/static/img/image4.jpeg" alt="" class="nft-image">
+                                </div>
+                                <div class="nft-detail">
+                                    <div class="nft-highest-bid">
+                                        <p>Highest bid</p>
+                                        <h4>0.56 ETH</h4>
+                                    </div>
+                                    <div class="nft-time">
+                                        <span>04:45:32</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nft-card">
+                                <h4 class="nft-name">Human Leaf #0121</h4>
+                                <div class="nft-card-image">
+                                    <img src="/static/img/image4.jpeg" alt="" class="nft-image">
+                                </div>
+                                <div class="nft-detail">
+                                    <div class="nft-highest-bid">
+                                        <p>Highest bid</p>
+                                        <h4>0.56 ETH</h4>
+                                    </div>
+                                    <div class="nft-time">
+                                        <span>04:45:32</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nft-card">
+                                <h4 class="nft-name">Human Leaf #0121</h4>
+                                <div class="nft-card-image">
+                                    <img src="/static/img/image4.jpeg" alt="" class="nft-image">
+                                </div>
+                                <div class="nft-detail">
+                                    <div class="nft-highest-bid">
+                                        <p>Highest bid</p>
+                                        <h4>0.56 ETH</h4>
+                                    </div>
+                                    <div class="nft-time">
+                                        <span>04:45:32</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nft-card">
+                                <h4 class="nft-name">Human Leaf #0121</h4>
+                                <div class="nft-card-image">
+                                    <img src="/static/img/image4.jpeg" alt="" class="nft-image">
+                                </div>
+                                <div class="nft-detail">
+                                    <div class="nft-highest-bid">
+                                        <p>Highest bid</p>
+                                        <h4>0.56 ETH</h4>
+                                    </div>
+                                    <div class="nft-time">
+                                        <span>04:45:32</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nft-card">
+                                <h4 class="nft-name">Human Leaf #0121</h4>
+                                <div class="nft-card-image">
+                                    <img src="/static/img/image4.jpeg" alt="" class="nft-image">
+                                </div>
+                                <div class="nft-detail">
+                                    <div class="nft-highest-bid">
+                                        <p>Highest bid</p>
+                                        <h4>0.56 ETH</h4>
+                                    </div>
+                                    <div class="nft-time">
+                                        <span>04:45:32</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nft-card">
+                                <h4 class="nft-name">Human Leaf #0121</h4>
+                                <div class="nft-card-image">
+                                    <img src="/static/img/image4.jpeg" alt="" class="nft-image">
+                                </div>
+                                <div class="nft-detail">
+                                    <div class="nft-highest-bid">
+                                        <p>Highest bid</p>
+                                        <h4>0.56 ETH</h4>
+                                    </div>
+                                    <div class="nft-time">
+                                        <span>04:45:32</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nft-card">
+                                <h4 class="nft-name">Human Leaf #0121</h4>
+                                <div class="nft-card-image">
+                                    <img src="/static/img/image4.jpeg" alt="" class="nft-image">
+                                </div>
+                                <div class="nft-detail">
+                                    <div class="nft-highest-bid">
+                                        <p>Highest bid</p>
+                                        <h4>0.56 ETH</h4>
+                                    </div>
+                                    <div class="nft-time">
+                                        <span>04:45:32</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nft-card">
+                                <h4 class="nft-name">Human Leaf #0121</h4>
+                                <div class="nft-card-image">
+                                    <img src="/static/img/image4.jpeg" alt="" class="nft-image">
+                                </div>
+                                <div class="nft-detail">
+                                    <div class="nft-highest-bid">
+                                        <p>Highest bid</p>
+                                        <h4>0.56 ETH</h4>
+                                    </div>
+                                    <div class="nft-time">
+                                        <span>04:45:32</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nft-card">
+                                <h4 class="nft-name">Human Leaf #0121</h4>
+                                <div class="nft-card-image">
+                                    <img src="/static/img/image4.jpeg" alt="" class="nft-image">
+                                </div>
+                                <div class="nft-detail">
+                                    <div class="nft-highest-bid">
+                                        <p>Highest bid</p>
+                                        <h4>0.56 ETH</h4>
+                                    </div>
+                                    <div class="nft-time">
+                                        <span>04:45:32</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nft-card">
+                                <h4 class="nft-name">Human Leaf #0121</h4>
+                                <div class="nft-card-image">
+                                    <img src="/static/img/image4.jpeg" alt="" class="nft-image">
+                                </div>
+                                <div class="nft-detail">
+                                    <div class="nft-highest-bid">
+                                        <p>Highest bid</p>
+                                        <h4>0.56 ETH</h4>
+                                    </div>
+                                    <div class="nft-time">
+                                        <span>04:45:32</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nft-card">
+                                <h4 class="nft-name">Human Leaf #0121</h4>
+                                <div class="nft-card-image">
+                                    <img src="/static/img/image4.jpeg" alt="" class="nft-image">
+                                </div>
+                                <div class="nft-detail">
+                                    <div class="nft-highest-bid">
+                                        <p>Highest bid</p>
+                                        <h4>0.56 ETH</h4>
+                                    </div>
+                                    <div class="nft-time">
+                                        <span>04:45:32</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nft-card">
+                                <h4 class="nft-name">Human Leaf #0121</h4>
+                                <div class="nft-card-image">
+                                    <img src="/static/img/image4.jpeg" alt="" class="nft-image">
+                                </div>
+                                <div class="nft-detail">
+                                    <div class="nft-highest-bid">
+                                        <p>Highest bid</p>
+                                        <h4>0.56 ETH</h4>
+                                    </div>
+                                    <div class="nft-time">
+                                        <span>04:45:32</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection-pagination">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </div>
+                            <div class="pagination">
+                                <a href="#">1</a>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                            </div>
+                            <div class="icon-box">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="top-collectors-section">
+            <h2 class="section-title">Our Top Collectors</h2>
+            <div class="top-collectors-list auto-scroll">
+                <div class="top-collector">
+                    <p class="top-collector-place">1.</p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar2.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-collector">
+                    <p class="top-collector-place">2.</p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar3.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-collector">
+                    <p class="top-collector-place">3.</p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-collector">
+                    <p class="top-collector-place">4.</p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar4.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-collector">
+                    <p class="top-collector-place">5.</p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-collector">
+                    <p class="top-collector-place">6.</p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar4.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top-collectors-list auto-scroll">
+                <div class="top-collector">
+                    <p class="top-collector-place">7.</p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar4.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-collector">
+                    <p class="top-collector-place">8.</p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar2.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-collector">
+                    <p class="top-collector-place">9.</p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-collector">
+                    <p class="top-collector-place">10.</p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar4.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-collector">
+                    <p class="top-collector-place">11.</p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar2.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-collector">
+                    <p class="top-collector-place">12.</p>
+                    <div class="avatar">
+                        <a href="#"><img class="avatar-img" src="/static/img/avatar3.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-collector-info">
+                        <h4 class="top-collector-name">Lincoln George</h4>
+                        <div class="top-collector-eth">
+                            <i class="fa-brands fa-ethereum"></i>
+                            <p class="eth-value">2,798</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer">
+                <div class="footer-logo-desc">
+                    <h3 class="footer-logo">NFTs Art</h3>
+                    <h4 class="footer-desc">Create sell, and collect <br> NFT digital art</h4>
+                </div>
+                <div class="footer-links">
+                    <ul class="footer-menu">
+                        <li><a href="#" class="footer-link">Collection</a></li>
+                        <li><a href="#" class="footer-link">Road Map</a></li>
+                        <li><a href="#" class="footer-link">Our Clans</a></li>
+                        <li><a href="#" class="footer-link">FAQ</a></li>
+                    </ul>
+                    <ul class="footer-social">
+                        <li><a href="#"><i class="fa-brands fa-discord"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    </ul>
+                    <div class="footer-rights">
+                        <p>2024. all right Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
