@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login | Register</title>
     <link rel="shortcut icon" href="/static/img/gear.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -21,9 +21,9 @@
                     <h3>NFTs Art</h3>
                 </a>
                 <ul class="nav-links">
-                    <li class="nav-item"><a href="#" class="nav-link">Collection</a></li>
+                    <li class="nav-item"><a href="nft-collection.html" class="nav-link">Collection</a></li>
                     <li class="nav-item"><a href="roadmap.html" class="nav-link">Road Map</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Our Clans</a></li>
+                    <li class="nav-item"><a href="ourclans.html" class="nav-link">Our Clans</a></li>
                     <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
                 </ul>
                 <div class="nav-buttons">
@@ -32,7 +32,7 @@
                     </div>
                     <a class="nav-button" href="nft-create.html"><button class="btn-green">Create</button></a>
                     <div class="avatar nav-button">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <a href="login.html"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -49,7 +49,7 @@
             <div class="nav-menu" id="nav-menu">
                 <div class="nav-menu-buttons">
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <a href="login.html"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -60,9 +60,9 @@
                     <a href="nft-create.html"><button class="btn-green">Create</button></a>
                 </div>
                 <ul class="nav-menu-links">
-                    <li class="nav-item"><a href="#" class="nav-link">Collection</a></li>
+                    <li class="nav-item"><a href="nft-collection.html" class="nav-link">Collection</a></li>
                     <li class="nav-item"><a href="roadmap.html" class="nav-link">Road Map</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Our Clans</a></li>
+                    <li class="nav-item"><a href="ourclans.html" class="nav-link">Our Clans</a></li>
                     <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
                 </ul>
             </div>
@@ -125,12 +125,14 @@
                                     <div class="form-input-box">
                                         <input type="password" id="password1" name="password1" class="form-input" required>
                                         <label for="password1" class="form-label">Password</label>
+                                        <i class="fa-regular fa-eye-slash password-show-btn"></i>   
                                     </div>
                                 </div>
                                 <div class="form-control">
                                     <div class="form-input-box">
                                         <input type="password" id="password2" name="password2" class="form-input" required>
                                         <label for="password2" class="form-label">Confirm Password</label>
+                                        <i class="fa-regular fa-eye-slash password-show-btn"></i>
                                     </div>
                                 </div>
                             </div>
@@ -161,7 +163,7 @@
                     <div class="form-input-box">
                         <input type="password" name="password" id="password" class="form-input" required>
                         <label for="password" class="form-label">Password</label>
-                        <i class="fa-solid fa-lock"></i>
+                        <i class="fa-regular fa-eye-slash password-show-btn"></i>
                     </div>
                     <button type="submit" class="btn-green">Login</button>
                     <button type="button" class="btn-outline-green">Forgot Password?</button>

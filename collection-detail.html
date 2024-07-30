@@ -21,9 +21,9 @@
                     <h3>NFTs Art</h3>
                 </a>
                 <ul class="nav-links">
-                    <li class="nav-item"><a href="#" class="nav-link">Collection</a></li>
+                    <li class="nav-item"><a href="nft-collection.html" class="nav-link">Collection</a></li>
                     <li class="nav-item"><a href="roadmap.html" class="nav-link">Road Map</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Our Clans</a></li>
+                    <li class="nav-item"><a href="ourclans.html" class="nav-link">Our Clans</a></li>
                     <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
                 </ul>
                 <div class="nav-buttons">
@@ -32,7 +32,7 @@
                     </div>
                     <a class="nav-button" href="nft-create.html"><button class="btn-green">Create</button></a>
                     <div class="avatar nav-button">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <a href="login.html"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -49,7 +49,7 @@
             <div class="nav-menu" id="nav-menu">
                 <div class="nav-menu-buttons">
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <a href="login.html"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -60,9 +60,9 @@
                     <a href="nft-create.html"><button class="btn-green">Create</button></a>
                 </div>
                 <ul class="nav-menu-links">
-                    <li class="nav-item"><a href="#" class="nav-link">Collection</a></li>
+                    <li class="nav-item"><a href="nft-collection.html" class="nav-link">Collection</a></li>
                     <li class="nav-item"><a href="roadmap.html" class="nav-link">Road Map</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Our Clans</a></li>
+                    <li class="nav-item"><a href="ourclans.html" class="nav-link">Our Clans</a></li>
                     <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
                 </ul>
             </div>
@@ -75,7 +75,7 @@
                 <div class="collection-cards-filters">
                     <div class="collection-creators-filters">
                         <div class="collection-creators">
-                            <h2 class="collection-creators-title">The Best Collectors for NFTs</h2>
+                            <h2 class="collection-creators-title">The Best Collectors for <br>NFTs</h2>
                             <div class="collection-creator">
                                 <div class="avatar">
                                     <img class="avatar-img" src="/static/img/avatar.jpeg" alt="">
@@ -102,7 +102,7 @@
                                                 <h5>1.5K</h5>
                                             </div>
                                         </div>
-                                        <button class="btn-green collection-card-button">Follow</button>
+                                        <button class="btn-green collection-card-btn">Follow</button>
                                     </div>
                                 </div>
                             </div>
@@ -115,22 +115,19 @@
                                 </div>
                                 <div class="collection-filter-items dropdown-content opened">
                                     <div class="collection-filter-item">
-                                        <h4 class="collection-filter-item-text">Buy Now</h4>
-                                        <div class="filter-check-icon">
-                                            <i class="fa-solid fa-check check-icon"></i>
-                                        </div>
+                                        <label class="collection-filter-item-text" for="status-buy-now">Buy Now</label>
+                                        <input class="collection-filter-radio hidden" id="status-buy-now" type="radio" name="status">
+                                        <label class="filter-check-icon" for="status-buy-now"><i class="radio-icon"></i></label>
                                     </div>
                                     <div class="collection-filter-item">
-                                        <h4 class="collection-filter-item-text">On Auction</h4>
-                                        <div class="filter-check-icon">
-                                            <i class="fa-solid fa-check check-icon"></i>
-                                        </div>
+                                        <label class="collection-filter-item-text" for="status-auction">On Auction</label>
+                                        <input class="collection-filter-radio hidden" id="status-auction" type="radio" name="status">
+                                        <label class="filter-check-icon" for="status-auction"><i class="radio-icon"></i></label>
                                     </div>
                                     <div class="collection-filter-item">
-                                        <h4 class="collection-filter-item-text">Buy With Card</h4>
-                                        <div class="filter-check-icon">
-                                            <i class="fa-solid fa-check check-icon"></i>
-                                        </div>
+                                        <label class="collection-filter-item-text" for="status-buy-with-card">Buy With Card</label>
+                                        <input class="collection-filter-radio hidden" id="status-buy-with-card" type="radio" name="status">
+                                        <label class="filter-check-icon" for="status-buy-with-card"><i class="radio-icon"></i></label>
                                     </div>
                                 </div>
                             </div>
@@ -159,22 +156,19 @@
                                 </div>
                                 <div class="collection-filter-items dropdown-content opened">
                                     <div class="collection-filter-item">
-                                        <h4 class="collection-filter-item-text">All Items</h4>
-                                        <div class="filter-check-icon">
-                                            <i class="fa-solid fa-check check-icon"></i>
-                                        </div>
+                                        <label class="collection-filter-item-text" for="quantity-all-items">All Items</label>
+                                        <input class="collection-filter-radio hidden" id="quantity-all-items" type="radio" name="quantity">
+                                        <label class="filter-check-icon" for="quantity-all-items"><i class="radio-icon"></i></label>
                                     </div>
                                     <div class="collection-filter-item">
-                                        <h4 class="collection-filter-item-text">Single Items</h4>
-                                        <div class="filter-check-icon">
-                                            <i class="fa-solid fa-check check-icon"></i>
-                                        </div>
+                                        <label class="collection-filter-item-text" for="quantity-single-items">Single Items</label>
+                                        <input class="collection-filter-radio hidden" id="quantity-single-items" type="radio" name="quantity">
+                                        <label class="filter-check-icon" for="quantity-single-items"><i class="radio-icon"></i></label>
                                     </div>
                                     <div class="collection-filter-item">
-                                        <h4 class="collection-filter-item-text">Bundles</h4>
-                                        <div class="filter-check-icon">
-                                            <i class="fa-solid fa-check check-icon"></i>
-                                        </div>
+                                        <label class="collection-filter-item-text" for="quantity-bundles">Bundles</label>
+                                        <input class="collection-filter-radio hidden" id="quantity-bundles" type="radio" name="quantity">
+                                        <label class="filter-check-icon" for="quantity-bundles"><i class="radio-icon"></i></label>
                                     </div>
                                 </div>
                             </div>
@@ -185,16 +179,14 @@
                                 </div>
                                 <div class="collection-filter-items dropdown-content opened">
                                     <div class="collection-filter-item">
-                                        <h4 class="collection-filter-item-text">ETH</h4>
-                                        <div class="filter-check-icon">
-                                            <i class="fa-solid fa-check check-icon"></i>
-                                        </div>
+                                        <label class="collection-filter-item-text" for="currency-eth">ETH</label>
+                                        <input class="collection-filter-radio hidden" id="currency-eth" type="radio" name="currency">
+                                        <label class="filter-check-icon" for="currency-eth"><i class="radio-icon"></i></label>
                                     </div>
                                     <div class="collection-filter-item">
-                                        <h4 class="collection-filter-item-text">WETH</h4>
-                                        <div class="filter-check-icon">
-                                            <i class="fa-solid fa-check check-icon"></i>
-                                        </div>
+                                        <label class="collection-filter-item-text" for="currency-weth">WETH</label>
+                                        <input class="collection-filter-radio hidden" id="currency-weth" type="radio" name="currency">
+                                        <label class="filter-check-icon" for="currency-weth"><i class="radio-icon"></i></label>
                                     </div>
                                 </div>
                             </div>
@@ -203,8 +195,9 @@
                     <div class="collection-cards-pagination">
                         <div class="collection-search">
                             <div class="collection-search-input">
-                                <input type="text" class="search-input" placeholder="Search NFT">
+                                <input type="text" class="search-input" placeholder="Search collections">
                                 <i class="fa-solid fa-magnifying-glass"></i>
+                                <i class="fa-solid fa-xmark remove-search-btn"></i>
                             </div>
                             <div class="collection-select-filter">
                                 <select name="search-select" id="search-select" class="filter-select">

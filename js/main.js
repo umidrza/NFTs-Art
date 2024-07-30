@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const root = document.documentElement;
     const navMenuButton = document.getElementById("nav-menu-icon");
     const navMenuIcons = navMenuButton.querySelectorAll('hr');
     const navMenu = document.getElementById("nav-menu");
@@ -9,14 +10,14 @@ document.addEventListener('DOMContentLoaded', function () {
         navMenu.style.height = isActive ? navMenu.scrollHeight + "px" : "0px";
         navMenuIcons.forEach((hr, key) => hr.classList.toggle(`rotated-hr${key + 1}`));
     });
-    
+
 
     const toggleButton = document.getElementById('theme-toggle');
     const toggleButtonIcon = toggleButton.querySelector('i');
     toggleButton.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const currentTheme = root.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', newTheme);
+        root.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         toggleButtonIcon.classList.toggle('fa-moon');
         toggleButtonIcon.classList.toggle('fa-circle-half-stroke');
@@ -24,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', savedTheme);
+        root.setAttribute('data-theme', savedTheme);
         toggleButtonIcon.classList.toggle('fa-moon');
         toggleButtonIcon.classList.toggle('fa-circle-half-stroke');
     }
@@ -203,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const registerBtn = document.getElementById('register-btn');
         const loginPopup = document.getElementById('login-popup');
         const isLoginActive = localStorage.getItem('isLoginActive');
-        if (isLoginActive === 'true'){
+        if (isLoginActive === 'true') {
             loginPopup.classList.add('active');
         }
 
@@ -225,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
         avatarInput.value = avatars[0].getAttribute('data-avatar-id');
 
         avatars.forEach(avatar => {
-            avatar.addEventListener('click', () =>{
+            avatar.addEventListener('click', () => {
                 const src = avatar.src;
                 const id = avatar.getAttribute('data-avatar-id');
                 previewAvatar.src = src;
@@ -241,5 +242,55 @@ document.addEventListener('DOMContentLoaded', function () {
             const fullName = fullNameInput.value;
             previewFullname.textContent = fullName;
         });
+
+
+        document.querySelectorAll('.password-show-btn').forEach(passwordShowBtn => {
+            const passwordInput = passwordShowBtn.parentElement.querySelector('input');
+
+            passwordShowBtn.addEventListener('click', () => {
+                passwordShowBtn.classList.toggle('fa-eye-slash');
+                passwordShowBtn.classList.toggle('fa-eye');
+                passwordInput.type = passwordInput.type === 'text' ? 'password' : 'text';
+            });
+        });
     }
+
+
+    const collectionFilters = document.querySelector('.collection-cards-filters');
+    if (collectionFilters) {
+        const switch1 = document.getElementById('switch1');
+        const switch2 = document.getElementById('switch2');
+        const switch3 = document.getElementById('switch3');
+
+
+        if (switch1) {
+            switch1.addEventListener('change', function () {
+                if (switch1.checked) {
+                    root.style.setProperty('--nft-cards-count', 3);
+                    collectionFilters.classList.remove('layout-3');
+                }
+            });
+        }
+
+        if (switch2) {
+            switch2.addEventListener('change', function () {
+                if (switch2.checked) {
+                    root.style.setProperty('--collection-cards-count', 3);
+                    root.style.setProperty('--nft-cards-count', 4);
+                    collectionFilters.classList.remove('layout-3');
+                }
+            });
+        }
+
+        if (switch3) {
+            switch3.addEventListener('change', function () {
+                if (switch3.checked) {
+                    root.style.setProperty('--collection-cards-count', 4);
+                    root.style.setProperty('--nft-cards-count', 4);
+                    collectionFilters.classList.add('layout-3');
+                }
+            });
+        }
+    }
+
 });
