@@ -1,4 +1,18 @@
 @media screen and (max-width: 1200px) {
+    :root {
+        --phases-gap: 32px;
+        --popular-collection-cards-gap: 24px;
+        --popular-collection-cards-count: 4;
+        --nft-cards-count: 3;
+        --nft-cards-gap: 16px;
+        --collection-cards-count: 2;
+        --collection-cards-gap: 24px;
+        --clan-member-gap: 24px;
+        --clan-member-count: 3;
+        --wallet-gap: 25px;
+        --wallet-count: 5;
+    }
+
     .nav-links {
         gap: 36px;
     }
@@ -7,8 +21,17 @@
 
 @media screen and (max-width: 992px) {
     :root {
+        --phases-gap: 22px;
         --popular-collection-cards-gap: 24px;
         --popular-collection-cards-count: 2;
+        --nft-cards-count: 2;
+        --nft-cards-gap: 16px;
+        --collection-cards-count: 2;
+        --collection-cards-gap: 24px;
+        --clan-member-gap: 24px;
+        --clan-member-count: 2;
+        --wallet-gap: 25px;
+        --wallet-count: 3;
     }
 
     .nav-links,
@@ -34,6 +57,10 @@
         font-size: 12px;
     }
 
+    .collection-cards-filters {
+        gap: 32px;
+    }
+
     .newsletter-faq {
         flex-direction: column;
         gap: 80px;
@@ -46,6 +73,14 @@
         --phases-gap: 22px;
         --popular-collection-cards-gap: 24px;
         --popular-collection-cards-count: 2;
+        --nft-cards-count: 2;
+        --nft-cards-gap: 16px;
+        --collection-cards-count: 2;
+        --collection-cards-gap: 24px;
+        --clan-member-gap: 24px;
+        --clan-member-count: 2;
+        --wallet-gap: 25px;
+        --wallet-count: 2;
     }
 
     .footer {
@@ -95,7 +130,7 @@
         line-height: 12px;
     }
 
-    .get-in-touch-button{
+    .get-in-touch-button {
         padding: 16px 32px;
         font-size: 16px;
         line-height: 24px;
@@ -143,6 +178,11 @@
         height: 100%;
     }
 
+    .collection-cards-filters {
+        flex-direction: column;
+        gap: 56px
+    }
+
     .notfound h2 {
         font-size: 24px;
     }
@@ -153,6 +193,16 @@
     :root {
         --phases-gap: 24px;
         --popular-collection-cards-count: 1;
+        --popular-collection-cards-gap: 24px;
+        --popular-collection-cards-count: 2;
+        --nft-cards-count: 1;
+        --nft-cards-gap: 16px;
+        --collection-cards-count: 1;
+        --collection-cards-gap: 24px;
+        --clan-member-gap: 24px;
+        --clan-member-count: 1;
+        --wallet-gap: 25px;
+        --wallet-count: 1;
     }
 
     .btn-green,
@@ -225,8 +275,6 @@
     .roadmap-container {
         grid-template-columns: 100%;
     }
-
-    
 
     .roadmap-container .phase {
         margin-left: 50px;

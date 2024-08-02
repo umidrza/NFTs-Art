@@ -89,7 +89,8 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.show-more').forEach(moreButton => {
         const textElement = moreButton.parentElement.querySelector('.extra-content');
         const fullText = textElement.innerHTML;
-        textElement.innerHTML = truncateText(fullText, 300);
+        const length = +textElement.getAttribute('data-length');
+        textElement.innerHTML = truncateText(fullText, length);
 
         moreButton.addEventListener('click', () => {
             if (moreButton.textContent == 'Show more') {
@@ -97,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 moreButton.textContent = 'Show less';
             }
             else {
-                textElement.innerHTML = truncateText(fullText, 300);
+                textElement.innerHTML = truncateText(fullText, length);
                 moreButton.textContent = 'Show more';
             }
         });
@@ -134,6 +135,8 @@ document.addEventListener('DOMContentLoaded', function () {
             popupCloseBtn.closest('.popup-section').classList.remove('active');
         });
     });
+
+
 
     if (document.getElementById('nft-create-form')) {
         const imageInput = document.getElementById('upload-image-input');
@@ -196,6 +199,11 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('listing-popup').classList.add('active');
             popupEndTime.textContent = endTimeInput.value;
             popupPrice.textContent = priceDisplay.textContent;
+        });
+
+        document.getElementById('sign-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('completed-popup').classList.add('active');
         });
     }
 
@@ -266,7 +274,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (switch1) {
             switch1.addEventListener('change', function () {
                 if (switch1.checked) {
-                    root.style.setProperty('--nft-cards-count', 3);
+                    // root.style.setProperty('--nft-cards-count', 3);
                     collectionFilters.classList.remove('layout-3');
                 }
             });
@@ -275,8 +283,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (switch2) {
             switch2.addEventListener('change', function () {
                 if (switch2.checked) {
-                    root.style.setProperty('--collection-cards-count', 3);
-                    root.style.setProperty('--nft-cards-count', 4);
+                    // root.style.setProperty('--collection-cards-count', 3);
+                    // root.style.setProperty('--nft-cards-count', 4);
                     collectionFilters.classList.remove('layout-3');
                 }
             });
@@ -285,12 +293,43 @@ document.addEventListener('DOMContentLoaded', function () {
         if (switch3) {
             switch3.addEventListener('change', function () {
                 if (switch3.checked) {
-                    root.style.setProperty('--collection-cards-count', 4);
-                    root.style.setProperty('--nft-cards-count', 4);
+                    // root.style.setProperty('--collection-cards-count', 4);
+                    // root.style.setProperty('--nft-cards-count', 4);
                     collectionFilters.classList.add('layout-3');
                 }
             });
         }
+
+
+        document.querySelectorAll('.remove-search-btn').forEach(removeSearchBtn => {
+            const input = removeSearchBtn.parentElement.querySelector('input');
+
+            removeSearchBtn.addEventListener('click', () => {
+                input.value = '';
+            });
+        });
     }
 
+
+    if (document.querySelector('.connect-wallet-section')) {
+        const walletPopup = document.querySelector('.popup-section');
+        const walletCancelBtn = document.getElementById('wallet-cancel-btn');
+
+        walletCancelBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            walletPopup.classList.remove('active');
+        });
+
+        document.querySelectorAll('.wallet').forEach(wallet => {
+            wallet.addEventListener('click', () => {
+                walletPopup.classList.add('active');
+                const walletImage = wallet.querySelector('.wallet-image img');
+                const walletName = wallet.querySelector('.wallet-name');
+                const walletType = document.querySelector('input[name="connect-wallet"]:checked + label');
+                walletPopup.querySelector('.wallet-image img').src = walletImage.src;
+                walletPopup.querySelector('.wallet-name').textContent = walletName.textContent;
+                walletPopup.querySelector('.wallet-info').textContent = walletType.textContent;
+            })
+        })
+    }
 });

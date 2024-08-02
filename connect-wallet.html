@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Wallet</title>
+    <link rel="shortcut icon" href="/static/img/gear.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <a href="index.html" class="nav-brand">
+                    <h3>NFTs Art</h3>
+                </a>
+                <ul class="nav-links">
+                    <li class="nav-item"><a href="nft-collection.html" class="nav-link">Collection</a></li>
+                    <li class="nav-item"><a href="roadmap.html" class="nav-link">Road Map</a></li>
+                    <li class="nav-item"><a href="ourclans.html" class="nav-link">Our Clans</a></li>
+                    <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <div id="theme-toggle">
+                        <i class="fa-solid fa-moon"></i>
+                    </div>
+                    <a class="nav-button" href="nft-create.html"><button class="btn-green">Create</button></a>
+                    <div class="avatar nav-button">
+                        <a href="login.html"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check check-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <i id="nav-menu-icon">
+                        <hr>
+                        <hr>
+                    </i>
+                </div>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <div class="nav-menu-buttons">
+                    <div class="avatar">
+                        <a href="login.html"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <div class="avatar-icons">
+                            <div class="verified-icon">
+                                <i class="star-icon"></i>
+                                <i class="fa-solid fa-check check-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="nft-create.html"><button class="btn-green">Create</button></a>
+                </div>
+                <ul class="nav-menu-links">
+                    <li class="nav-item"><a href="nft-collection.html" class="nav-link">Collection</a></li>
+                    <li class="nav-item"><a href="roadmap.html" class="nav-link">Road Map</a></li>
+                    <li class="nav-item"><a href="ourclans.html" class="nav-link">Our Clans</a></li>
+                    <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="connect-wallet-section">
+            <div class="container">
+                <div class="connect-wallet">
+                    <div class="connect-wallet-desc">
+                        <h2 class="section-title">Connect Wallet</h2>
+                        <p class="section-desc">
+                            If you don't have a wallet yet, you can select a provider and create one now.
+                        </p>
+                    </div>
+                    <div class="connect-wallet-tabs">
+                        <div class="connect-wallet-tab">
+                            <input type="radio" name="connect-wallet" id="Bitcoin" class="hidden">
+                            <label for="Bitcoin" class="connect-wallet-tab-text">Bitcoin</label>
+                        </div>
+                        <div class="connect-wallet-tab">
+                            <input type="radio" name="connect-wallet" id="Ethereum" class="hidden" checked>
+                            <label for="Ethereum" class="connect-wallet-tab-text">Ethereum</label>
+                        </div>
+                        <div class="connect-wallet-tab">
+                            <input type="radio" name="connect-wallet" id="Solana" class="hidden">
+                            <label for="Solana" class="connect-wallet-tab-text">Solana</label>
+                        </div>
+                        <div class="connect-wallet-tab">
+                            <input type="radio" name="connect-wallet" id="Tezos" class="hidden">
+                            <label for="Tezos" class="connect-wallet-tab-text">Tezos</label>
+                        </div>
+                        <div class="connect-wallet-tab">
+                            <input type="radio" name="connect-wallet" id="Polygon" class="hidden">
+                            <label for="Polygon" class="connect-wallet-tab-text">Polygon</label>
+                        </div>
+                    </div>
+                    <div class="connect-wallet-list">
+                        <div class="wallet">
+                            <div class="wallet-image">
+                                <img src="static/img/metamask.png" alt="">
+                            </div>
+                            <div class="wallet-desc">
+                                <h3 class="wallet-name">MetaMask</h3>
+                                <p class="wallet-info">Popular</p>
+                            </div>
+                        </div>
+                        <div class="wallet">
+                            <div class="wallet-image">
+                                <img src="static/img/phantom.png" alt="">
+                            </div>
+                            <div class="wallet-desc">
+                                <h3 class="wallet-name">Phantom</h3>
+                                <p class="wallet-info">Solana</p>
+                            </div>
+                        </div>
+                        <div class="wallet">
+                            <div class="wallet-image">
+                                <img src="static/img/coinbase-coin.png" alt="">
+                            </div>
+                            <div class="wallet-desc">
+                                <h3 class="wallet-name">CoinBase</h3>
+                                <p class="wallet-info"></p>
+                            </div>
+                        </div>
+                        <div class="wallet">
+                            <div class="wallet-image">
+                                <img src="static/img/walletconnect.png" alt="">
+                            </div>
+                            <div class="wallet-desc">
+                                <h3 class="wallet-name">WalletConnect</h3>
+                                <p class="wallet-info"></p>
+                            </div>
+                        </div>
+                        <div class="wallet">
+                            <div class="wallet-image">
+                                <img src="static/img/trust-wallet.png" alt="">
+                            </div>
+                            <div class="wallet-desc">
+                                <h3 class="wallet-name">TrustWallet</h3>
+                                <p class="wallet-info"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="popup-section">
+            <div class="popup">
+                <div class="popup-logo-header">
+                    <div class="popup-logo">
+                        <div class="wallet">
+                            <div class="wallet-image">
+                                <img src="static/img/metamask.png" alt="">
+                            </div>
+                            <div class="wallet-desc">
+                                <h3 class="wallet-name">MetaMask</h3>
+                                <p class="wallet-info">Etherium</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popup-header">
+                        <h3 class="popup-title">Sign this petition?</h3>
+                        <p class="popup-desc">Sign a message using your wallet <br> to continue</p>
+                    </div>
+                </div>
+                <div class="popup-detail">
+                    <div class="popup-user-wallet">
+                        <div class="avatar">
+                            <img class="avatar-img" src="/static/img/avatar4.jpeg">
+                        </div>
+                        <div class="popup-wallet-desc">
+                            <h4 class="popup-user-name">Lincoln George</h4>
+                            <div class="popup-wallet-detail">
+                                <p class="popup-wallet-link">0x38682823...4T93</p>
+                                <div class="popup-wallet-connected">Connected</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popup-subheader">
+                        <h4>Welcome to NFTs Art!</h4>
+                        <p class="popup-desc popup-subheader-desc">
+                            <span class="extra-content" data-length="140">
+                                Click to sign in and accept the NFTs Art Term of Service:
+                                https://example-nftsart.io/terms
+                            </span>
+                            <span class="show-more">Show more</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="popup-buttons">
+                    <button type="button" class="btn-outline-green" id="wallet-cancel-btn">Cancel</button>
+                    <button type="submit" class="btn-green">Connect</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer">
+                <div class="footer-logo-desc">
+                    <h3 class="footer-logo">NFTs Art</h3>
+                    <h4 class="footer-desc">Create sell, and collect <br> NFT digital art</h4>
+                </div>
+                <div class="footer-links">
+                    <ul class="footer-menu">
+                        <li><a href="#" class="footer-link">Collection</a></li>
+                        <li><a href="#" class="footer-link">Road Map</a></li>
+                        <li><a href="#" class="footer-link">Our Clans</a></li>
+                        <li><a href="#" class="footer-link">FAQ</a></li>
+                    </ul>
+                    <ul class="footer-social">
+                        <li><a href="#"><i class="fa-brands fa-discord"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    </ul>
+                    <div class="footer-rights">
+                        <p>2024. all right Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
