@@ -21,7 +21,7 @@
                     <h3>NFTs Art</h3>
                 </a>
                 <ul class="nav-links">
-                    <li class="nav-item"><a href="nft-collection.html" class="nav-link">Collection</a></li>
+                    <li class="nav-item"><a href="collections.html" class="nav-link">Collection</a></li>
                     <li class="nav-item"><a href="roadmap.html" class="nav-link">Road Map</a></li>
                     <li class="nav-item"><a href="ourclans.html" class="nav-link">Our Clans</a></li>
                     <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
@@ -60,7 +60,7 @@
                     <a href="nft-create.html"><button class="btn-green">Create</button></a>
                 </div>
                 <ul class="nav-menu-links">
-                    <li class="nav-item"><a href="nft-collection.html" class="nav-link">Collection</a></li>
+                    <li class="nav-item"><a href="collections.html" class="nav-link">Collection</a></li>
                     <li class="nav-item"><a href="roadmap.html" class="nav-link">Road Map</a></li>
                     <li class="nav-item"><a href="ourclans.html" class="nav-link">Our Clans</a></li>
                     <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
@@ -79,18 +79,21 @@
                     <div class="nft-collections-container">
                         <div class="collection-search">
                             <div class="collection-search-input">
-                                <input type="text" class="search-input" placeholder="Search collections">
+                                <input type="text" class="search-input" placeholder="Search collections" id="collection-search">
                                 <i class="fa-solid fa-magnifying-glass"></i>
-                                <i class="fa-solid fa-xmark remove-search-btn"></i>
+                                <i class="fa-solid fa-xmark remove-search-btn hidden"></i>
                             </div>
                             <div class="collection-select-filter">
                                 <select name="blockchains" id="blockchains" class="filter-select">
-                                    <option value="all-blockchains">All blockchains</option>
+                                    <option value="all">All blockchains</option>
+                                    <option value="1">Ethereum</option>
+                                    <option value="2">Polygon</option>
                                 </select>
-                                <div class="filter-select">
-                                    <span>Sort by</span>
-                                    <i class="fa-solid fa-sliders"></i>
-                                </div>
+                                <select id="sort-by-collection" class="filter-select">
+                                    <option value="default">Sort By</option>
+                                    <option value="name-asc">Name: A to Z</option>
+                                    <option value="name-desc">Name: Z to A</option>
+                                </select>
                             </div>
                             <div class="collection-grid-switches">
                                 <div class="grid-switch">
@@ -127,63 +130,63 @@
                                     <div class="collection-filter-items">
                                         <div class="collection-filter-item">
                                             <label class="collection-filter-item-text" for="category-top">Top</label>
-                                            <input class="collection-filter-checkbox hidden" id="category-top" type="checkbox">
+                                            <input class="collection-filter-checkbox hidden" id="category-top" type="checkbox" value="1" name="category">
                                             <label class="filter-check-icon" for="category-top">
                                                 <i class="fa-solid fa-check check-icon"></i>
                                             </label>
                                         </div>
                                         <div class="collection-filter-item">
                                             <label class="collection-filter-item-text" for="category-art">Art</label>
-                                            <input class="collection-filter-checkbox hidden" id="category-art" type="checkbox">
+                                            <input class="collection-filter-checkbox hidden" id="category-art" type="checkbox" value="2" name="category">
                                             <label class="filter-check-icon" for="category-art">
                                                 <i class="fa-solid fa-check check-icon"></i>
                                             </label>
                                         </div>
                                         <div class="collection-filter-item">
                                             <label class="collection-filter-item-text" for="category-collectibles">Collectibles</label>
-                                            <input class="collection-filter-checkbox hidden" id="category-collectibles" type="checkbox">
+                                            <input class="collection-filter-checkbox hidden" id="category-collectibles" type="checkbox" value="3" name="category">
                                             <label class="filter-check-icon" for="category-collectibles">
                                                 <i class="fa-solid fa-check check-icon"></i>
                                             </label>
                                         </div>
                                         <div class="collection-filter-item">
                                             <label class="collection-filter-item-text" for="category-domain-names">Domain Names</label>
-                                            <input class="collection-filter-checkbox hidden" id="category-domain-names" type="checkbox">
+                                            <input class="collection-filter-checkbox hidden" id="category-domain-names" type="checkbox" value="4" name="category">
                                             <label class="filter-check-icon" for="category-domain-names">
                                                 <i class="fa-solid fa-check check-icon"></i>
                                             </label>
                                         </div>
                                         <div class="collection-filter-item">
                                             <label class="collection-filter-item-text" for="category-music">Music</label>
-                                            <input class="collection-filter-checkbox hidden" id="category-music" type="checkbox">
+                                            <input class="collection-filter-checkbox hidden" id="category-music" type="checkbox"  value="5" name="category">
                                             <label class="filter-check-icon" for="category-music">
                                                 <i class="fa-solid fa-check check-icon"></i>
                                             </label>
                                         </div>
                                         <div class="collection-filter-item">
                                             <label class="collection-filter-item-text" for="category-photography">Photography</label>
-                                            <input class="collection-filter-checkbox hidden" id="category-photography" type="checkbox">
+                                            <input class="collection-filter-checkbox hidden" id="category-photography" type="checkbox" value="6" name="category">
                                             <label class="filter-check-icon" for="category-photography">
                                                 <i class="fa-solid fa-check check-icon"></i>
                                             </label>
                                         </div>
                                         <div class="collection-filter-item">
                                             <label class="collection-filter-item-text" for="category-sports">Sports</label>
-                                            <input class="collection-filter-checkbox hidden" id="category-sports" type="checkbox">
+                                            <input class="collection-filter-checkbox hidden" id="category-sports" type="checkbox" value="7" name="category">
                                             <label class="filter-check-icon" for="category-sports">
                                                 <i class="fa-solid fa-check check-icon"></i>
                                             </label>
                                         </div>
                                         <div class="collection-filter-item">
                                             <label class="collection-filter-item-text" for="category-trading-cards">Trading Cards</label>
-                                            <input class="collection-filter-checkbox hidden" id="category-trading-cards" type="checkbox">
+                                            <input class="collection-filter-checkbox hidden" id="category-trading-cards" type="checkbox" value="8" name="category">
                                             <label class="filter-check-icon" for="category-trading-cards">
                                                 <i class="fa-solid fa-check check-icon"></i>
                                             </label>
                                         </div>
                                         <div class="collection-filter-item">
                                             <label class="collection-filter-item-text" for="category-virtual-worlds">Virtual Worlds</label>
-                                            <input class="collection-filter-checkbox hidden" id="category-virtual-worlds" type="checkbox">
+                                            <input class="collection-filter-checkbox hidden" id="category-virtual-worlds" type="checkbox"  value="9" name="category">
                                             <label class="filter-check-icon" for="category-virtual-worlds">
                                                 <i class="fa-solid fa-check check-icon"></i>
                                             </label>
@@ -193,7 +196,7 @@
                             </div>
                             <div class="collection-cards-pagination">
                                 <div class="collection-cards">
-                                    <div class="collection-card">
+                                    <div class="collection-card" data-category="1" data-blockchain="1">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">Human Life
@@ -211,7 +214,7 @@
                                                         <h5>1.5K</h5>
                                                     </div>
                                                 </div>
-                                                <button class="btn-green collection-card-btn">Follow</button>
+                                                <button class="btn-green collection-card-btn follow-btn">Follow</button>
                                             </div>
                                         </div>
                                         <div class="collection-card-images">
@@ -230,7 +233,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="collection-card">
+                                    <div class="collection-card" data-category="1" data-blockchain="2">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">Human Life
@@ -248,7 +251,7 @@
                                                         <h5>1.5K</h5>
                                                     </div>
                                                 </div>
-                                                <button class="btn-green collection-card-btn">Follow</button>
+                                                <button class="btn-green collection-card-btn follow-btn">Follow</button>
                                             </div>
                                         </div>
                                         <div class="collection-card-images">
@@ -267,7 +270,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="collection-card">
+                                    <div class="collection-card" data-category="2" data-blockchain="1">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">Human Life
@@ -285,7 +288,7 @@
                                                         <h5>1.5K</h5>
                                                     </div>
                                                 </div>
-                                                <button class="btn-green collection-card-btn">Follow</button>
+                                                <button class="btn-green collection-card-btn follow-btn">Follow</button>
                                             </div>
                                         </div>
                                         <div class="collection-card-images">
@@ -304,7 +307,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="collection-card">
+                                    <div class="collection-card" data-category="3" data-blockchain="1">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">Human Life
@@ -322,7 +325,7 @@
                                                         <h5>1.5K</h5>
                                                     </div>
                                                 </div>
-                                                <button class="btn-green collection-card-btn">Follow</button>
+                                                <button class="btn-green collection-card-btn follow-btn">Follow</button>
                                             </div>
                                         </div>
                                         <div class="collection-card-images">
@@ -341,7 +344,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="collection-card">
+                                    <div class="collection-card" data-category="1" data-blockchain="2">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">Human Life
@@ -359,7 +362,7 @@
                                                         <h5>1.5K</h5>
                                                     </div>
                                                 </div>
-                                                <button class="btn-green collection-card-btn">Follow</button>
+                                                <button class="btn-green collection-card-btn follow-btn">Follow</button>
                                             </div>
                                         </div>
                                         <div class="collection-card-images">
@@ -378,7 +381,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="collection-card">
+                                    <div class="collection-card" data-category="1" data-blockchain="2">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">Human Life
@@ -396,7 +399,7 @@
                                                         <h5>1.5K</h5>
                                                     </div>
                                                 </div>
-                                                <button class="btn-green collection-card-btn">Follow</button>
+                                                <button class="btn-green collection-card-btn follow-btn">Follow</button>
                                             </div>
                                         </div>
                                         <div class="collection-card-images">
@@ -415,7 +418,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="collection-card">
+                                    <div class="collection-card" data-category="2" data-blockchain="1">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">Human Life
@@ -433,7 +436,7 @@
                                                         <h5>1.5K</h5>
                                                     </div>
                                                 </div>
-                                                <button class="btn-green collection-card-btn">Follow</button>
+                                                <button class="btn-green collection-card-btn follow-btn">Follow</button>
                                             </div>
                                         </div>
                                         <div class="collection-card-images">
@@ -452,7 +455,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="collection-card">
+                                    <div class="collection-card" data-category="1" data-blockchain="1">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">Human Life
@@ -470,7 +473,7 @@
                                                         <h5>1.5K</h5>
                                                     </div>
                                                 </div>
-                                                <button class="btn-green collection-card-btn">Follow</button>
+                                                <button class="btn-green collection-card-btn follow-btn">Follow</button>
                                             </div>
                                         </div>
                                         <div class="collection-card-images">
@@ -489,7 +492,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="collection-card">
+                                    <div class="collection-card" data-category="2" data-blockchain="2">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">Human Life
@@ -507,7 +510,7 @@
                                                         <h5>1.5K</h5>
                                                     </div>
                                                 </div>
-                                                <button class="btn-green collection-card-btn">Follow</button>
+                                                <button class="btn-green collection-card-btn follow-btn">Follow</button>
                                             </div>
                                         </div>
                                         <div class="collection-card-images">
@@ -526,7 +529,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="collection-card">
+                                    <div class="collection-card" data-category="4" data-blockchain="1">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">Human Life
@@ -544,7 +547,7 @@
                                                         <h5>1.5K</h5>
                                                     </div>
                                                 </div>
-                                                <button class="btn-green collection-card-btn">Follow</button>
+                                                <button class="btn-green collection-card-btn follow-btn">Follow</button>
                                             </div>
                                         </div>
                                         <div class="collection-card-images">
@@ -563,7 +566,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="collection-card">
+                                    <div class="collection-card" data-category="2" data-blockchain="1">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">Human Life
@@ -581,7 +584,7 @@
                                                         <h5>1.5K</h5>
                                                     </div>
                                                 </div>
-                                                <button class="btn-green collection-card-btn">Follow</button>
+                                                <button class="btn-green collection-card-btn follow-btn">Follow</button>
                                             </div>
                                         </div>
                                         <div class="collection-card-images">
@@ -600,7 +603,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="collection-card">
+                                    <div class="collection-card" data-category="1" data-blockchain="2">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">Human Life
@@ -618,7 +621,7 @@
                                                         <h5>1.5K</h5>
                                                     </div>
                                                 </div>
-                                                <button class="btn-green collection-card-btn">Follow</button>
+                                                <button class="btn-green collection-card-btn follow-btn">Follow</button>
                                             </div>
                                         </div>
                                         <div class="collection-card-images">
@@ -904,10 +907,10 @@
                 </div>
                 <div class="footer-links">
                     <ul class="footer-menu">
-                        <li><a href="#" class="footer-link">Collection</a></li>
-                        <li><a href="#" class="footer-link">Road Map</a></li>
-                        <li><a href="#" class="footer-link">Our Clans</a></li>
-                        <li><a href="#" class="footer-link">FAQ</a></li>
+                        <li><a href="collections.html" class="footer-link">Collection</a></li>
+                        <li><a href="roadmap.html" class="footer-link">Road Map</a></li>
+                        <li><a href="ourclans.html" class="footer-link">Our Clans</a></li>
+                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
                     </ul>
                     <ul class="footer-social">
                         <li><a href="#"><i class="fa-brands fa-discord"></i></a></li>
@@ -921,7 +924,6 @@
             </div>
         </div>
     </footer>
-
     <script src="./js/main.js"></script>
 </body>
 

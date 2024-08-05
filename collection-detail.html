@@ -21,7 +21,7 @@
                     <h3>NFTs Art</h3>
                 </a>
                 <ul class="nav-links">
-                    <li class="nav-item"><a href="nft-collection.html" class="nav-link">Collection</a></li>
+                    <li class="nav-item"><a href="collections.html" class="nav-link">Collection</a></li>
                     <li class="nav-item"><a href="roadmap.html" class="nav-link">Road Map</a></li>
                     <li class="nav-item"><a href="ourclans.html" class="nav-link">Our Clans</a></li>
                     <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
@@ -60,7 +60,7 @@
                     <a href="nft-create.html"><button class="btn-green">Create</button></a>
                 </div>
                 <ul class="nav-menu-links">
-                    <li class="nav-item"><a href="nft-collection.html" class="nav-link">Collection</a></li>
+                    <li class="nav-item"><a href="collections.html" class="nav-link">Collection</a></li>
                     <li class="nav-item"><a href="roadmap.html" class="nav-link">Road Map</a></li>
                     <li class="nav-item"><a href="ourclans.html" class="nav-link">Our Clans</a></li>
                     <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
@@ -115,19 +115,19 @@
                                 </div>
                                 <div class="collection-filter-items dropdown-content opened">
                                     <div class="collection-filter-item">
-                                        <label class="collection-filter-item-text" for="status-buy-now">Buy Now</label>
-                                        <input class="collection-filter-radio hidden" id="status-buy-now" type="radio" name="status">
-                                        <label class="filter-check-icon" for="status-buy-now"><i class="radio-icon"></i></label>
-                                    </div>
-                                    <div class="collection-filter-item">
                                         <label class="collection-filter-item-text" for="status-auction">On Auction</label>
-                                        <input class="collection-filter-radio hidden" id="status-auction" type="radio" name="status">
-                                        <label class="filter-check-icon" for="status-auction"><i class="radio-icon"></i></label>
+                                        <input class="collection-filter-checkbox hidden" id="status-auction" type="checkbox" name="status" value="auction">
+                                        <label class="filter-check-icon" for="status-auction"><i class="fa-solid fa-check check-icon"></i></label>
                                     </div>
                                     <div class="collection-filter-item">
-                                        <label class="collection-filter-item-text" for="status-buy-with-card">Buy With Card</label>
-                                        <input class="collection-filter-radio hidden" id="status-buy-with-card" type="radio" name="status">
-                                        <label class="filter-check-icon" for="status-buy-with-card"><i class="radio-icon"></i></label>
+                                        <label class="collection-filter-item-text" for="status-expired" >Expired</label>
+                                        <input class="collection-filter-checkbox hidden" id="status-expired" type="checkbox" name="status" value="expired">
+                                        <label class="filter-check-icon" for="status-expired"><i class="fa-solid fa-check check-icon"></i></label>
+                                    </div>
+                                    <div class="collection-filter-item">
+                                        <label class="collection-filter-item-text" for="status-not-on-sale">Not on sale</label>
+                                        <input class="collection-filter-checkbox hidden" id="status-not-on-sale" type="checkbox" name="status" value="not-on-sale">
+                                        <label class="filter-check-icon" for="status-not-on-sale"><i class="fa-solid fa-check check-icon"></i></label>
                                     </div>
                                 </div>
                             </div>
@@ -138,14 +138,9 @@
                                 </div>
                                 <div class="dropdown-content opened">
                                     <div class="collection-filter-items-fd-row">
-                                        <select class="filter-select">
-                                            <option value="usd">Usd</option>
-                                            <option value="eth">Eth</option>
-                                        </select>
-                                        <input type="number" class="filter-input" placeholder="Min">
+                                        <input type="number" class="filter-input" placeholder="Min" id="min-value">
                                         <p class="filter-input-text">To</p>
-                                        <input type="number" class="filter-input" placeholder="Max">
-
+                                        <input type="number" class="filter-input" placeholder="Max" id="max-value">
                                     </div>
                                 </div>
                             </div>
@@ -179,13 +174,18 @@
                                 </div>
                                 <div class="collection-filter-items dropdown-content opened">
                                     <div class="collection-filter-item">
+                                        <label class="collection-filter-item-text" for="currency-all">Show all</label>
+                                        <input class="collection-filter-radio hidden" id="currency-all" type="radio" name="currency" value="all" checked>
+                                        <label class="filter-check-icon" for="currency-all"><i class="radio-icon"></i></label>
+                                    </div>
+                                    <div class="collection-filter-item">
                                         <label class="collection-filter-item-text" for="currency-eth">ETH</label>
-                                        <input class="collection-filter-radio hidden" id="currency-eth" type="radio" name="currency">
+                                        <input class="collection-filter-radio hidden" id="currency-eth" type="radio" name="currency" value="ETH">
                                         <label class="filter-check-icon" for="currency-eth"><i class="radio-icon"></i></label>
                                     </div>
                                     <div class="collection-filter-item">
                                         <label class="collection-filter-item-text" for="currency-weth">WETH</label>
-                                        <input class="collection-filter-radio hidden" id="currency-weth" type="radio" name="currency">
+                                        <input class="collection-filter-radio hidden" id="currency-weth" type="radio" name="currency" value="BTC">
                                         <label class="filter-check-icon" for="currency-weth"><i class="radio-icon"></i></label>
                                     </div>
                                 </div>
@@ -195,14 +195,17 @@
                     <div class="collection-cards-pagination">
                         <div class="collection-search">
                             <div class="collection-search-input">
-                                <input type="text" class="search-input" placeholder="Search collections">
+                                <input type="text" class="search-input" placeholder="Search collections" id="nft-search">
                                 <i class="fa-solid fa-magnifying-glass"></i>
-                                <i class="fa-solid fa-xmark remove-search-btn"></i>
+                                <i class="fa-solid fa-xmark remove-search-btn hidden"></i>
                             </div>
                             <div class="collection-select-filter">
-                                <select name="search-select" id="search-select" class="filter-select">
-                                    <option value="low-to-high">Price: Low to high</option>
-                                    <option value="low-to-high">Price: High to low</option>
+                                <select id="sort-by" class="filter-select">
+                                    <option value="default">Sort By</option>
+                                    <option value="price-asc">Price: Low to High</option>
+                                    <option value="price-desc">Price: High to Low</option>
+                                    <option value="name-asc">Name: A to Z</option>
+                                    <option value="name-desc">Name: Z to A</option>
                                 </select>
                             </div>
                             <div class="collection-grid-switches">
@@ -239,7 +242,7 @@
                             </div>
                         </div>
                         <div class="collection-nft-cards">
-                            <div class="nft-card">
+                            <div class="nft-card" data-status="auction" data-currency="ETH" data-price="0.56">
                                 <h4 class="nft-name">Human Leaf #0121</h4>
                                 <div class="nft-card-image">
                                     <img src="/static/img/image4.jpeg" alt="" class="nft-image">
@@ -254,7 +257,33 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="nft-card">
+                            <div class="nft-card" data-status="expired" data-currency="ETH" data-price="0.56">
+                                <h4 class="nft-name">Human Leaf #0121</h4>
+                                <div class="nft-card-image">
+                                    <img src="/static/img/image4.jpeg" alt="" class="nft-image">
+                                </div>
+                                <div class="nft-detail">
+                                    <div class="nft-highest-bid">
+                                        <p>Highest bid</p>
+                                        <h4>0.56 ETH</h4>
+                                    </div>
+                                    <div class="nft-time expired">
+                                        <span>Expired</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nft-card" data-status="not-on-sale" data-currency="null" data-price="null">
+                                <h4 class="nft-name">Human Leaf #0121</h4>
+                                <div class="nft-card-image">
+                                    <img src="/static/img/image4.jpeg" alt="" class="nft-image">
+                                </div>
+                                <div class="nft-detail">
+                                    <div class="not-on-sale">
+                                        <h4>Not on sale</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nft-card" data-status="auction" data-currency="ETH" data-price="0.56">
                                 <h4 class="nft-name">Human Leaf #0121</h4>
                                 <div class="nft-card-image">
                                     <img src="/static/img/image4.jpeg" alt="" class="nft-image">
@@ -269,7 +298,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="nft-card">
+                            <div class="nft-card" data-status="auction" data-currency="ETH" data-price="0.56">
                                 <h4 class="nft-name">Human Leaf #0121</h4>
                                 <div class="nft-card-image">
                                     <img src="/static/img/image4.jpeg" alt="" class="nft-image">
@@ -284,7 +313,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="nft-card">
+                            <div class="nft-card" data-status="auction" data-currency="ETH" data-price="0.56">
                                 <h4 class="nft-name">Human Leaf #0121</h4>
                                 <div class="nft-card-image">
                                     <img src="/static/img/image4.jpeg" alt="" class="nft-image">
@@ -299,7 +328,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="nft-card">
+                            <div class="nft-card" data-status="auction" data-currency="ETH" data-price="0.56">
                                 <h4 class="nft-name">Human Leaf #0121</h4>
                                 <div class="nft-card-image">
                                     <img src="/static/img/image4.jpeg" alt="" class="nft-image">
@@ -314,7 +343,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="nft-card">
+                            <div class="nft-card" data-status="auction" data-currency="ETH" data-price="0.56">
                                 <h4 class="nft-name">Human Leaf #0121</h4>
                                 <div class="nft-card-image">
                                     <img src="/static/img/image4.jpeg" alt="" class="nft-image">
@@ -329,7 +358,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="nft-card">
+                            <div class="nft-card" data-status="auction" data-currency="ETH" data-price="0.56">
                                 <h4 class="nft-name">Human Leaf #0121</h4>
                                 <div class="nft-card-image">
                                     <img src="/static/img/image4.jpeg" alt="" class="nft-image">
@@ -344,7 +373,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="nft-card">
+                            <div class="nft-card" data-status="auction" data-currency="ETH" data-price="0.56">
                                 <h4 class="nft-name">Human Leaf #0121</h4>
                                 <div class="nft-card-image">
                                     <img src="/static/img/image4.jpeg" alt="" class="nft-image">
@@ -359,7 +388,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="nft-card">
+                            <div class="nft-card" data-status="auction" data-currency="ETH" data-price="0.56">
                                 <h4 class="nft-name">Human Leaf #0121</h4>
                                 <div class="nft-card-image">
                                     <img src="/static/img/image4.jpeg" alt="" class="nft-image">
@@ -374,37 +403,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="nft-card">
-                                <h4 class="nft-name">Human Leaf #0121</h4>
-                                <div class="nft-card-image">
-                                    <img src="/static/img/image4.jpeg" alt="" class="nft-image">
-                                </div>
-                                <div class="nft-detail">
-                                    <div class="nft-highest-bid">
-                                        <p>Highest bid</p>
-                                        <h4>0.56 ETH</h4>
-                                    </div>
-                                    <div class="nft-time">
-                                        <span>04:45:32</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="nft-card">
-                                <h4 class="nft-name">Human Leaf #0121</h4>
-                                <div class="nft-card-image">
-                                    <img src="/static/img/image4.jpeg" alt="" class="nft-image">
-                                </div>
-                                <div class="nft-detail">
-                                    <div class="nft-highest-bid">
-                                        <p>Highest bid</p>
-                                        <h4>0.56 ETH</h4>
-                                    </div>
-                                    <div class="nft-time">
-                                        <span>04:45:32</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="nft-card">
+                            <div class="nft-card" data-status="auction" data-currency="ETH" data-price="0.56">
                                 <h4 class="nft-name">Human Leaf #0121</h4>
                                 <div class="nft-card-image">
                                     <img src="/static/img/image4.jpeg" alt="" class="nft-image">
@@ -684,10 +683,10 @@
                 </div>
                 <div class="footer-links">
                     <ul class="footer-menu">
-                        <li><a href="#" class="footer-link">Collection</a></li>
-                        <li><a href="#" class="footer-link">Road Map</a></li>
-                        <li><a href="#" class="footer-link">Our Clans</a></li>
-                        <li><a href="#" class="footer-link">FAQ</a></li>
+                        <li><a href="collections.html" class="footer-link">Collection</a></li>
+                        <li><a href="roadmap.html" class="footer-link">Road Map</a></li>
+                        <li><a href="ourclans.html" class="footer-link">Our Clans</a></li>
+                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
                     </ul>
                     <ul class="footer-social">
                         <li><a href="#"><i class="fa-brands fa-discord"></i></a></li>
