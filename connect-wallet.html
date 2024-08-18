@@ -81,23 +81,23 @@
                     </div>
                     <div class="connect-wallet-tabs">
                         <div class="connect-wallet-tab">
-                            <input type="radio" name="connect-wallet" id="Bitcoin" class="hidden">
+                            <input type="radio" name="blockchain" id="Bitcoin" value="Bitcoin" class="hidden">
                             <label for="Bitcoin" class="connect-wallet-tab-text">Bitcoin</label>
                         </div>
                         <div class="connect-wallet-tab">
-                            <input type="radio" name="connect-wallet" id="Ethereum" class="hidden" checked>
+                            <input type="radio" name="blockchain" id="Ethereum" value="Ethereum" class="hidden" checked>
                             <label for="Ethereum" class="connect-wallet-tab-text">Ethereum</label>
                         </div>
                         <div class="connect-wallet-tab">
-                            <input type="radio" name="connect-wallet" id="Solana" class="hidden">
+                            <input type="radio" name="blockchain" id="Solana" value="Solana" class="hidden">
                             <label for="Solana" class="connect-wallet-tab-text">Solana</label>
                         </div>
                         <div class="connect-wallet-tab">
-                            <input type="radio" name="connect-wallet" id="Tezos" class="hidden">
+                            <input type="radio" name="blockchain" id="Tezos" value="Tezos" class="hidden">
                             <label for="Tezos" class="connect-wallet-tab-text">Tezos</label>
                         </div>
                         <div class="connect-wallet-tab">
-                            <input type="radio" name="connect-wallet" id="Polygon" class="hidden">
+                            <input type="radio" name="blockchain" id="Polygon" value="Polygon" class="hidden">
                             <label for="Polygon" class="connect-wallet-tab-text">Polygon</label>
                         </div>
                     </div>
@@ -107,7 +107,8 @@
                                 <img src="static/img/metamask.png" alt="">
                             </div>
                             <div class="wallet-desc">
-                                <h3 class="wallet-name">MetaMask</h3>
+                                <input type="radio" name="provider" id="provider_1" value="1" class="hidden"> 
+                                <label for="provider_1" class="wallet-name">MetaMask</label>
                                 <p class="wallet-info">Popular</p>
                             </div>
                         </div>
@@ -116,7 +117,8 @@
                                 <img src="static/img/phantom.png" alt="">
                             </div>
                             <div class="wallet-desc">
-                                <h3 class="wallet-name">Phantom</h3>
+                                <input type="radio" name="provider" id="provider_2" value="2" class="hidden"> 
+                                <label for="provider_2" class="wallet-name">Phantom</label>
                                 <p class="wallet-info">Solana</p>
                             </div>
                         </div>
@@ -125,7 +127,8 @@
                                 <img src="static/img/coinbase-coin.png" alt="">
                             </div>
                             <div class="wallet-desc">
-                                <h3 class="wallet-name">CoinBase</h3>
+                                <input type="radio" name="provider" id="provider_3" value="3" class="hidden"> 
+                                <label for="provider_3" class="wallet-name">CoinBase</label>
                                 <p class="wallet-info"></p>
                             </div>
                         </div>
@@ -134,7 +137,8 @@
                                 <img src="static/img/walletconnect.png" alt="">
                             </div>
                             <div class="wallet-desc">
-                                <h3 class="wallet-name">WalletConnect</h3>
+                                <input type="radio" name="provider" id="provider_4" value="4" class="hidden"> 
+                                <label for="provider_4" class="wallet-name">WalletConnect</label>
                                 <p class="wallet-info"></p>
                             </div>
                         </div>
@@ -143,7 +147,8 @@
                                 <img src="static/img/trust-wallet.png" alt="">
                             </div>
                             <div class="wallet-desc">
-                                <h3 class="wallet-name">TrustWallet</h3>
+                                <input type="radio" name="provider" id="provider_5" value="5" class="hidden"> 
+                                <label for="provider_5" class="wallet-name">TrustWallet</label>
                                 <p class="wallet-info"></p>
                             </div>
                         </div>
@@ -197,7 +202,7 @@
                 </div>
                 <div class="popup-buttons">
                     <button type="button" class="btn-outline-green" id="wallet-cancel-btn">Cancel</button>
-                    <button type="submit" class="btn-green">Connect</button>
+                    <button type="submit" class="btn-green" id="wallet-connect-btn">Connect</button>
                 </div>
             </div>
         </section>

@@ -10,6 +10,7 @@
     --background-color-white: #FEFEFE;
     --light-cyan: #52B4C1;
     --light-green: #DCF06B;
+    --light-red: #EB3F5E;
     --neutral-1: #11315B;
     --neutral-2: #6E84AB;
     --neutral-3: #21204A;
@@ -39,7 +40,7 @@
     --text-secondary-color: #FEFEFE;
     --grayscale-30-90: #434E58;
     --grayscale-0-90: #444444;
-    --grayscale-10-95: #0b0b11;
+    --grayscale-10-95: #07070a;
     --line-color: #4A4A65;
     --neutral-1: #6E84AB;
     --neutral-3: #3e3ea0;
@@ -88,7 +89,6 @@ body:has(header) {
     text-align: center;
     font-size: 16px;
     font-weight: 400;
-    line-height: 24px;
     letter-spacing: 0.08px;
 }
 
@@ -105,9 +105,12 @@ body:has(header) {
     line-height: 24px;
     letter-spacing: 0.08px;
     cursor: pointer;
-    border: none;
+    border: 1px solid transparent;
     transition: 300ms;
     min-width: fit-content;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .btn-green {
@@ -119,6 +122,29 @@ body:has(header) {
     background-color: var(--background-primary-color);
     border: 1px solid var(--light-green);
     color: var(--text-primary-color);
+}
+
+.btn-green:hover{
+    background-color: transparent;
+    border-color: var(--light-green);
+    color: var(--text-primary-color);
+}
+
+.btn-outline-green:hover{
+    background-color: var(--light-green);
+    color: var(--text-color-black-1);
+    border-color: transparent;
+}
+
+.delete-btn{
+    background-color: var(--light-red);
+    color: white;
+}
+
+.delete-btn:hover{
+    color: var(--light-red);
+    border-color: var(--light-red);
+    background-color: transparent;
 }
 
 .btn-green:disabled,
@@ -261,6 +287,11 @@ header {
     font-weight: 600;
     line-height: 26px;
     letter-spacing: 0.5px;
+    transition: 300ms;
+}
+
+.nav-link:hover{
+    color: var(--light-cyan);
 }
 
 .nav-buttons {
@@ -403,6 +434,7 @@ footer {
     font-weight: 600;
     line-height: 26px;
     letter-spacing: 0.5px;
+    transition: 300ms;
 }
 
 .footer-menu {
@@ -418,6 +450,15 @@ footer {
     align-items: center;
     gap: 12px;
     color: var(--text-primary-color);
+}
+
+.footer-social li a {
+    transition: 300ms;
+}
+
+.footer-link:hover,
+.footer-social li a:hover {
+    color: var(--light-cyan);
 }
 
 .footer-rights p {
@@ -637,6 +678,8 @@ footer {
 }
 
 .roadmap .section-desc {
+    width: 60%;
+    margin: 0 auto;
     color: rgba(254, 254, 254, 0.72);
 }
 
@@ -834,6 +877,12 @@ footer {
     display: flex;
     align-items: center;
     gap: 12px;
+}
+
+.auction-actions button{
+    background-color: transparent;
+    border: none;
+    color: var(--text-primary-color);
 }
 
 .auction-action-text {
@@ -1106,10 +1155,11 @@ footer {
 
 .price-history-chart .prices {
     display: flex;
-    width: 20px;
+    width: fit-content;
     flex-direction: column;
     align-items: flex-end;
     gap: 24px;
+    text-align: right;
 }
 
 .chart-text {
@@ -1123,7 +1173,7 @@ footer {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 0 30px;
+    padding: 0 10px 0 40px;
     max-width: 650px;
 }
 
@@ -1136,7 +1186,7 @@ footer {
     gap: 40px;
     position: absolute;
     top: 5px;
-    left: 30px;
+    left: 40px;
 }
 
 .price-history-chart .line {
@@ -1152,8 +1202,8 @@ footer {
     width: 90%;
     max-width: 650px;
     position: absolute;
-    top: 50%;
-    left: 30px;
+    top: 45%;
+    left: 40px;
     transform: translateY(-50%);
 }
 
@@ -1215,6 +1265,9 @@ tr td:last-child {
     letter-spacing: 0.08px;
     padding: 8px;
     text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 tr.spacing,
@@ -1232,6 +1285,7 @@ tr.spacing td {
 /* 
  * POPULAR COLLECTIONS
  */
+
 .popular-collections-section {
     padding: 120px 0;
 }
@@ -1259,7 +1313,7 @@ tr.spacing td {
 
 .popular-collection-cards {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
     gap: var(--popular-collection-cards-gap);
 }
@@ -1447,18 +1501,22 @@ tr.spacing td {
     align-items: flex-start;
     gap: 15px;
     padding: 12px 0;
+    width: 100%;
 }
 
 .faq {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    width: 100%;
 }
 
 .faq-question {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    cursor: pointer;
 }
 
 .faq-question h4 {
@@ -1632,6 +1690,7 @@ tr.spacing td {
     width: 70px;
     height: 70px;
     flex-shrink: 0;
+    cursor: pointer;
 }
 
 .collection-creator-desc {
@@ -1659,6 +1718,10 @@ tr.spacing td {
     font-weight: 700;
     line-height: 28px;
     letter-spacing: 0.1px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .collection-creator-username {
@@ -1667,6 +1730,9 @@ tr.spacing td {
     font-weight: 400;
     line-height: 16px;
     letter-spacing: 0.06px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .collection-creator-detail {
@@ -1708,6 +1774,8 @@ tr.spacing td {
 
 .collection-card-btn {
     padding: 8px 24px;
+    font-size: 14px;
+    height: 40px;
 }
 
 .collection-filters {
@@ -1804,18 +1872,18 @@ tr.spacing td {
     flex-shrink: 0;
     border-radius: 50%;
     transition: 200ms;
-    background: #52B4C1;
+    background: var(--light-cyan);
     position: absolute;
     opacity: 0;
 }
 
 .collection-filter-checkbox:checked+.filter-check-icon {
-    background: #52B4C1;
+    background: var(--light-cyan);
     border: none;
 }
 
 .collection-filter-radio:checked+.filter-check-icon {
-    border: 1px solid #52B4C1;
+    border: 1px solid var(--light-cyan);
 }
 
 .collection-filter-radio:checked+.filter-check-icon .radio-icon,
@@ -1901,7 +1969,7 @@ tr.spacing td {
 
 .search-input {
     display: flex;
-    padding: 12px 40px;
+    padding: 12px 12px 12px 40px;
     align-items: center;
     flex: 1 0 0;
     border-radius: 16px;
@@ -1965,7 +2033,7 @@ tr.spacing td {
 }
 
 .grid-switch input:checked+label {
-    background: #DCF06B;
+    background: var(--light-green);
     border-radius: 12px;
 }
 
@@ -2038,6 +2106,15 @@ tr.spacing td {
     font-weight: 700;
     line-height: 24px;
     letter-spacing: 0.08px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.collection-card-name:hover, 
+.collection-creator-fullname:hover{
+    color: var(--neutral-1);
 }
 
 .collection-card-creator {
@@ -2046,6 +2123,7 @@ tr.spacing td {
     font-weight: 400;
     line-height: 16px;
     letter-spacing: 0.06px;
+    cursor: pointer;
 }
 
 .collection-card-detail {
@@ -2065,6 +2143,19 @@ tr.spacing td {
     height: 140px;
 }
 
+.collection-cards .no-images{
+    width: 100%;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9D9BB9;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.06px;
+}
+
 .collection-card-image {
     background: var(--Neutral-1-07, rgba(215, 214, 220, 0.20));
     border-radius: 8px;
@@ -2081,7 +2172,19 @@ tr.spacing td {
     grid-row: span 2;
 }
 
+.collection-card-image:nth-of-type(1):not(:has(+ .collection-card-image)) {
+    grid-column: span 3;
+}
+
 .collection-card-image:nth-of-type(2) {
+    grid-column: span 2;
+}
+
+.collection-card-image:nth-of-type(2):not(:has(+ .collection-card-image)) {
+    grid-row: span 2;
+}
+
+.collection-card-image:nth-of-type(3):not(:has(+ .collection-card-image)) {
     grid-column: span 2;
 }
 
@@ -2138,6 +2241,9 @@ tr.spacing td {
     font-weight: 600;
     line-height: 28px;
     letter-spacing: 0.1px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .nft-card-image {
@@ -2163,8 +2269,7 @@ tr.spacing td {
     overflow: hidden;
 }
 
-.nft-highest-bid,
-.not-on-sale {
+.nft-status{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -2174,28 +2279,31 @@ tr.spacing td {
     overflow: hidden;
 }
 
-.nft-highest-bid p {
+.nft-status-not-sale{
+    align-items: center;
+    width: 100%;
+}
+
+.nft-status p {
     color: var(--grayscale-60);
     font-size: 14px;
     font-weight: 400;
     line-height: 18px;
     letter-spacing: 0.07px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
-.nft-highest-bid h4, 
-.not-on-sale h4{
+.nft-status h4{
     color: var(--text-primary-color);
     font-size: 18px;
     font-weight: 700;
     line-height: 28px;
     letter-spacing: 0.1px;
+    overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-}
-
-.not-on-sale{
-    align-items: center;
-    width: 100%;
 }
 
 .nft-time {
@@ -2210,8 +2318,8 @@ tr.spacing td {
     margin-left: 2px;
 }
 
-.nft-time.expired{
-    background: #EB3F5E;
+.nft-time:has(.expired){
+    background: var(--light-red);
 }
 
 .nft-time span {
@@ -2222,16 +2330,17 @@ tr.spacing td {
     letter-spacing: 0.06px; 
 }
 
-.nft-time.expired span{
+.nft-time .expired{
     color: #fff;
 }
 
 .collection-pagination {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     padding: 0 10px;
+    gap: 24px;
 }
 
 .icon-box {
@@ -2242,10 +2351,13 @@ tr.spacing td {
     align-items: center;
     justify-content: center;
     transition: 300ms;
-    cursor: pointer;
 }
 
-.icon-box:hover {
+.icon-box.disabled{
+    color: var(--grayscale-30-90);
+}
+
+.icon-box:not(.disabled):hover {
     background-color: var(--grayscale-30-90);
 }
 
@@ -2457,7 +2569,7 @@ tr.spacing td {
 .form-textarea:focus,
 .form-textarea:valid,
 .form-select:focus {
-    border-color: #52B4C1;
+    border-color: var(--light-cyan);
 }
 
 .form-input-box .form-input:focus+.form-label,
@@ -2549,8 +2661,9 @@ input[type='number']::-webkit-outer-spin-button {
 
 .form-collections {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
     gap: 16px;
 }
 
@@ -2562,12 +2675,20 @@ input[type='number']::-webkit-outer-spin-button {
     align-items: center;
     border-radius: 16px;
     border: 1px solid var(--line-color);
+    cursor: pointer;
 }
 
 .form-collection {
     width: 80px;
     height: 80px;
     position: relative;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 16px;
+}
+
+.form-collection:has(input:checked){
+    border: 1px solid var(--light-cyan);
 }
 
 .form-collection-image {
@@ -2575,11 +2696,12 @@ input[type='number']::-webkit-outer-spin-button {
     height: 100%;
     border-radius: 16px;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .form-collection-name {
     display: inline-flex;
-    padding: 2px 6px;
+    padding: 2px;
     justify-content: center;
     align-items: center;
     gap: 8px;
@@ -2589,6 +2711,11 @@ input[type='number']::-webkit-outer-spin-button {
     position: absolute;
     bottom: 4px;
     left: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 65px;
+    cursor: pointer;
 }
 
 .form-collection-name span {
@@ -2598,6 +2725,10 @@ input[type='number']::-webkit-outer-spin-button {
     font-weight: 400;
     line-height: 12px;
     letter-spacing: 0.06px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .form-checkboxes {
@@ -2672,16 +2803,10 @@ input[type='number']::-webkit-outer-spin-button {
     gap: 8px;
 }
 
-#login-btn {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 24px;
-    color: var(--text-primary-color);
-    cursor: pointer;
-}
-
-#login-btn:hover {
-    text-decoration: underline;
+.form-buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .form-button {
@@ -2690,16 +2815,11 @@ input[type='number']::-webkit-outer-spin-button {
 
 .form-warning {
     text-align: left;
-    /* color: #FFCD1A; */
-    color: #EB3F5E;
+    color: var(--light-red);
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
     letter-spacing: 0.16px;
-}
-
-.password-show-btn {
-    cursor: pointer;
 }
 
 
@@ -2835,6 +2955,9 @@ input[type='number']::-webkit-outer-spin-button {
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .popup-nft-link i {
@@ -2944,6 +3067,23 @@ input[type='number']::-webkit-outer-spin-button {
     width: 50px;
     height: 50px;
 }
+
+#login-btn {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: var(--text-primary-color);
+    cursor: pointer;
+}
+
+#login-btn:hover {
+    text-decoration: underline;
+}
+
+.password-show-btn {
+    cursor: pointer;
+}
+
 
 
 /* 
@@ -3093,7 +3233,7 @@ body:has(.notfound-section) {
     align-items: center;
     gap: 8px;
     border-radius: 16px;
-    background: #52B4C1;
+    background: var(--light-cyan);
     color: var(--background-color-white);
     font-size: 14px;
     font-weight: 600;
@@ -3212,7 +3352,7 @@ body:has(.notfound-section) {
 
 .connect-wallet-tab input:checked+.connect-wallet-tab-text {
     color: var(--neutral-1);
-    border-bottom: 1px solid #52B4C1;
+    border-bottom: 1px solid var(--light-cyan);
 }
 
 .connect-wallet-list {
@@ -3285,6 +3425,7 @@ body:has(.notfound-section) {
     display: flex;
     align-items: center;
     gap: 12px;
+    margin: 0 auto;
 }
 
 .popup-wallet-desc {
@@ -3314,7 +3455,7 @@ body:has(.notfound-section) {
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    background: #52B4C1;
+    background: var(--light-cyan);
     color: var(--Background-04, #FFF);
     text-align: center;
     font-family: "Poppins", sans-serif;
@@ -3345,5 +3486,62 @@ body:has(.notfound-section) {
 }
 
 .popup-subheader-desc .show-more {
-    color: #52B4C1;
+    color: var(--light-cyan);
+}
+
+
+
+/* 
+ *  MORE
+ */
+
+.messages{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    position: fixed;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3000;
+    width: 60%;
+}
+
+.alert{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: var(--text-primary-color);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.08px;
+    border-radius: 25px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    opacity: 1;
+    transition: 0.5s ease-out;
+}
+
+.alert-success {
+    background-color: #00C566;
+    color: white;
+}
+
+.alert-error {
+    background-color: var(--light-red);
+    color: white;
+}
+
+.alert-info {
+    background-color: #FFCD1A;
+    color: white;
+}
+
+.deactive{
+    opacity: 0;
+    pointer-events: none;
 }

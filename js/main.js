@@ -113,11 +113,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    document.querySelectorAll('.like-btn').forEach(likeBtn => {
-        likeBtn.addEventListener('click', () => {
-            likeBtn.classList.toggle('fa-regular');
-            likeBtn.classList.toggle('fa-solid');
-        })
+    document.querySelectorAll('.alert').forEach(alert => {
+        setTimeout(() => {
+            alert.classList.add('deactive');
+        }, 2000); 
+    
+        setTimeout(() => {
+            alert.remove();
+        }, 2500);
     });
 
     document.querySelectorAll('.popup-close-btn').forEach(popupCloseBtn => {
@@ -132,6 +135,48 @@ document.addEventListener('DOMContentLoaded', function () {
         usd.textContent = `$${usdAmount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
     });
 
+    document.querySelectorAll('.difference').forEach(diffElement => {
+        const nftPrice = parseFloat(diffElement.getAttribute('data-price'));
+        const bidAmount = parseFloat(diffElement.getAttribute('data-bid-amount'));
+        const quantity = parseFloat(diffElement.getAttribute('data-quantity'));
+        const percentage = (((bidAmount - nftPrice * quantity) / nftPrice) * 100).toFixed(0);
+
+        if(nftPrice && bidAmount && quantity){
+            if (percentage > 0) {
+                diffElement.textContent = `${percentage}% above`;
+            } else {
+                diffElement.textContent = `${Math.abs(percentage)}% below`;
+            }
+        }
+        else{
+            diffElement.textContent = 'N/A'
+        }
+    });
+
+    document.querySelectorAll('.countdown').forEach(countdownElement => {
+        const endTime = new Date(countdownElement.getAttribute('data-date')).getTime();
+        const now = new Date().getTime();
+        const timeDifference = endTime - now;
+
+        if (timeDifference > 0) {
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+            if (countdownElement.classList.contains('days')){
+                countdownString = `${days} days`;
+            }
+            else{
+                countdownString = `${days.toString().padStart(2, '0')}d : ${hours.toString().padStart(2, '0')}h : ${minutes.toString().padStart(2, '0')}m`;
+            }
+            countdownElement.textContent = countdownString;
+            
+        } else {
+            countdownElement.textContent = 'Expired';
+            countdownElement.classList.add('expired');
+        }
+    })
+
     const termCheckbox = document.querySelector('.term-check-icon');
     if (termCheckbox) {
         const termCheckIcon = termCheckbox.querySelector('.check-icon');
@@ -145,6 +190,19 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
+
+    const auctionShare = document.querySelector('.auction-share-action');
+    if (auctionShare){
+        const auctionShareBtn = auctionShare.querySelector('.auction-share-btn');
+        const auctionShareText = auctionShare.querySelector('.auction-action-text');
+
+        auctionShareBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(window.location.href);
+            auctionShareText.textContent = 'Copied';
+            setTimeout(() => auctionShareText.textContent = 'Share', 3000);
+        });
+    }
+    
 
     if (document.getElementById('nft-create-form')) {
         const imageInput = document.getElementById('upload-image-input');
@@ -167,8 +225,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const priceInput = document.getElementById('price-input');
         const priceDisplay = document.getElementById('price-display');
         const currencySelect = document.getElementById('currency');
-        const popupEndTime = document.getElementById('popup-end-time');
-        const popupPrice = document.getElementById('popup-price');
         const startTimeInput = document.getElementById('start-time');
         const endTimeInput = document.getElementById('end-time');
         const scheduleSelect = document.getElementById('schedule-time');
@@ -177,9 +233,11 @@ document.addEventListener('DOMContentLoaded', function () {
         startTimeInput.setAttribute('min', today);
         startTimeInput.value = today;
 
+        updatePrice();
         updateEndTime();
         scheduleSelect.addEventListener('change', updateEndTime);
         startTimeInput.addEventListener('change', updateEndTime);
+        priceInput.addEventListener('input', updatePrice);
 
         function updateEndTime() {
             const scheduleValue = scheduleSelect.value.split('-');
@@ -197,24 +255,40 @@ document.addEventListener('DOMContentLoaded', function () {
             endTimeInput.setAttribute('min', startTimeInput.value);
         }
 
-
-        priceInput.addEventListener('input', () => {
-            const currency = currencySelect.value;
+        function updatePrice() {
+            const selectedCurrency = currencySelect.options[currencySelect.selectedIndex];
+            const currency = selectedCurrency.textContent;
             const price = +parseFloat(priceInput.value).toFixed(2) || 0;
             priceDisplay.textContent = `${price} ${currency}`;
-        });
+        }
 
-        document.getElementById('complete-listing-btn').addEventListener('click', (e) => {
-            e.preventDefault();
-            document.getElementById('listing-popup').classList.add('active');
-            popupEndTime.textContent = endTimeInput.value;
-            popupPrice.textContent = priceDisplay.textContent;
-        });
+        // document.getElementById('complete-listing-btn').addEventListener('click', (e) => {
+        //     e.preventDefault();
+        //     document.getElementById('listing-popup').classList.add('active');
+        //     document.getElementById('popup-end-time').setAttribute('data-date', endTimeInput.value);
+        //     document.getElementById('popup-price').textContent = priceDisplay.textContent;
+        // });
 
-        document.getElementById('sign-btn').addEventListener('click', (e) => {
-            e.preventDefault();
-            document.getElementById('completed-popup').classList.add('active');
-        });
+        // document.getElementById('sign-btn').addEventListener('click', (e) => {
+        //     e.preventDefault();
+        //     document.getElementById('completed-popup').classList.add('active');
+        // });
+
+
+        const walletLink = document.querySelector('.popup-nft-link');
+        if(walletLink){
+            const walletKey = walletLink.querySelector('.popup-wallet-link');
+            const copyBtn = walletLink.querySelector('.wallet-copy-btn');
+            const fullKey = walletKey.getAttribute('data-key');
+            const truncatedKey = `0x${fullKey.slice(0, 7)}...K${fullKey.slice(-3)}`;
+            walletKey.textContent = truncatedKey;
+
+            copyBtn.addEventListener('click', () => {
+                navigator.clipboard.writeText(fullKey);
+                copyBtn.classList.toggle('fa-solid');
+                copyBtn.classList.toggle('fa-regular');
+            });
+        }
     }
 
     if (document.getElementById('register-form')) {
@@ -286,28 +360,27 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.wallet').forEach(wallet => {
             wallet.addEventListener('click', () => {
                 walletPopup.classList.add('active');
+                wallet.querySelector('input[name="provider"]').checked = true;
                 const walletImage = wallet.querySelector('.wallet-image img');
                 const walletName = wallet.querySelector('.wallet-name');
-                const walletType = document.querySelector('input[name="connect-wallet"]:checked + label');
+                const walletBlockchain = document.querySelector('input[name="blockchain"]:checked + label');
                 walletPopup.querySelector('.wallet-image img').src = walletImage.src;
                 walletPopup.querySelector('.wallet-name').textContent = walletName.textContent;
-                walletPopup.querySelector('.wallet-info').textContent = walletType.textContent;
-            })
-        })
+                walletPopup.querySelector('.wallet-info').textContent = walletBlockchain.textContent;
+            });
+        });
     }
 
-
-    const collectionSection = document.querySelector('.collection-section');
-    if (collectionSection) {
-        const collectionFilters = collectionSection.querySelector('.collection-cards-filters');
-        const nftTimes = collectionSection.querySelectorAll('.nft-time');
-        const searchRemoveBtn = collectionSection.querySelector('.remove-search-btn');
-        const nftSearchInput = collectionSection.querySelector('#nft-search');
-        const collectionSearchInput = collectionSection.querySelector('#collection-search');
-
-
+    if (document.querySelector('.collection-section')) {
+        const collectionFilters = document.querySelector('.collection-cards-filters');
+        const nftSearchInput = document.querySelector('#nft-search');
+        const collectionSearchInput = document.querySelector('#collection-search');
+        const searchRemoveBtn = document.querySelector('.remove-search-btn');
+        
+        
         if (nftSearchInput) {
-            const nftCardsParent = collectionSection.querySelector('.collection-nft-cards');
+            const nftCardsParent = document.querySelector('.collection-nft-cards');
+            const collectionPagination = document.querySelector('.collection-pagination');
             const nftCards = nftCardsParent.querySelectorAll('.nft-card');
             const statusFilters = collectionFilters.querySelectorAll('input[name="status"]');
             const currencyFilters = collectionFilters.querySelectorAll('input[name="currency"]');
@@ -328,7 +401,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             function FilterNfts() {
                 const selectedStatusFilters = Array.from(statusFilters).filter(cb => cb.checked).map(cb => cb.value);
-                const selectedCurrency = collectionSection.querySelector('input[name="currency"]:checked').value;
+                const selectedCurrency = document.querySelector('input[name="currency"]:checked').value;
                 const searchText = nftSearchInput.value.toLowerCase();
                 const minValue = parseFloat(minValueFilter.value);
                 const maxValue = parseFloat(maxValueFilter.value);
@@ -369,21 +442,31 @@ document.addEventListener('DOMContentLoaded', function () {
                             return 0;
                     }
                 });
-
-                nftCardsParent.innerHTML = '';
-                sortedCards.forEach(card => nftCardsParent.appendChild(card));
+                
+                
+                if (sortedCards.length > 0){
+                    nftCardsParent.innerHTML = '';
+                    sortedCards.forEach(card => nftCardsParent.appendChild(card));
+                    if (collectionPagination)
+                        collectionPagination.classList.remove('hidden');
+                }
+                else{
+                    nftCardsParent.innerHTML = 'No nft with this filter';
+                    if (collectionPagination)
+                        collectionPagination.classList.add('hidden');
+                }
             }
 
 
         }
 
         if (collectionSearchInput) {
-            const collectionCardsParent = collectionSection.querySelector('.collection-cards');
+            const collectionCardsParent = document.querySelector('.collection-cards');
+            const collectionPagination = document.querySelector('.collection-pagination');
             const collectionCards = Array.from(collectionCardsParent.querySelectorAll('.collection-card'));
             const categoryFilters = collectionFilters.querySelectorAll('input[name="category"]');
-            const blockchainFilter = collectionSection.querySelector('#blockchains');
+            const blockchainFilter = document.querySelector('#blockchains');
             const sortByFilter = document.getElementById('sort-by-collection');
-
             categoryFilters.forEach(cb => cb.addEventListener('change', FilterCollections));
             blockchainFilter.addEventListener('change', FilterCollections);
             collectionSearchInput.addEventListener('input', FilterCollections);
@@ -427,98 +510,77 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 });
 
-                collectionCardsParent.innerHTML = '';
-                sortedCards.forEach(card => collectionCardsParent.appendChild(card));
+                if (sortedCards.length > 0){
+                    collectionCardsParent.innerHTML = '';
+                    sortedCards.forEach(card => collectionCardsParent.appendChild(card));
+                    if (collectionPagination)
+                        collectionPagination.classList.remove('hidden');
+                }
+                else{
+                    collectionPagination.classList.add('hidden');
+                    if (collectionPagination)
+                        collectionCardsParent.innerHTML = 'No collection with this filter';
+                }
             }
         }
-
-
 
         if (collectionFilters) {
             const switch1 = document.getElementById('switch1');
             const switch2 = document.getElementById('switch2');
             const switch3 = document.getElementById('switch3');
+            const pageWidth = window.innerWidth;
+            
+            function updateCardCounts(cardsCount, collectionCount) {
+                root.style.setProperty('--nft-cards-count', cardsCount);
+                root.style.setProperty('--collection-cards-count', collectionCount);
+            }
+            
+            function handleSwitchChange() {
 
-
+                if (switch1 && switch1.checked) {
+                    if (pageWidth > 1200) { 
+                        updateCardCounts(3, 3);
+                    } else if (pageWidth > 992) { 
+                        updateCardCounts(2, 2);
+                    }
+                    collectionFilters.classList.remove('layout-3');
+                } else if (switch2 && switch2.checked) {
+                    if (pageWidth > 1200) { 
+                        updateCardCounts(4, 3);
+                    } else if (pageWidth > 992) {
+                        updateCardCounts(3, 2);
+                    }
+                    collectionFilters.classList.remove('layout-3');
+                } else if (switch3 && switch3.checked) {
+                    if (pageWidth > 1200) { 
+                        updateCardCounts(4, 4);
+                    } else if (pageWidth > 992) {
+                        updateCardCounts(3, 3);
+                    }
+                    collectionFilters.classList.add('layout-3');
+                }
+            }
+            
             if (switch1) {
-                switch1.addEventListener('change', function () {
-                    if (switch1.checked) {
-                        // root.style.setProperty('--nft-cards-count', 3);
-                        collectionFilters.classList.remove('layout-3');
-                    }
-                });
+                switch1.addEventListener('change', handleSwitchChange);
+                if(pageWidth < 992) {
+                    switch1.parentElement.classList.add('hidden');
+                }
             }
-
+            
             if (switch2) {
-                switch2.addEventListener('change', function () {
-                    if (switch2.checked) {
-                        // root.style.setProperty('--collection-cards-count', 3);
-                        // root.style.setProperty('--nft-cards-count', 4);
-                        collectionFilters.classList.remove('layout-3');
-                    }
-                });
+                switch2.addEventListener('change', handleSwitchChange);
+            }
+            
+            if (switch3) {;
+                switch3.addEventListener('change', handleSwitchChange);
+                if (pageWidth < 992) {
+                    switch3.checked = true;
+                }
             }
 
-            if (switch3) {
-                switch3.addEventListener('change', function () {
-                    if (switch3.checked) {
-                        // root.style.setProperty('--collection-cards-count', 4);
-                        // root.style.setProperty('--nft-cards-count', 4);
-                        collectionFilters.classList.add('layout-3');
-                    }
-                });
-            }
+            handleSwitchChange();
+            // window.addEventListener('resize', handleSwitchChange);
         }
-
-        nftTimes.forEach(nftTime => {
-            const nftTimeText = nftTime.querySelector('span');
-            const dateString = nftTimeText.textContent.trim();
-            const datePattern = /(\w+)\.?\ (\d+), (\d+), (\d+):(\d+) (a\.m\.|p\.m\.)/;
-            const match = dateString.match(datePattern);
-
-            if (match) {
-                const monthMap = {
-                    'Jan': 0, 'Feb': 1, 'March': 2, 'April': 3, 'May': 4, 'June': 5,
-                    'July': 6, 'Aug': 7, 'Sept': 8, 'Oct': 9, 'Nov': 10, 'Dec': 11
-                };
-
-                const month = monthMap[match[1]];
-                const day = parseInt(match[2], 10);
-                const year = parseInt(match[3], 10);
-                let hour = parseInt(match[4], 10);
-                const minute = parseInt(match[5], 10);
-                const period = match[6];
-
-                if (period === 'p.m.' && hour !== 12) {
-                    hour += 12;
-                } else if (period === 'a.m.' && hour === 12) {
-                    hour = 0;
-                }
-
-                const nftEndTime = new Date(Date.UTC(year, month, day, hour, minute));
-
-                if (!isNaN(nftEndTime)) {
-                    const today = new Date();
-                    const isToday = (
-                        year === today.getFullYear() &&
-                        month === today.getMonth() &&
-                        day === today.getDate()
-                    );
-
-                    if (nftEndTime < today) {
-                        nftTimeText.textContent = 'Expired';
-                        nftTime.classList.add('expired');
-                    }
-                    else if (isToday) {
-                        nftTimeText.textContent = nftEndTime.toLocaleTimeString();
-                    }
-                    else {
-                        nftTimeText.textContent = formatDateToISOString(nftEndTime);
-                    }
-                }
-            }
-        });
-
-
     }
 });
