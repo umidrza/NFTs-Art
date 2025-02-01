@@ -27,12 +27,14 @@
                     <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
                 </ul>
                 <div class="nav-buttons">
-                    <div id="theme-toggle">
-                        <i class="fa-solid fa-moon"></i>
-                    </div>
-                    <a class="nav-button" href="nft-create.html"><button class="btn-green">Create</button></a>
+
+                    <a class="nav-button" href="nft-create.html">
+                        <button class="btn-green">Create</button>
+                    </a>
                     <div class="avatar nav-button">
-                        <a href="login.html"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <a href="login.html">
+                            <img class="avatar-img" src="/img/avatars/avatar.jpeg">
+                        </a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -40,6 +42,11 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- <a class="nav-button" href="login.html">
+                        <button class="btn-green">Login</button>
+                    </a> -->
+
                     <i id="nav-menu-icon">
                         <hr>
                         <hr>
@@ -49,7 +56,9 @@
             <div class="nav-menu" id="nav-menu">
                 <div class="nav-menu-buttons">
                     <div class="avatar">
-                        <a href="login.html"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <a href="login.html">
+                            <img class="avatar-img" src="/img/avatars/avatar.jpeg">
+                        </a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -58,6 +67,10 @@
                         </div>
                     </div>
                     <a href="nft-create.html"><button class="btn-green">Create</button></a>
+
+                    <!-- <a class="nav-button" href="login.html">
+                    <button class="btn-green">Login</button>
+                    </a>  -->
                 </div>
                 <ul class="nav-menu-links">
                     <li class="nav-item"><a href="collections.html" class="nav-link">Collection</a></li>
@@ -74,7 +87,7 @@
             <div class="container">
                 <div class="form-container">
                     <h2 class="section-title">Create New Item</h2>
-                    <form class="form" id="nft-create-form">
+                    <form class="form" id="nft-create-form" method="post" enctype="multipart/form-data">
                         <div class="form-preview">
                             <h4 class="form-subtitle">Preview</h4>
                             <div class="nft-form-image">
@@ -97,22 +110,21 @@
                                 <div class="form-control">
                                     <label for="image" class="form-label">Upload image</label>
                                     <div class="upload-image">
-                                        <input type="file" id="upload-image-input" accept="image/*" class="hidden" />
+                                        <input type="file" name="image" id="upload-image-input" accept="image/*" class="hidden" />
                                         <button type="button" class="btn-outline-green"
-                                            onclick="document.getElementById('upload-image-input').click();">Upload
-                                            Image</button>
+                                                onclick="document.getElementById('upload-image-input').click();">
+                                            Upload Image
+                                        </button>
                                         <p class="form-text-grey">PNG, GIF, WEBP, JPEG. Max 100mb.</p>
                                     </div>
                                 </div>
                                 <div class="form-control">
                                     <label for="name" class="form-label">Name of NFTs</label>
-                                    <input type="text" name="name" class="form-input" placeholder="Type here..."
-                                        required>
+                                    <input type="text" name="name" class="form-input" placeholder="Type here..." required>
                                 </div>
                                 <div class="form-control">
                                     <label for="description" class="form-label">Description</label>
-                                    <textarea name="description" class="form-textarea" placeholder="Type here..."
-                                        required></textarea>
+                                    <textarea name="description" class="form-textarea" placeholder="Type here..." required></textarea>
                                 </div>
                                 <div class="form-control">
                                     <label for="collection" class="form-label">Choose Collection </label>
@@ -122,7 +134,7 @@
                                         </div>
                                         <div class="form-collection">
                                             <input type="checkbox" name="collections" id="collection-1" value="1" class="hidden">
-                                            <label for="collection-1"><img src="/static/img/image1.jpeg" alt="" class="form-collection-image"></label>
+                                            <label for="collection-1"><img src="/img/nfts/image1.jpeg" alt="" class="form-collection-image"></label>
                                             <label for="collection-1" class="form-collection-name">
                                                 <span>Human Leaf</span>
                                             </label>
@@ -192,6 +204,11 @@
                         <li><a href="#"><i class="fa-brands fa-discord"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li>
+                            <div id="theme-toggle">
+                                <i class="fa-solid fa-moon"></i>
+                            </div>
+                        </li>
                     </ul>
                     <div class="footer-rights">
                         <p>2024. all right Reserved.</p>

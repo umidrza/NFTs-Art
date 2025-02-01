@@ -27,12 +27,14 @@
                     <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
                 </ul>
                 <div class="nav-buttons">
-                    <div id="theme-toggle">
-                        <i class="fa-solid fa-moon"></i>
-                    </div>
-                    <a class="nav-button" href="nft-create.html"><button class="btn-green">Create</button></a>
+
+                    <a class="nav-button" href="nft-create.html">
+                        <button class="btn-green">Create</button>
+                    </a>
                     <div class="avatar nav-button">
-                        <a href="login.html"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <a href="login.html">
+                            <img class="avatar-img" src="/img/avatars/avatar.jpeg">
+                        </a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -40,6 +42,11 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- <a class="nav-button" href="login.html">
+                        <button class="btn-green">Login</button>
+                    </a> -->
+
                     <i id="nav-menu-icon">
                         <hr>
                         <hr>
@@ -49,7 +56,9 @@
             <div class="nav-menu" id="nav-menu">
                 <div class="nav-menu-buttons">
                     <div class="avatar">
-                        <a href="login.html"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <a href="login.html">
+                            <img class="avatar-img" src="/img/avatars/avatar.jpeg">
+                        </a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -58,6 +67,10 @@
                         </div>
                     </div>
                     <a href="nft-create.html"><button class="btn-green">Create</button></a>
+
+                    <!-- <a class="nav-button" href="login.html">
+                    <button class="btn-green">Login</button>
+                    </a>  -->
                 </div>
                 <ul class="nav-menu-links">
                     <li class="nav-item"><a href="collections.html" class="nav-link">Collection</a></li>
@@ -79,7 +92,7 @@
                     <div class="nft-collections-container">
                         <div class="collection-search">
                             <div class="collection-search-input">
-                                <input type="text" class="search-input" placeholder="Search collections" id="collection-search">
+                                <input type="text" class="search-input" placeholder="Search collections" id="collection-search" name="search">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                                 <i class="fa-solid fa-xmark remove-search-btn hidden"></i>
                             </div>
@@ -158,7 +171,7 @@
                                         </div>
                                         <div class="collection-filter-item">
                                             <label class="collection-filter-item-text" for="category-music">Music</label>
-                                            <input class="collection-filter-checkbox hidden" id="category-music" type="checkbox"  value="5" name="category">
+                                            <input class="collection-filter-checkbox hidden" id="category-music" type="checkbox" value="5" name="category">
                                             <label class="filter-check-icon" for="category-music">
                                                 <i class="fa-solid fa-check check-icon"></i>
                                             </label>
@@ -186,7 +199,7 @@
                                         </div>
                                         <div class="collection-filter-item">
                                             <label class="collection-filter-item-text" for="category-virtual-worlds">Virtual Worlds</label>
-                                            <input class="collection-filter-checkbox hidden" id="category-virtual-worlds" type="checkbox"  value="9" name="category">
+                                            <input class="collection-filter-checkbox hidden" id="category-virtual-worlds" type="checkbox" value="9" name="category">
                                             <label class="filter-check-icon" for="category-virtual-worlds">
                                                 <i class="fa-solid fa-check check-icon"></i>
                                             </label>
@@ -196,11 +209,13 @@
                             </div>
                             <div class="collection-cards-pagination">
                                 <div class="collection-cards">
-                                    <div class="collection-card" data-category="1" data-blockchain="1">
+                                    <div class="collection-card">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
-                                                <a href="collection-detail.html" class="collection-card-name">Human Life
-                                                    Collection</a>
+                                                <a href="collection-detail.html" class="collection-card-name">
+                                                    Human Life
+                                                    Collection
+                                                </a>
                                                 <p class="collection-card-creator">@Lincoln</p>
                                             </div>
                                             <div class="collection-card-detail">
@@ -211,7 +226,7 @@
                                                     </div>
                                                     <div class="collection-creator-stat">
                                                         <p>Followers</p>
-                                                        <h5>1.5K</h5>
+                                                        <h5 class="creator-followers-count">1.5K</h5>
                                                     </div>
                                                 </div>
                                                 <button class="btn-green collection-card-btn follow-btn">Follow</button>
@@ -219,21 +234,21 @@
                                         </div>
                                         <div class="collection-card-images">
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image1.jpeg">
+                                                <img src="/img/nfts/image1.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image4.jpeg">
+                                                <img src="/img/nfts/image4.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image2.jpeg">
+                                                <img src="/img/nfts/image2.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image3.jpeg">
+                                                <img src="/img/nfts/image3.jpeg">
                                                 <p class="collection-more-image">+12</p>
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="collection-card" data-category="2" data-blockchain="2">
+                                    <div class="collection-card">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">Nature's Wonders</a>
@@ -255,14 +270,14 @@
                                         </div>
                                         <div class="collection-card-images">
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image1.jpeg">
+                                                <img src="/img/nfts/image1.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image4.jpeg">
+                                                <img src="/img/nfts/image4.jpeg">
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="collection-card" data-category="2" data-blockchain="2"> 
+                                    <div class="collection-card">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">Urban Art</a>
@@ -284,17 +299,17 @@
                                         </div>
                                         <div class="collection-card-images">
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image1.jpeg">
+                                                <img src="/img/nfts/image1.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image4.jpeg">
+                                                <img src="/img/nfts/image4.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image2.jpeg">
+                                                <img src="/img/nfts/image2.jpeg">
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="collection-card" data-category="6" data-blockchain="1">
+                                    <div class="collection-card">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">Digital Dreams</a>
@@ -316,21 +331,21 @@
                                         </div>
                                         <div class="collection-card-images">
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image1.jpeg">
+                                                <img src="/img/nfts/image1.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image4.jpeg">
+                                                <img src="/img/nfts/image4.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image2.jpeg">
+                                                <img src="/img/nfts/image2.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image3.jpeg">
+                                                <img src="/img/nfts/image3.jpeg">
                                                 <p class="collection-more-image">+12</p>
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="collection-card" data-category="5" data-blockchain="2">
+                                    <div class="collection-card">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">
@@ -354,21 +369,21 @@
                                         </div>
                                         <div class="collection-card-images">
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image1.jpeg">
+                                                <img src="/img/nfts/image1.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image4.jpeg">
+                                                <img src="/img/nfts/image4.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image2.jpeg">
+                                                <img src="/img/nfts/image2.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image3.jpeg">
+                                                <img src="/img/nfts/image3.jpeg">
                                                 <p class="collection-more-image">+12</p>
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="collection-card" data-category="7" data-blockchain="2">
+                                    <div class="collection-card">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">Abstract Impressions</a>
@@ -390,21 +405,21 @@
                                         </div>
                                         <div class="collection-card-images">
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image1.jpeg">
+                                                <img src="/img/nfts/image1.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image4.jpeg">
+                                                <img src="/img/nfts/image4.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image2.jpeg">
+                                                <img src="/img/nfts/image2.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image3.jpeg">
+                                                <img src="/img/nfts/image3.jpeg">
                                                 <p class="collection-more-image">+12</p>
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="collection-card" data-category="2" data-blockchain="1">
+                                    <div class="collection-card">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">Vintage Vibes</a>
@@ -426,21 +441,21 @@
                                         </div>
                                         <div class="collection-card-images">
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image1.jpeg">
+                                                <img src="/img/nfts/image1.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image4.jpeg">
+                                                <img src="/img/nfts/image4.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image2.jpeg">
+                                                <img src="/img/nfts/image2.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image3.jpeg">
+                                                <img src="/img/nfts/image3.jpeg">
                                                 <p class="collection-more-image">+12</p>
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="collection-card" data-category="3" data-blockchain="1">
+                                    <div class="collection-card">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">Wildlife Wonders</a>
@@ -462,21 +477,21 @@
                                         </div>
                                         <div class="collection-card-images">
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image1.jpeg">
+                                                <img src="/img/nfts/image1.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image4.jpeg">
+                                                <img src="/img/nfts/image4.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image2.jpeg">
+                                                <img src="/img/nfts/image2.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image3.jpeg">
+                                                <img src="/img/nfts/image3.jpeg">
                                                 <p class="collection-more-image">+12</p>
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="collection-card" data-category="5" data-blockchain="2">
+                                    <div class="collection-card">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">Mythical Realms</a>
@@ -498,21 +513,21 @@
                                         </div>
                                         <div class="collection-card-images">
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image1.jpeg">
+                                                <img src="/img/nfts/image1.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image4.jpeg">
+                                                <img src="/img/nfts/image4.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image2.jpeg">
+                                                <img src="/img/nfts/image2.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image3.jpeg">
+                                                <img src="/img/nfts/image3.jpeg">
                                                 <p class="collection-more-image">+12</p>
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="collection-card" data-category="4" data-blockchain="1">
+                                    <div class="collection-card">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">Futuristic Visions</a>
@@ -534,21 +549,21 @@
                                         </div>
                                         <div class="collection-card-images">
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image1.jpeg">
+                                                <img src="/img/nfts/image1.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image4.jpeg">
+                                                <img src="/img/nfts/image4.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image2.jpeg">
+                                                <img src="/img/nfts/image2.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image3.jpeg">
+                                                <img src="/img/nfts/image3.jpeg">
                                                 <p class="collection-more-image">+12</p>
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="collection-card" data-category="8" data-blockchain="1">
+                                    <div class="collection-card">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">Colorful Chaos</a>
@@ -570,21 +585,21 @@
                                         </div>
                                         <div class="collection-card-images">
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image1.jpeg">
+                                                <img src="/img/nfts/image1.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image4.jpeg">
+                                                <img src="/img/nfts/image4.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image2.jpeg">
+                                                <img src="/img/nfts/image2.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image3.jpeg">
+                                                <img src="/img/nfts/image3.jpeg">
                                                 <p class="collection-more-image">+12</p>
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="collection-card" data-category="9" data-blockchain="2">
+                                    <div class="collection-card">
                                         <div class="collection-card-desc">
                                             <div class="collection-card-title">
                                                 <a href="collection-detail.html" class="collection-card-name">Monochrome Mystique</a>
@@ -606,33 +621,35 @@
                                         </div>
                                         <div class="collection-card-images">
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image1.jpeg">
+                                                <img src="/img/nfts/image1.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image4.jpeg">
+                                                <img src="/img/nfts/image4.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image2.jpeg">
+                                                <img src="/img/nfts/image2.jpeg">
                                             </a>
                                             <a href="collection-detail.html" class="collection-card-image">
-                                                <img src="static/img/image3.jpeg">
+                                                <img src="/img/nfts/image3.jpeg">
                                                 <p class="collection-more-image">+12</p>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="collection-pagination">
-                                    <div class="icon-box">
+                                    <div class="icon-box disabled">
                                         <i class="fa-solid fa-chevron-left"></i>
                                     </div>
                                     <div class="pagination">
-                                        <a href="#">1</a>
-                                        <a href="#">2</a>
-                                        <a href="#">3</a>
+                                        <strong class="pagination-number">1</strong>
+                                        <a class="pagination-number" href="?page=2">2</a>
+                                        <a class="pagination-number" href="?page=3">3</a>
                                     </div>
-                                    <div class="icon-box">
-                                        <i class="fa-solid fa-chevron-right"></i>
-                                    </div>
+                                    <a href="#">
+                                        <div class="icon-box">
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -647,7 +664,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar2.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar2.jpeg" alt=""></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -666,7 +683,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar3.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar3.jpeg" alt=""></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -685,7 +702,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar.jpeg" alt=""></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -704,7 +721,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar4.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar4.jpeg" alt=""></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -723,7 +740,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar.jpeg" alt=""></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -742,7 +759,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar4.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar4.jpeg" alt=""></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -763,7 +780,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar4.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar4.jpeg" alt=""></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -782,7 +799,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar2.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar2.jpeg" alt=""></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -801,7 +818,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar.jpeg" alt=""></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -820,7 +837,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar4.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar4.jpeg" alt=""></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -839,7 +856,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar2.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar2.jpeg" alt=""></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -858,7 +875,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar3.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar3.jpeg" alt=""></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -896,6 +913,11 @@
                         <li><a href="#"><i class="fa-brands fa-discord"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li>
+                            <div id="theme-toggle">
+                                <i class="fa-solid fa-moon"></i>
+                            </div>
+                        </li>
                     </ul>
                     <div class="footer-rights">
                         <p>2024. all right Reserved.</p>
@@ -904,6 +926,7 @@
             </div>
         </div>
     </footer>
+    
     <script src="./js/main.js"></script>
 </body>
 

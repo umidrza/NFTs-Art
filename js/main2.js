@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     const conversionRates = {
-        ethToUsd: 2637.50
+        ethToUsd: 3497.43
     };
 
     // fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd')
@@ -96,12 +96,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const textElement = moreButton.parentElement.querySelector('.extra-content');
         const fullText = textElement.innerHTML;
         const length = +textElement.getAttribute('data-length');
-
-        if (length >= fullText.length){
-            moreButton.classList.add('hidden');
-            return;
-        }
-
         textElement.innerHTML = truncateText(fullText, length);
         let isTruncated = true;
 
@@ -122,11 +116,11 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.alert').forEach(alert => {
         setTimeout(() => {
             alert.classList.add('deactive');
-        }, 3000); 
+        }, 2000); 
     
         setTimeout(() => {
             alert.remove();
-        }, 3500);
+        }, 2500);
     });
 
     document.querySelectorAll('.popup-close-btn').forEach(popupCloseBtn => {
@@ -197,6 +191,18 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    const auctionShare = document.querySelector('.auction-share-action');
+    if (auctionShare){
+        const auctionShareBtn = auctionShare.querySelector('.auction-share-btn');
+        const auctionShareText = auctionShare.querySelector('.auction-action-text');
+
+        auctionShareBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(window.location.href);
+            auctionShareText.textContent = 'Copied';
+            setTimeout(() => auctionShareText.textContent = 'Share', 3000);
+        });
+    }
+    
 
     if (document.getElementById('nft-create-form')) {
         const imageInput = document.getElementById('upload-image-input');
@@ -256,6 +262,19 @@ document.addEventListener('DOMContentLoaded', function () {
             priceDisplay.textContent = `${price} ${currency}`;
         }
 
+        // document.getElementById('complete-listing-btn').addEventListener('click', (e) => {
+        //     e.preventDefault();
+        //     document.getElementById('listing-popup').classList.add('active');
+        //     document.getElementById('popup-end-time').setAttribute('data-date', endTimeInput.value);
+        //     document.getElementById('popup-price').textContent = priceDisplay.textContent;
+        // });
+
+        // document.getElementById('sign-btn').addEventListener('click', (e) => {
+        //     e.preventDefault();
+        //     document.getElementById('completed-popup').classList.add('active');
+        // });
+
+
         const walletLink = document.querySelector('.popup-nft-link');
         if(walletLink){
             const walletKey = walletLink.querySelector('.popup-wallet-link');
@@ -278,40 +297,26 @@ document.addEventListener('DOMContentLoaded', function () {
         const loginPopup = document.getElementById('login-popup');
         const isLoginActive = localStorage.getItem('isLoginActive');
 
-        if (isLoginActive === 'true' && loginPopup) {
+        if (isLoginActive === 'true') {
             loginPopup.classList.add('active');
         }
 
-        if (loginBtn){
-            loginBtn.addEventListener('click', () => {
-                
-                loginPopup.classList.add('active');
-                localStorage.setItem('isLoginActive', 'true');
-            });
-        }
+        loginBtn.addEventListener('click', () => {
+            loginPopup.classList.add('active');
+            localStorage.setItem('isLoginActive', 'true');
+        });
 
-        if (registerBtn){
-            registerBtn.addEventListener('click', () => {
-                loginPopup.classList.remove('active');
-                localStorage.setItem('isLoginActive', 'false');
-            });
-        }
+        registerBtn.addEventListener('click', () => {
+            loginPopup.classList.remove('active');
+            localStorage.setItem('isLoginActive', 'false');
+        });
 
-        
+
         const avatars = document.querySelectorAll('#avatar-selection .avatar-img');
         const previewAvatar = document.querySelector('#avatar-preview .avatar-img');
         const avatarInput = document.querySelector('#avatar-input');
-
-        let selectedAvatar = [...avatars].find(avatar => avatar.getAttribute('data-avatar-id') === avatarInput.value);
-
-        if (selectedAvatar) {
-            previewAvatar.src = selectedAvatar.src;
-            avatarInput.value = selectedAvatar.getAttribute('data-avatar-id');
-        }
-        else {
-            previewAvatar.src = avatars[0].src;
-            avatarInput.value = avatars[0].getAttribute('data-avatar-id');
-        }
+        previewAvatar.src = avatars[0].src;
+        avatarInput.value = avatars[0].getAttribute('data-avatar-id');
 
         avatars.forEach(avatar => {
             avatar.addEventListener('click', () => {
@@ -326,10 +331,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const fullNameInput = document.getElementById('fullNameInput');
         const previewFullname = document.getElementById('previewFullname');
 
-        if (fullNameInput.value){
-            previewFullname.textContent = fullNameInput.value;
-        }
-
         fullNameInput.addEventListener('input', () => {
             const fullName = fullNameInput.value;
             previewFullname.textContent = fullName;
@@ -343,7 +344,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 passwordShowBtn.classList.toggle('fa-eye-slash');
                 passwordShowBtn.classList.toggle('fa-eye');
                 passwordInput.type = passwordInput.type === 'text' ? 'password' : 'text';
-                passwordInput.focus();
             });
         });
     }
@@ -373,64 +373,214 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (document.querySelector('.collection-section')) {
         const collectionFilters = document.querySelector('.collection-cards-filters');
+        const nftSearchInput = document.querySelector('#nft-search');
+        const collectionSearchInput = document.querySelector('#collection-search');
+        const searchRemoveBtn = document.querySelector('.remove-search-btn');
+        
+        
+        if (nftSearchInput) {
+            const nftCardsParent = document.querySelector('.collection-nft-cards');
+            const collectionPagination = document.querySelector('.collection-pagination');
+            const nftCards = nftCardsParent.querySelectorAll('.nft-card');
+            const statusFilters = collectionFilters.querySelectorAll('input[name="status"]');
+            const currencyFilters = collectionFilters.querySelectorAll('input[name="currency"]');
+            const minValueFilter = document.getElementById('min-value');
+            const maxValueFilter = document.getElementById('max-value');
+            const sortByFilter = document.getElementById('sort-by');
+            statusFilters.forEach(cb => cb.addEventListener('change', FilterNfts));
+            currencyFilters.forEach(rb => rb.addEventListener('change', FilterNfts));
+            nftSearchInput.addEventListener('input', FilterNfts);
+            searchRemoveBtn.addEventListener('click', () => {
+                nftSearchInput.value = '';
+                nftSearchInput.focus();
+                FilterNfts();
+            });
+            minValueFilter.addEventListener('input', FilterNfts);
+            maxValueFilter.addEventListener('input', FilterNfts);
+            sortByFilter.addEventListener('change', FilterNfts);
 
-        const switch1 = document.getElementById('switch1');
-        const switch2 = document.getElementById('switch2');
-        const switch3 = document.getElementById('switch3');
-        let pageWidth = window.innerWidth;
-        
-        function updateCardCounts(cardsCount, collectionCount) {
-            root.style.setProperty('--nft-cards-count', cardsCount);
-            root.style.setProperty('--collection-cards-count', collectionCount);
-        }
-        
-        function handleSwitchChange() {
-            pageWidth = window.innerWidth;
-            if (switch1 && switch1.checked) {
-                if (pageWidth > 1200) { 
-                    updateCardCounts(3, 3);
-                } else if (pageWidth > 992) { 
-                    updateCardCounts(2, 2);
+            function FilterNfts() {
+                const selectedStatusFilters = Array.from(statusFilters).filter(cb => cb.checked).map(cb => cb.value);
+                const selectedCurrency = document.querySelector('input[name="currency"]:checked').value;
+                const searchText = nftSearchInput.value.toLowerCase();
+                const minValue = parseFloat(minValueFilter.value);
+                const maxValue = parseFloat(maxValueFilter.value);
+                const sortBy = sortByFilter.value;
+                searchRemoveBtn.classList.toggle('hidden', !searchText);
+
+                const filteredCards = Array.from(nftCards).filter(card => {
+                    const cardStatus = card.getAttribute('data-status');
+                    const cardCurrency = card.getAttribute('data-currency');
+                    const cardContent = card.textContent.toLowerCase();
+                    const cardPrice = parseFloat(card.getAttribute('data-price'));
+
+                    const matchesStatus = !selectedStatusFilters.length || selectedStatusFilters.includes(cardStatus);
+                    const matchesCurrency = selectedCurrency === 'all' || cardCurrency === selectedCurrency;
+                    const matchesSearchText = cardContent.includes(searchText);
+                    const matchesMinValue = isNaN(minValue) || cardPrice >= minValue;
+                    const matchesMaxValue = isNaN(maxValue) || cardPrice <= maxValue;
+
+                    return matchesStatus && matchesCurrency && matchesSearchText && (matchesMinValue && matchesMaxValue);
+                });
+
+                const sortedCards = filteredCards.sort((a, b) => {
+                    const priceA = parseFloat(a.getAttribute('data-price'));
+                    const priceB = parseFloat(b.getAttribute('data-price'));
+                    const nameA = a.textContent.toLowerCase();
+                    const nameB = b.textContent.toLowerCase();
+
+                    switch (sortBy) {
+                        case 'price-asc':
+                            return priceA - priceB;
+                        case 'price-desc':
+                            return priceB - priceA;
+                        case 'name-asc':
+                            return nameA.localeCompare(nameB);
+                        case 'name-desc':
+                            return nameB.localeCompare(nameA);
+                        default:
+                            return 0;
+                    }
+                });
+                
+                
+                if (sortedCards.length > 0){
+                    nftCardsParent.innerHTML = '';
+                    sortedCards.forEach(card => nftCardsParent.appendChild(card));
+                    if (collectionPagination)
+                        collectionPagination.classList.remove('hidden');
                 }
-                collectionFilters.classList.remove('layout-2');
-                collectionFilters.classList.remove('layout-3');
-            } else if (switch2 && switch2.checked) {
-                if (pageWidth > 1200) { 
-                    updateCardCounts(4, 3);
-                } else if (pageWidth > 992) {
-                    updateCardCounts(3, 2);
+                else{
+                    nftCardsParent.innerHTML = 'No nft with this filter';
+                    if (collectionPagination)
+                        collectionPagination.classList.add('hidden');
                 }
-                collectionFilters.classList.add('layout-2');
-                collectionFilters.classList.remove('layout-3');
-            } else if (switch3 && switch3.checked) {
-                if (pageWidth > 1200) { 
-                    updateCardCounts(4, 4);
-                } else if (pageWidth > 992) {
-                    updateCardCounts(3, 3);
-                }
-                collectionFilters.classList.remove('layout-2');
-                collectionFilters.classList.add('layout-3');
             }
+
+
         }
-        
-        if (switch1) {
-            switch1.addEventListener('change', handleSwitchChange);
-            if(pageWidth < 992) {
-                switch1.parentElement.classList.add('hidden');
-            }
-        }
-        
-        if (switch2) {
-            switch2.addEventListener('change', handleSwitchChange);
-        }
-        
-        if (switch3) {;
-            switch3.addEventListener('change', handleSwitchChange);
-            if (pageWidth < 992) {
-                switch3.checked = true;
+
+        if (collectionSearchInput) {
+            const collectionCardsParent = document.querySelector('.collection-cards');
+            const collectionPagination = document.querySelector('.collection-pagination');
+            const collectionCards = Array.from(collectionCardsParent.querySelectorAll('.collection-card'));
+            const categoryFilters = collectionFilters.querySelectorAll('input[name="category"]');
+            const blockchainFilter = document.querySelector('#blockchains');
+            const sortByFilter = document.getElementById('sort-by-collection');
+            categoryFilters.forEach(cb => cb.addEventListener('change', FilterCollections));
+            blockchainFilter.addEventListener('change', FilterCollections);
+            collectionSearchInput.addEventListener('input', FilterCollections);
+            sortByFilter.addEventListener('change', FilterCollections);
+            searchRemoveBtn.addEventListener('click', () => {
+                collectionSearchInput.value = '';
+                collectionSearchInput.focus();
+                FilterCollections();
+            });
+
+            function FilterCollections() {
+                const selectedCategories = Array.from(categoryFilters).filter(cb => cb.checked).map(cb => cb.value);
+                const selectedBlockchain = blockchainFilter.value;
+                const searchText = collectionSearchInput.value.toLowerCase();
+                const sortBy = sortByFilter.value;
+                searchRemoveBtn.classList.toggle('hidden', !searchText);
+
+                const filteredCards = collectionCards.filter(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    const cardBlockchain = card.getAttribute('data-blockchain');
+                    const cardContent = card.textContent.toLowerCase();
+
+                    const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(cardCategory);
+                    const matchesBlockchain = selectedBlockchain === 'all' || cardBlockchain === selectedBlockchain;
+                    const matchesSearchText = cardContent.includes(searchText);
+
+                    return matchesCategory && matchesBlockchain && matchesSearchText;
+                });
+
+                const sortedCards = filteredCards.sort((a, b) => {
+                    const nameA = a.textContent.toLowerCase();
+                    const nameB = b.textContent.toLowerCase();
+
+                    switch (sortBy) {
+                        case 'name-asc':
+                            return nameA.localeCompare(nameB);
+                        case 'name-desc':
+                            return nameB.localeCompare(nameA);
+                        default:
+                            return 0;
+                    }
+                });
+
+                if (sortedCards.length > 0){
+                    collectionCardsParent.innerHTML = '';
+                    sortedCards.forEach(card => collectionCardsParent.appendChild(card));
+                    if (collectionPagination)
+                        collectionPagination.classList.remove('hidden');
+                }
+                else{
+                    collectionPagination.classList.add('hidden');
+                    if (collectionPagination)
+                        collectionCardsParent.innerHTML = 'No collection with this filter';
+                }
             }
         }
 
-        handleSwitchChange();
+        if (collectionFilters) {
+            const switch1 = document.getElementById('switch1');
+            const switch2 = document.getElementById('switch2');
+            const switch3 = document.getElementById('switch3');
+            const pageWidth = window.innerWidth;
+            
+            function updateCardCounts(cardsCount, collectionCount) {
+                root.style.setProperty('--nft-cards-count', cardsCount);
+                root.style.setProperty('--collection-cards-count', collectionCount);
+            }
+            
+            function handleSwitchChange() {
+
+                if (switch1 && switch1.checked) {
+                    if (pageWidth > 1200) { 
+                        updateCardCounts(3, 3);
+                    } else if (pageWidth > 992) { 
+                        updateCardCounts(2, 2);
+                    }
+                    collectionFilters.classList.remove('layout-3');
+                } else if (switch2 && switch2.checked) {
+                    if (pageWidth > 1200) { 
+                        updateCardCounts(4, 3);
+                    } else if (pageWidth > 992) {
+                        updateCardCounts(3, 2);
+                    }
+                    collectionFilters.classList.remove('layout-3');
+                } else if (switch3 && switch3.checked) {
+                    if (pageWidth > 1200) { 
+                        updateCardCounts(4, 4);
+                    } else if (pageWidth > 992) {
+                        updateCardCounts(3, 3);
+                    }
+                    collectionFilters.classList.add('layout-3');
+                }
+            }
+            
+            if (switch1) {
+                switch1.addEventListener('change', handleSwitchChange);
+                if(pageWidth < 992) {
+                    switch1.parentElement.classList.add('hidden');
+                }
+            }
+            
+            if (switch2) {
+                switch2.addEventListener('change', handleSwitchChange);
+            }
+            
+            if (switch3) {;
+                switch3.addEventListener('change', handleSwitchChange);
+                if (pageWidth < 992) {
+                    switch3.checked = true;
+                }
+            }
+
+            handleSwitchChange();
+            // window.addEventListener('resize', handleSwitchChange);
+        }
     }
 });

@@ -93,7 +93,8 @@ body:has(header) {
 }
 
 .btn-green,
-.btn-outline-green {
+.btn-outline-green,
+.btn-red {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,12 +137,14 @@ body:has(header) {
     border-color: transparent;
 }
 
-.delete-btn{
+.delete-btn,
+.btn-red{
     background-color: var(--light-red);
     color: white;
 }
 
-.delete-btn:hover{
+.delete-btn:hover,
+.btn-red:hover{
     color: var(--light-red);
     border-color: var(--light-red);
     background-color: transparent;
@@ -151,7 +154,7 @@ body:has(header) {
 .btn-outline-green:disabled {
     color: var(--grayscale-60);
     background: var(--grayscale-10-95);
-    border: none;
+    border: 1px solid transparent;
 }
 
 .avatar {
@@ -187,7 +190,7 @@ body:has(header) {
 .star-icon {
     width: 100%;
     height: 100%;
-    background: url(/static/img/star.svg) 50% / cover no-repeat;
+    background: url(/img/icons/star.svg) 50% / cover no-repeat;
 }
 
 .check-icon {
@@ -339,9 +342,8 @@ header .avatar-icons {
 }
 
 #nav-menu-icon {
-    width: 50px;
+    width: 30px;
     cursor: pointer;
-    padding: 10px;
     display: none;
 }
 
@@ -369,18 +371,13 @@ header .avatar-icons {
 }
 
 #theme-toggle {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 20px;
     transition: 300ms;
     cursor: pointer;
 }
 
 #theme-toggle:hover {
-    background-color: var(--grayscale-30-90);
+    color: var(--light-cyan);
 }
 
 
@@ -513,7 +510,7 @@ footer {
     width: 56px;
     height: 56px;
     transform: rotate(-17deg);
-    background: url(/static/img/gear.png) 50% / cover no-repeat;
+    background: url(/img/icons/gear.png) 50% / cover no-repeat;
     position: absolute;
     right: 16%;
     bottom: 10%;
@@ -655,7 +652,18 @@ footer {
     background: black;
     padding-top: 160px;
     padding-bottom: 120px;
+}
+
+body:has(.hero-cards) .roadmap-section{
     margin-top: -80px;
+}
+
+body:not(:has(.hero-cards)) .hero-section{
+    padding-bottom: 80px;
+}
+
+body:not(:has(.hero-cards)) .roadmap-section{
+    padding-top: 80px;
 }
 
 .roadmap {
@@ -1623,6 +1631,13 @@ tr.spacing td {
     width: 100%;
 }
 
+.nft-collections-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .nft-collections-container {
     display: flex;
     flex-direction: column;
@@ -1652,6 +1667,18 @@ tr.spacing td {
 
 .layout-3 .collection-cards-pagination{
     width: 100%;
+}
+
+.layout-2 .nft-status .nft-price{
+    font-size: 16px;
+}
+
+.layout-2 .nft-status p{
+    font-size: 12px;
+}
+
+.layout-2 .nft-time .countdown{
+    font-size: 10px;
 }
 
 .collection-creators-filters {
@@ -1776,6 +1803,7 @@ tr.spacing td {
     padding: 8px 24px;
     font-size: 14px;
     height: 40px;
+    
 }
 
 .collection-filters {
@@ -2132,6 +2160,7 @@ tr.spacing td {
     align-items: center;
     align-self: stretch;
     width: 100%;
+    overflow: hidden;
 }
 
 .collection-card-images {
@@ -2395,6 +2424,27 @@ tr.spacing td {
     width: 100%;
 }
 
+.register-form-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.popup-form{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.popup-form button {
+    padding: 12px 24px;
+    width: 100%;
+}
+
 .form-previews {
     display: flex;
     flex-direction: column;
@@ -2532,7 +2582,7 @@ tr.spacing td {
 
 .form-input,
 .form-textarea {
-    padding: 12px 16px;
+    padding: 12px 40px 12px 16px;
     border-radius: 24px;
     border: 1px solid var(--line-color);
     background: var(--grayscale-10-95);
@@ -2544,6 +2594,10 @@ tr.spacing td {
     width: 100%;
     color: var(--text-primary-color);
     transition: 300ms;
+}
+
+.form-input[type="date"]{
+    padding: 12px 16px;
 }
 
 .form-label {
@@ -2683,7 +2737,7 @@ input[type='number']::-webkit-outer-spin-button {
     height: 80px;
     position: relative;
     cursor: pointer;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     border-radius: 16px;
 }
 
@@ -2772,6 +2826,7 @@ input[type='number']::-webkit-outer-spin-button {
     border-radius: 1000px;
     background: var(--line-color);
     transition: 250ms;
+    cursor: pointer;
 }
 
 .checkbox-icon::after {
@@ -3082,6 +3137,10 @@ input[type='number']::-webkit-outer-spin-button {
 
 .password-show-btn {
     cursor: pointer;
+}
+
+.logout-btn {
+    width: 100%;
 }
 
 

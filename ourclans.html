@@ -27,12 +27,14 @@
                     <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
                 </ul>
                 <div class="nav-buttons">
-                    <div id="theme-toggle">
-                        <i class="fa-solid fa-moon"></i>
-                    </div>
-                    <a class="nav-button" href="nft-create.html"><button class="btn-green">Create</button></a>
+
+                    <a class="nav-button" href="nft-create.html">
+                        <button class="btn-green">Create</button>
+                    </a>
                     <div class="avatar nav-button">
-                        <a href="login.html"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <a href="login.html">
+                            <img class="avatar-img" src="/img/avatars/avatar.jpeg">
+                        </a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -40,6 +42,11 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- <a class="nav-button" href="login.html">
+                        <button class="btn-green">Login</button>
+                    </a> -->
+
                     <i id="nav-menu-icon">
                         <hr>
                         <hr>
@@ -49,7 +56,9 @@
             <div class="nav-menu" id="nav-menu">
                 <div class="nav-menu-buttons">
                     <div class="avatar">
-                        <a href="login.html"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <a href="login.html">
+                            <img class="avatar-img" src="/img/avatars/avatar.jpeg">
+                        </a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -58,6 +67,10 @@
                         </div>
                     </div>
                     <a href="nft-create.html"><button class="btn-green">Create</button></a>
+
+                    <!-- <a class="nav-button" href="login.html">
+                    <button class="btn-green">Login</button>
+                    </a>  -->
                 </div>
                 <ul class="nav-menu-links">
                     <li class="nav-item"><a href="collections.html" class="nav-link">Collection</a></li>
@@ -78,13 +91,13 @@
                         <p class="section-desc">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod erat sit amet, volutpat.
                             Posuere quis faucibus a odio. Scelerisque dui non vitae velit senectus sit. Pellentesque
-                            quisque pellentesque diam enim nulla mattis mi adipiscing. 
+                            quisque pellentesque diam enim nulla mattis mi adipiscing.
                         </p>
                     </div>
                     <div class="our-clans-members">
                         <div class="our-clans-member">
                             <div class="clan-member-profile">
-                                <img src="static/img/member1.jpeg" alt="">
+                                <img src="img/members/member1.jpeg" alt="">
                             </div>
                             <div class="clan-member-detail">
                                 <div class="clan-member-clan-name">Creators</div>
@@ -103,7 +116,7 @@
                         </div>
                         <div class="our-clans-member">
                             <div class="clan-member-profile">
-                                <img src="static/img/member2.jpeg" alt="">
+                                <img src="img/members/member2.jpeg" alt="">
                             </div>
                             <div class="clan-member-detail">
                                 <div class="clan-member-clan-name">Creators</div>
@@ -122,7 +135,7 @@
                         </div>
                         <div class="our-clans-member">
                             <div class="clan-member-profile">
-                                <img src="static/img/member3.jpeg" alt="">
+                                <img src="img/members/member3.jpeg" alt="">
                             </div>
                             <div class="clan-member-detail">
                                 <div class="clan-member-clan-name">Artist / Partnership</div>
@@ -141,7 +154,7 @@
                         </div>
                         <div class="our-clans-member">
                             <div class="clan-member-profile">
-                                <img src="static/img/member4.jpeg" alt="">
+                                <img src="img/members/member4.jpeg" alt="">
                             </div>
                             <div class="clan-member-detail">
                                 <div class="clan-member-clan-name">PM / Community</div>
@@ -160,7 +173,7 @@
                         </div>
                         <div class="our-clans-member">
                             <div class="clan-member-profile">
-                                <img src="static/img/member5.jpeg" alt="">
+                                <img src="img/members/member5.jpeg" alt="">
                             </div>
                             <div class="clan-member-detail">
                                 <div class="clan-member-clan-name">Tech / Contract</div>
@@ -181,7 +194,7 @@
                 </div>
             </div>
         </section>
-
+    
         <section class="newsletter-section">
             <div class="container">
                 <div class="newsletter-faq">
@@ -195,10 +208,10 @@
                                 New product release and more
                             </p>
                         </div>
-                        <form action="" class="get-in-touch-form">
+                        <form action="" method="post" class="get-in-touch-form">
                             <div class="get-in-touch-input-box">
                                 <i class="fa-regular fa-envelope sms-icon"></i>
-                                <input type="email" class="get-in-touch-input" placeholder="Email address">
+                                <input type="email" name="email" class="get-in-touch-input" placeholder="Email address">
                             </div>
                             <button type="submit" class="get-in-touch-button btn-green">Get In Touch</button>
                         </form>
@@ -214,7 +227,7 @@
                                     <h4>When does minting begin?</h4>
                                     <i class="fa-solid fa-arrow-down arrow-icon"></i>
                                 </div>
-                                <p class="faq-answer section-desc dropdown-content opened">
+                                <p class="faq-answer section-desc dropdown-content">
                                     Initial distribution will begin on February 1st 2022 at 3:00 PM
                                     UTC. The ongoing distribution will begin on February 8, 2022 at 3:00 PM UTC, and the
                                     reveal will happen by this point in time. The initial distribution will be tiered to
@@ -270,6 +283,11 @@
                         <li><a href="#"><i class="fa-brands fa-discord"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li>
+                            <div id="theme-toggle">
+                                <i class="fa-solid fa-moon"></i>
+                            </div>
+                        </li>
                     </ul>
                     <div class="footer-rights">
                         <p>2024. all right Reserved.</p>

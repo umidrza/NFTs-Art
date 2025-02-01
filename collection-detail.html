@@ -27,12 +27,14 @@
                     <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
                 </ul>
                 <div class="nav-buttons">
-                    <div id="theme-toggle">
-                        <i class="fa-solid fa-moon"></i>
-                    </div>
-                    <a class="nav-button" href="nft-create.html"><button class="btn-green">Create</button></a>
+
+                    <a class="nav-button" href="nft-create.html">
+                        <button class="btn-green">Create</button>
+                    </a>
                     <div class="avatar nav-button">
-                        <a href="login.html"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <a href="login.html">
+                            <img class="avatar-img" src="/img/avatars/avatar.jpeg">
+                        </a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -40,6 +42,11 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- <a class="nav-button" href="login.html">
+                        <button class="btn-green">Login</button>
+                    </a> -->
+
                     <i id="nav-menu-icon">
                         <hr>
                         <hr>
@@ -49,7 +56,9 @@
             <div class="nav-menu" id="nav-menu">
                 <div class="nav-menu-buttons">
                     <div class="avatar">
-                        <a href="login.html"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <a href="login.html">
+                            <img class="avatar-img" src="/img/avatars/avatar.jpeg">
+                        </a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -58,6 +67,10 @@
                         </div>
                     </div>
                     <a href="nft-create.html"><button class="btn-green">Create</button></a>
+
+                    <!-- <a class="nav-button" href="login.html">
+                    <button class="btn-green">Login</button>
+                    </a>  -->
                 </div>
                 <ul class="nav-menu-links">
                     <li class="nav-item"><a href="collections.html" class="nav-link">Collection</a></li>
@@ -78,7 +91,7 @@
                             <h2 class="collection-creators-title">The Best Collectors for <br>NFTs</h2>
                             <div class="collection-creator">
                                 <div class="avatar">
-                                    <img class="avatar-img" src="/static/img/avatar.jpeg" alt="">
+                                    <img class="avatar-img" src="/img/avatars/avatar.jpeg">
                                     <div class="avatar-icons">
                                         <div class="verified-icon">
                                             <i class="star-icon"></i>
@@ -99,16 +112,16 @@
                                             </div>
                                             <div class="collection-creator-stat">
                                                 <p>Followers</p>
-                                                <h5>1.5K</h5>
+                                                <h5 class="creator-followers-count">1.5K</h5>
                                             </div>
                                         </div>
-                                        <button class="btn-green collection-card-btn">Follow</button>
+                                        <button class="btn-green collection-card-btn follow-btn" data-user-id="1">Follow</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="collection-filters">
-                            <div class="collection-filter dropdown">    
+                            <div class="collection-filter dropdown">
                                 <div class="collection-filter-title dropdown-btn">
                                     <h3>Status</h3>
                                     <i class="fa-solid fa-chevron-down arrow-icon"></i>
@@ -120,7 +133,7 @@
                                         <label class="filter-check-icon" for="status-auction"><i class="fa-solid fa-check check-icon"></i></label>
                                     </div>
                                     <div class="collection-filter-item">
-                                        <label class="collection-filter-item-text" for="status-expired" >Expired</label>
+                                        <label class="collection-filter-item-text" for="status-expired">Expired</label>
                                         <input class="collection-filter-checkbox hidden" id="status-expired" type="checkbox" name="status" value="expired">
                                         <label class="filter-check-icon" for="status-expired"><i class="fa-solid fa-check check-icon"></i></label>
                                     </div>
@@ -200,7 +213,7 @@
                     <div class="collection-cards-pagination">
                         <div class="collection-search">
                             <div class="collection-search-input">
-                                <input type="text" class="search-input" placeholder="Search collections" id="nft-search">
+                                <input type="text" class="search-input" placeholder="Search collections" id="nft-search" name="search">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                                 <i class="fa-solid fa-xmark remove-search-btn hidden"></i>
                             </div>
@@ -247,25 +260,25 @@
                             </div>
                         </div>
                         <div class="collection-nft-cards">
-                            <div class="nft-card" data-status="auction" data-currency="ETH" data-price="0.56">
+                            <div class="nft-card">
                                 <h4 class="nft-name">Human Leaf #0121</h4>
                                 <div class="nft-card-image">
-                                    <img src="/static/img/image2.jpeg" alt="" class="nft-image">
+                                    <img src="/img/nfts/image2.jpeg" class="nft-image">
                                 </div>
                                 <div class="nft-detail">
                                     <div class="nft-status">
                                         <p>Highest bid</p>
-                                        <h4>0.56 ETH</h4>
+                                        <h4 class="nft-price">0.56 ETH</h4>
                                     </div>
                                     <div class="nft-time">
-                                        <span>04:45:32</span>
+                                        <span class="countdown" data-date="">04:45:32</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="nft-card" data-status="expired" data-currency="WETH" data-price="1.02">
+                            <div class="nft-card">
                                 <h4 class="nft-name">Golden Eagle #0034</h4>
                                 <div class="nft-card-image">
-                                    <img src="/static/img/image1.jpeg" alt="" class="nft-image">
+                                    <img src="/img/nfts/image1.jpeg" class="nft-image">
                                 </div>
                                 <div class="nft-detail">
                                     <div class="nft-status">
@@ -277,10 +290,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="nft-card" data-status="not-on-sale" data-currency="ETH" data-price="">
+                            <div class="nft-card">
                                 <h4 class="nft-name">Cyber Cat #0278</h4>
                                 <div class="nft-card-image">
-                                    <img src="/static/img/image3.jpeg" alt="" class="nft-image">
+                                    <img src="/img/nfts/image3.jpeg" class="nft-image">
                                 </div>
                                 <div class="nft-detail">
                                     <div class="nft-status nft-status-not-sale">
@@ -288,10 +301,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="nft-card" data-status="not-started" data-currency="WETH" data-price="">
+                            <div class="nft-card">
                                 <h4 class="nft-name">Mystic Wolf #0456</h4>
                                 <div class="nft-card-image">
-                                    <img src="/static/img/image4.jpeg" alt="" class="nft-image">
+                                    <img src="/img/nfts/image4.jpeg" class="nft-image">
                                 </div>
                                 <div class="nft-detail">
                                     <div class="nft-status nft-status-not-sale">
@@ -300,25 +313,25 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="nft-card" data-status="auction" data-currency="ETH" data-price="3.45">
+                            <div class="nft-card">
                                 <h4 class="nft-name">Dragon Flame #0657</h4>
                                 <div class="nft-card-image">
-                                    <img src="/static/img/image3.jpeg" alt="" class="nft-image">
+                                    <img src="/img/nfts/image3.jpeg" class="nft-image">
                                 </div>
                                 <div class="nft-detail">
                                     <div class="nft-status">
                                         <p>Highest bid</p>
-                                        <h4>3.45 ETH</h4>
+                                        <h4 class="nft-price">3.45 ETH</h4>
                                     </div>
                                     <div class="nft-time">
-                                        <span>12:34:56</span>
+                                        <span class="countdown">12:34:56</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="nft-card" data-status="expired" data-currency="WETH" data-price="1.99">
+                            <div class="nft-card">
                                 <h4 class="nft-name">Pixel Hero #0789</h4>
                                 <div class="nft-card-image">
-                                    <img src="/static/img/image1.jpeg" alt="" class="nft-image">
+                                    <img src="/img/nfts/image1.jpeg" class="nft-image">
                                 </div>
                                 <div class="nft-detail">
                                     <div class="nft-status">
@@ -330,10 +343,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="nft-card" data-status="not-on-sale" data-currency="ETH" data-price="">
+                            <div class="nft-card">
                                 <h4 class="nft-name">Retro Rover #0890</h4>
                                 <div class="nft-card-image">
-                                    <img src="/static/img/image3.jpeg" alt="" class="nft-image">
+                                    <img src="/img/nfts/image3.jpeg" class="nft-image">
                                 </div>
                                 <div class="nft-detail">
                                     <div class="nft-status nft-status-not-sale">
@@ -341,10 +354,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="nft-card" data-status="not-started" data-currency="WETH" data-price="">
+                            <div class="nft-card">
                                 <h4 class="nft-name">Astral Ape #0912</h4>
                                 <div class="nft-card-image">
-                                    <img src="/static/img/image4.jpeg" alt="" class="nft-image">
+                                    <img src="/img/nfts/image4.jpeg" class="nft-image">
                                 </div>
                                 <div class="nft-detail">
                                     <div class="nft-status nft-status-not-sale">
@@ -353,25 +366,25 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="nft-card" data-status="auction" data-currency="ETH" data-price="4.67">
+                            <div class="nft-card">
                                 <h4 class="nft-name">Quantum Quokka #1034</h4>
                                 <div class="nft-card-image">
-                                    <img src="/static/img/image2.jpeg" alt="" class="nft-image">
+                                    <img src="/img/nfts/image2.jpeg" class="nft-image">
                                 </div>
                                 <div class="nft-detail">
                                     <div class="nft-status">
                                         <p>Highest bid</p>
-                                        <h4>4.67 ETH</h4>
+                                        <h4 class="nft-price">4.67 ETH</h4>
                                     </div>
                                     <div class="nft-time">
-                                        <span>06:12:34</span>
+                                        <span class="countdown">06:12:34</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="nft-card" data-status="expired" data-currency="WETH" data-price="2.34">
+                            <div class="nft-card">
                                 <h4 class="nft-name">Celestial Cheetah #1122</h4>
                                 <div class="nft-card-image">
-                                    <img src="/static/img/image2.jpeg" alt="" class="nft-image">
+                                    <img src="/img/nfts/image2.jpeg" class="nft-image">
                                 </div>
                                 <div class="nft-detail">
                                     <div class="nft-status">
@@ -383,10 +396,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="nft-card" data-status="not-on-sale" data-currency="ETH" data-price="">
+                            <div class="nft-card">
                                 <h4 class="nft-name">Galactic Gecko #1233</h4>
                                 <div class="nft-card-image">
-                                    <img src="/static/img/image1.jpeg" alt="" class="nft-image">
+                                    <img src="/img/nfts/image1.jpeg" class="nft-image">
                                 </div>
                                 <div class="nft-detail">
                                     <div class="nft-status nft-status-not-sale">
@@ -394,10 +407,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="nft-card" data-status="not-started" data-currency="WETH" data-price="">
+                            <div class="nft-card">
                                 <h4 class="nft-name">Solar Serpent #1345</h4>
                                 <div class="nft-card-image">
-                                    <img src="/static/img/image4.jpeg" alt="" class="nft-image">
+                                    <img src="/img/nfts/image4.jpeg" class="nft-image">
                                 </div>
                                 <div class="nft-detail">
                                     <div class="nft-status nft-status-not-sale">
@@ -408,30 +421,32 @@
                             </div>
                         </div>
                         <div class="collection-pagination">
-                            <div class="icon-box">
+                            <div class="icon-box disabled">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </div>
                             <div class="pagination">
-                                <a href="#">1</a>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
+                                <strong class="pagination-number">1</strong>
+                                <a href="?page=2" class="pagination-number">2</a>
+                                <a href="?page=3" class="pagination-number">3</a>
                             </div>
-                            <div class="icon-box">
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </div>
+                            <a href="?page=2">
+                                <div class="icon-box">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
+    
         <section class="top-collectors-section">
             <h2 class="section-title">Our Top Collectors</h2>
             <div class="top-collectors-list auto-scroll">
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar2.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar2.jpeg"></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -450,7 +465,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar3.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar3.jpeg"></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -469,7 +484,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar.jpeg"></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -488,7 +503,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar4.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar4.jpeg"></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -507,7 +522,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar.jpeg"></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -526,7 +541,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar4.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar4.jpeg"></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -547,7 +562,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar4.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar4.jpeg"></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -566,7 +581,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar2.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar2.jpeg"></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -585,7 +600,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar.jpeg"></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -604,7 +619,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar4.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar4.jpeg"></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -623,7 +638,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar2.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar2.jpeg"></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -642,7 +657,7 @@
                 <div class="top-collector">
                     <p class="top-collector-place"></p>
                     <div class="avatar">
-                        <a href="#"><img class="avatar-img" src="/static/img/avatar3.jpeg" alt=""></a>
+                        <a href="#"><img class="avatar-img" src="/img/avatars/avatar3.jpeg"></a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -680,6 +695,11 @@
                         <li><a href="#"><i class="fa-brands fa-discord"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li>
+                            <div id="theme-toggle">
+                                <i class="fa-solid fa-moon"></i>
+                            </div>
+                        </li>
                     </ul>
                     <div class="footer-rights">
                         <p>2024. all right Reserved.</p>

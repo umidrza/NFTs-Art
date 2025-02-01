@@ -27,12 +27,14 @@
                     <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
                 </ul>
                 <div class="nav-buttons">
-                    <div id="theme-toggle">
-                        <i class="fa-solid fa-moon"></i>
-                    </div>
-                    <a class="nav-button" href="nft-create.html"><button class="btn-green">Create</button></a>
+
+                    <a class="nav-button" href="nft-create.html">
+                        <button class="btn-green">Create</button>
+                    </a>
                     <div class="avatar nav-button">
-                        <a href="login.html"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <a href="login.html">
+                            <img class="avatar-img" src="/img/avatars/avatar.jpeg">
+                        </a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -40,6 +42,11 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- <a class="nav-button" href="login.html">
+                        <button class="btn-green">Login</button>
+                    </a> -->
+
                     <i id="nav-menu-icon">
                         <hr>
                         <hr>
@@ -49,7 +56,9 @@
             <div class="nav-menu" id="nav-menu">
                 <div class="nav-menu-buttons">
                     <div class="avatar">
-                        <a href="login.html"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <a href="login.html">
+                            <img class="avatar-img" src="/img/avatars/avatar.jpeg">
+                        </a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -58,6 +67,10 @@
                         </div>
                     </div>
                     <a href="nft-create.html"><button class="btn-green">Create</button></a>
+
+                    <!-- <a href="login.html">
+                    <button class="btn-green">Login</button>
+                    </a>  -->
                 </div>
                 <ul class="nav-menu-links">
                     <li class="nav-item"><a href="collections.html" class="nav-link">Collection</a></li>
@@ -73,35 +86,40 @@
         <section class="form-section">
             <div class="container">
                 <div class="form-container">
-                    <h2 class="section-title">Register</h2>
-                    <form class="form" id="register-form">
+                    <div class="register-form-title">
+                        <h2 class="section-title">
+                            Register
+                        </h2>
+                    </div>
+                    <form class="form" id="register-form" method="post" enctype="multipart/form-data">
                         <div class="form-previews">
                             <div class="form-preview">
                                 <h4 class="form-subtitle">Preview</h4>
                                 <div class="avatar-preview" id="avatar-preview">
                                     <div class="avatar">
-                                        <img class="avatar-img" src="/static/img/avatar.jpeg">
+                                        <img class="avatar-img" src="/img/avatars/avatar.jpeg">
                                     </div>
                                     <h3 class="register-fullname" id="previewFullname"></h3>
                                 </div>
                                 <div class="form-control">
                                     <input type="hidden" id="avatar-input" name="avatar">
+                                    <!--<div class="form-warning">Warning</div>-->
                                 </div>
                             </div>
                             <div class="form-preview">
                                 <h4 class="form-subtitle">Choose avatar</h4>
                                 <div class="new-avatars" id="avatar-selection">
                                     <div class="avatar">
-                                        <img class="avatar-img" src="/static/img/avatar.jpeg" data-avatar-id="1">
+                                        <img class="avatar-img" src="/img/avatars/avatar.jpeg" data-avatar-id="1">
                                     </div>
                                     <div class="avatar">
-                                        <img class="avatar-img" src="/static/img/avatar2.jpeg" data-avatar-id="2">
+                                        <img class="avatar-img" src="/img/avatars/avatar2.jpeg" data-avatar-id="2">
                                     </div>
                                     <div class="avatar">
-                                        <img class="avatar-img" src="/static/img/avatar3.jpeg" data-avatar-id="3">
+                                        <img class="avatar-img" src="/img/avatars/avatar3.jpeg" data-avatar-id="3">
                                     </div>
                                     <div class="avatar">
-                                        <img class="avatar-img" src="/static/img/avatar4.jpeg" data-avatar-id="4">
+                                        <img class="avatar-img" src="/img/avatars/avatar4.jpeg" data-avatar-id="4">
                                     </div>
                                 </div>
                             </div>
@@ -123,9 +141,15 @@
                                 </div>
                                 <div class="form-control">
                                     <div class="form-input-box">
+                                        <input type="email" id="email" name="email" class="form-input" required>
+                                        <label for="email" class="form-label">Email</label>
+                                    </div>
+                                </div>
+                                <div class="form-control">
+                                    <div class="form-input-box">
                                         <input type="password" id="password1" name="password1" class="form-input" required>
                                         <label for="password1" class="form-label">Password</label>
-                                        <i class="fa-regular fa-eye-slash password-show-btn"></i>   
+                                        <i class="fa-regular fa-eye-slash password-show-btn"></i>
                                     </div>
                                 </div>
                                 <div class="form-control">
@@ -150,11 +174,11 @@
                 </div>
             </div>
         </section>
-
+    
         <section class="popup-section" id="login-popup">
             <div class="popup">
                 <h2 class="popup-title">Login</h2>
-                <form class="login-form">
+                <form class="login-form" method="post">
                     <div class="form-input-box">
                         <input type="text" name="username" id="username" class="form-input" required>
                         <label for="username" class="form-label">Username</label>
@@ -170,6 +194,66 @@
                     <div class="register-link">
                         <p>Don't have an account? <span id="register-btn">Register</span></p>
                     </div>
+                </form>
+            </div>
+        </section>
+    
+        <section class="popup-section" id="forgot-password-popup">
+            <div class="popup">
+                <h2 class="popup-title">Forgot Password</h2>
+                <form method="post" id="forgot-password-form" class="popup-form">
+                    <div class="form-control">
+                        <label for="email" class="form-label">Enter your email address:</label>
+                        <input type="email" name="email" id="forgot-password-email" class="form-input" placeholder="Type here..." required>
+                    </div>
+                    <button type="submit" class="btn-green">Send Verification Code</button>
+                </form>
+            </div>
+        </section>
+    
+        <section class="popup-section" id="verify-code-popup">
+            <div class="popup">
+                <h2 class="popup-title">Verify Code</h2>
+                <form method="post" id="verify-code-form" class="popup-form">
+                    <div class="form-control">
+                        <label for="token" class="form-label">Verification Code:</label>
+                        <input type="text" name="token" id="token" class="form-input" placeholder="Type here..." required>
+                    </div>
+                    <button type="submit" class="btn-green">Verify Code</button>
+                </form>
+            </div>
+        </section>
+    
+        <section class="popup-section" id="reset-password-popup">
+            <div class="popup">
+                <h2 class="popup-title">Reset Password</h2>
+                <form method="post" id="reset-password-form" class="popup-form">
+    
+                    <!--
+                    <div class="form-control" id="current-password-input">
+                        <div class="form-input-box">
+                            <input type="password" name="old-password" id="old-password" class="form-input">
+                            <label for="old-password" class="form-label">Current Password</label>
+                            <i class="fa-regular fa-eye-slash password-show-btn"></i>
+                        </div>
+                    </div>
+                    -->
+                    <div class="form-control">
+                        <div class="form-input-box">
+                            <input type="password" name="new-password1" id="new-password1" class="form-input" required>
+                            <label for="password" class="form-label">New Password</label>
+                            <i class="fa-regular fa-eye-slash password-show-btn"></i>
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <div class="form-input-box">
+                            <input type="password" name="new-password2" id="new-password2" class="form-input" required>
+                            <label for="password" class="form-label">Confirm New Password</label>
+                            <i class="fa-regular fa-eye-slash password-show-btn"></i>
+                        </div>
+                    </div>
+    
+                    <button type="submit" class="btn-green">Reset Password</button>
                 </form>
             </div>
         </section>
@@ -193,6 +277,11 @@
                         <li><a href="#"><i class="fa-brands fa-discord"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li>
+                            <div id="theme-toggle">
+                                <i class="fa-solid fa-moon"></i>
+                            </div>
+                        </li>
                     </ul>
                     <div class="footer-rights">
                         <p>2024. all right Reserved.</p>

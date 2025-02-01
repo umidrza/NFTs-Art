@@ -27,12 +27,14 @@
                     <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
                 </ul>
                 <div class="nav-buttons">
-                    <div id="theme-toggle">
-                        <i class="fa-solid fa-moon"></i>
-                    </div>
-                    <a class="nav-button" href="nft-create.html"><button class="btn-green">Create</button></a>
+
+                    <a class="nav-button" href="nft-create.html">
+                        <button class="btn-green">Create</button>
+                    </a>
                     <div class="avatar nav-button">
-                        <a href="login.html"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <a href="login.html">
+                            <img class="avatar-img" src="/img/avatars/avatar.jpeg">
+                        </a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -40,6 +42,11 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- <a class="nav-button" href="login.html">
+                        <button class="btn-green">Login</button>
+                    </a> -->
+
                     <i id="nav-menu-icon">
                         <hr>
                         <hr>
@@ -49,7 +56,9 @@
             <div class="nav-menu" id="nav-menu">
                 <div class="nav-menu-buttons">
                     <div class="avatar">
-                        <a href="login.html"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                        <a href="login.html">
+                            <img class="avatar-img" src="/img/avatars/avatar.jpeg">
+                        </a>
                         <div class="avatar-icons">
                             <div class="verified-icon">
                                 <i class="star-icon"></i>
@@ -58,6 +67,10 @@
                         </div>
                     </div>
                     <a href="nft-create.html"><button class="btn-green">Create</button></a>
+
+                    <!-- <a class="nav-button" href="login.html">
+                    <button class="btn-green">Login</button>
+                    </a>  -->
                 </div>
                 <ul class="nav-menu-links">
                     <li class="nav-item"><a href="collections.html" class="nav-link">Collection</a></li>
@@ -74,7 +87,7 @@
             <div class="container">
                 <div class="auction">
                     <div class="auction-image">
-                        <img src="/static/img/image1-1.jpeg" alt="">
+                        <img src="/img/nfts/image1.jpeg" alt="">
                         <div class="auction-detail-desc">
                             <span class="extra-content" data-length="300">
                                 Human Leaf Cowboy #0123 is a collection of 10,000 unique Human Life NFTs, unique digital
@@ -91,8 +104,8 @@
                         </div>
                         <div class="auction-actions">
                             <div class="auction-action">
-                                <i class="fa-regular fa-heart like-btn"></i>    
-                                <p class="auction-action-text">2,8k</p>
+                                <i class="fa-regular fa-heart like-btn"></i>
+                                <p class="auction-action-text like-count">2,8k</p>
                             </div>
                             <div class="auction-action auction-share-action">
                                 <i class="fa-solid fa-arrow-up-from-bracket auction-share-btn"></i>
@@ -123,7 +136,7 @@
                                     </div>
                                     <div class="auction-detail">
                                         <p class="auction-text-grey">Auction ending in</p>
-                                        <h4 class="auction-text-black">03d : 25h : 05m</h4>
+                                        <h4 class="auction-text-black countdown">03d : 25h : 05m</h4>
                                         <p class="auction-text-grey">Bids: 25</p>
                                     </div>
                                 </div>
@@ -132,7 +145,7 @@
                                         <p class="auction-text-grey">Creator</p>
                                         <div class="auction-nft-card">
                                             <div class="avatar auction-avatar">
-                                                <a href="#"><img class="avatar-img" src="/static/img/avatar4.jpeg" alt=""></a>
+                                                <a href="#"><img class="avatar-img" src="/img/avatars/avatar4.jpeg" alt=""></a>
                                                 <div class="avatar-icons">
                                                     <div class="verified-icon">
                                                         <i class="star-icon"></i>
@@ -147,7 +160,7 @@
                                         <p class="auction-text-grey">Collection</p>
                                         <div class="auction-nft-card">
                                             <div class="avatar auction-avatar">
-                                                <a href="#"><img class="avatar-img" src="/static/img/avatar.jpeg" alt=""></a>
+                                                <a href="#"><img class="avatar-img" src="/img/avatars/avatar.jpeg" alt=""></a>
                                                 <div class="avatar-icons">
                                                     <div class="verified-icon">
                                                         <i class="star-icon"></i>
@@ -163,13 +176,13 @@
                         </div>
                         <div class="auction-terms">
                             <div class="term-check-icon">
-                                <i class="fa-solid fa-check check-icon hidden"></i>
+                                <i class="fa-solid fa-check check-icon"></i>
                             </div>
                             <p class="auction-term">I Agree to AllBlocks. Term & Service</p>
                         </div>
                         <div class="auction-buttons">
-                            <button class="auction-button btn-green" disabled>Purchase now</button>
-                            <button class="auction-button btn-outline-green" disabled>Place a bid</button>
+                            <button class="auction-button btn-green">Purchase now</button>
+                            <button class="auction-button btn-outline-green">Place a bid</button>
                         </div>
                         <div class="auction-charts">
                             <div class="auction-chart dropdown">
@@ -184,7 +197,7 @@
                                             <option value="1">7 days</option>
                                             <option value="2">1 month</option>
                                             <option value="3">1 year</option>
-                                            <option value="4">All times</option>
+                                            <option value="4" selected>All times</option>
                                         </select>
                                     </div>
                                     <div class="price-history-chart">
@@ -214,29 +227,25 @@
                                             <div class="line"></div>
                                         </div>
                                         <div class="chart">
-                                            <svg class="chart-line1" xmlns="http://www.w3.org/2000/svg" width="657"
-                                                height="200" viewBox="0 0 657 200" fill="none">
-                                                <path
-                                                    d="M48.6568 91.6627L11.3589 112.275C4.35057 116.148 0 123.523 0 131.53V195H657.32V114.17C657.32 107.01 653.836 100.298 647.98 96.1781L608.343 68.2885C599.764 62.2521 588.117 63.1123 580.517 70.3434L536.226 112.49C532.136 116.382 526.706 118.552 521.06 118.552H487.272C478.273 118.552 470.181 113.072 466.842 104.715L438.863 34.6921C434.789 24.4961 423.822 18.8649 413.162 21.496L399.037 24.9825C391.44 26.8575 383.42 24.5567 377.972 18.9401L366.626 7.24147C357.638 -2.02622 342.638 -1.59806 334.193 8.16727L279.192 71.7668C272.07 80.0022 259.995 81.7894 250.793 75.9701L194.582 40.4237C183.917 33.6795 169.777 37.269 163.62 48.2833L134.549 100.291C128.83 110.521 116.095 114.472 105.59 109.275L69.0536 91.1993C62.5896 88.0013 54.9688 88.1745 48.6568 91.6627Z"
-                                                    fill="url(#paint0_linear_91_2002)" fill-opacity="0.32" />
+                                            <svg class="chart-line1" xmlns="http://www.w3.org/2000/svg" width="650"
+                                                 height="200" viewBox="0 0 650 200" fill="none">
+                                                <path d="" fill="url(#paint0_linear_91_2002)" fill-opacity="0.32" />
                                                 <defs>
                                                     <linearGradient id="paint0_linear_91_2002" x1="328.351" y1="-10"
-                                                        x2="328.478" y2="186" gradientUnits="userSpaceOnUse">
+                                                                    x2="328.478" y2="186" gradientUnits="userSpaceOnUse">
                                                         <stop stop-color="#DCF06B" />
                                                         <stop offset="1" stop-color="#DCF06B" stop-opacity="0" />
                                                     </linearGradient>
                                                 </defs>
                                             </svg>
-                                            <svg class="chart-line2" xmlns="http://www.w3.org/2000/svg" width="657"
-                                                height="200" viewBox="0 0 657 200" fill="none">
-                                                <path
-                                                    d="M1 120.003L49.5974 93.0392C55.9258 89.5279 63.5763 89.3537 70.058 92.5732L106.482 110.666C117.004 115.892 129.776 111.929 135.491 101.664L164.529 49.5072C170.682 38.4558 184.865 34.8565 195.543 41.6361L251.62 77.2396C260.839 83.0923 272.955 81.298 280.081 73.0247L334.996 9.27087C343.445 -0.537424 358.494 -0.966864 367.488 8.34371L378.772 20.0251C384.224 25.6692 392.27 27.9817 399.887 26.0941L413.913 22.6184C424.589 19.9727 435.578 25.6182 439.645 35.8376L467.623 106.138C470.954 114.509 479.054 120.003 488.064 120.003H521.777C527.438 120.003 532.881 117.821 536.974 113.91L581.202 71.6569C588.809 64.3886 600.499 63.5247 609.093 69.5956L658 104.146"
-                                                    stroke="#171717" stroke-width="1.5" stroke-linecap="round" />
+                                            <svg class="chart-line2" xmlns="http://www.w3.org/2000/svg" width="650"
+                                                 height="200" viewBox="0 0 650 200" fill="none">
+                                                <path d="" stroke="#171717" stroke-width="1.5" stroke-linecap="round" />
                                             </svg>
                                         </div>
                                     </div>
                                 </div>
-
+    
                             </div>
                             <div class="auction-chart dropdown">
                                 <div class="chart-title dropdown-btn">
@@ -263,26 +272,30 @@
                                                 </td>
                                                 <td class="usd"></td>
                                                 <td>1</td>
-                                                <td>30 days</td>
+                                                <td class="countdown days" data-date="">30 days</td>
                                                 <td>nolanschleifer</td>
                                                 <td>
-                                                    <button class="btn-outline-green">Buy</button>
+                                                    <form action="" method="post">
+                                                        <button type="submit" class="btn-outline-green">Buy</button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                             <tr class="spacing">
                                                 <td></td>
                                             </tr>
                                             <tr>
-                                                <td class="eth"> 
+                                                <td class="eth">
                                                     <i class="fa-brands fa-ethereum"></i>
                                                     0.25 ETH
                                                 </td>
                                                 <td class="usd"></td>
                                                 <td>1</td>
-                                                <td>30 days</td>
+                                                <td class ="countdown days" data-date="">30 days</td>
                                                 <td>george</td>
                                                 <td>
-                                                    <button class="btn-outline-green">Buy</button>
+                                                    <form action="" method="post">
+                                                        <button type="submit" class="btn-outline-green">Buy</button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                             <tr class="spacing">
@@ -295,10 +308,12 @@
                                                 </td>
                                                 <td class="usd"></td>
                                                 <td>1</td>
-                                                <td>30 days</td>
+                                                <td class="countdown days" data-date="">30 days</td>
                                                 <td>talan</td>
                                                 <td>
-                                                    <button class="btn-outline-green">Buy</button>
+                                                    <form action="" method="post">
+                                                        <button type="submit" class="btn-outline-green">Buy</button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                             <tr class="spacing">
@@ -311,10 +326,12 @@
                                                 </td>
                                                 <td class="usd"></td>
                                                 <td>1</td>
-                                                <td>30 days</td>
+                                                <td class="countdown days" data-date="">30 days</td>
                                                 <td>jamesdias</td>
                                                 <td>
-                                                    <button class="btn-outline-green">Buy</button>
+                                                    <form action="" method="post">
+                                                        <button type="submit" class="btn-outline-green">Buy</button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -343,8 +360,8 @@
                                                 <td class="eth"><i class="fa-brands fa-ethereum"></i> 0.22 ETH</td>
                                                 <td class="usd"></td>
                                                 <td>1</td>
-                                                <td>12% below</td>
-                                                <td>3 days</td>
+                                                <td class="difference" data-price="0.47" data-bid-amount="0.22" data-quantity="1"></td>
+                                                <td class="countdown days" data-date=""></td>
                                                 <td>nolanschleifer</td>
                                             </tr>
                                             <tr class="spacing">
@@ -354,8 +371,8 @@
                                                 <td class="eth"><i class="fa-brands fa-ethereum"></i> 0.22 ETH</td>
                                                 <td class="usd"></td>
                                                 <td>1</td>
-                                                <td>12% below</td>
-                                                <td>3 days</td>
+                                                <td class="difference" data-price="0.47" data-bid-amount="0.22" data-quantity="1"></td>
+                                                <td class="countdown days" data-date=""></td>
                                                 <td>jamesdias</td>
                                             </tr>
                                             <tr class="spacing">
@@ -365,8 +382,8 @@
                                                 <td class="eth"><i class="fa-brands fa-ethereum"></i> 0.22 ETH</td>
                                                 <td class="usd"></td>
                                                 <td>1</td>
-                                                <td>12% below</td>
-                                                <td>21 hours</td>
+                                                <td class="difference" data-price="0.47" data-bid-amount="0.22" data-quantity="1"></td>
+                                                <td class="countdown days" data-date=""></td>
                                                 <td>lincolngeorge</td>
                                             </tr>
                                             <tr class="spacing">
@@ -376,8 +393,8 @@
                                                 <td class="eth"><i class="fa-brands fa-ethereum"></i> 0.22 ETH</td>
                                                 <td class="usd"></td>
                                                 <td>1</td>
-                                                <td>12% below</td>
-                                                <td>21 hours</td>
+                                                <td class="difference" data-price="0.47" data-bid-amount="0.22" data-quantity="1"></td>
+                                                <td class="countdown days" data-date=""></td>
                                                 <td>coreykenter</td>
                                             </tr>
                                         </tbody>
@@ -389,7 +406,7 @@
                 </div>
             </div>
         </section>
-
+    
         <section class="popular-collections-section">
             <div class="container">
                 <div class="popular-collections">
@@ -401,67 +418,84 @@
                         <div class="nft-card">
                             <h4 class="nft-name">Human Leaf #0121</h4>
                             <div class="nft-card-image">
-                                <img src="/static/img/image4.jpeg" alt="" class="nft-image">
+                                <img src="/img/nfts/image4.jpeg" alt="" class="nft-image">
                             </div>
                             <div class="nft-detail">
                                 <div class="nft-status">
                                     <p>Highest bid</p>
-                                    <h4>0.56 ETH</h4>
+                                    <h4 class="nft-price">0.56 ETH</h4>
                                 </div>
                                 <div class="nft-time">
-                                    <span>04:45:32</span>
+                                    <span class="countdown">04:45:32</span>
                                 </div>
+    
+                                <!-- <div class="nft-status">
+                                    <p>Highest bid</p>
+                                    <h4 class="nft-price">{{ nft.auctions.first.price }} {{ nft.auctions.first.currency.symbol }}</h4>
+                                </div>
+                                <div class="nft-time">
+                                    <span class="expired">Expired</span>
+                                </div>
+    
+                                <div class="nft-status nft-status-not-sale">
+                                    <h4>Not Started</h4>
+                                    <p>Starts at: {{ nft.auctions.first.start_time|date:"M d, Y" }}</p>
+                                </div>
+    
+                                <div class="nft-status nft-status-not-sale">
+                                    <h4>Not on sale</h4>
+                                </div>  -->
                             </div>
                         </div>
                         <div class="nft-card">
                             <h4 class="nft-name">Human Leaf #0122</h4>
                             <div class="nft-card-image">
-                                <img src="/static/img/image2.jpeg" alt="" class="nft-image">
+                                <img src="/img/nfts/image2.jpeg" alt="" class="nft-image">
                             </div>
                             <div class="nft-detail">
                                 <div class="nft-status">
                                     <p>Highest bid</p>
-                                    <h4>0.56 ETH</h4>
+                                    <h4 class="nft-price">0.56 ETH</h4>
                                 </div>
                                 <div class="nft-time">
-                                    <span>04:45:32</span>
+                                    <span class="countdown">04:45:32</span>
                                 </div>
                             </div>
                         </div>
                         <div class="nft-card">
                             <h4 class="nft-name">Human Leaf #0123</h4>
                             <div class="nft-card-image">
-                                <img src="/static/img/image1.jpeg" alt="" class="nft-image">
+                                <img src="/img/nfts/image1.jpeg" alt="" class="nft-image">
                             </div>
                             <div class="nft-detail">
                                 <div class="nft-status">
                                     <p>Highest bid</p>
-                                    <h4>0.56 ETH</h4>
+                                    <h4 class="nft-price">0.56 ETH</h4>
                                 </div>
                                 <div class="nft-time">
-                                    <span>04:45:32</span>
+                                    <span class="countdown">04:45:32</span>
                                 </div>
                             </div>
                         </div>
                         <div class="nft-card">
                             <h4 class="nft-name">Human Leaf #0124</h4>
                             <div class="nft-card-image">
-                                <img src="/static/img/image3.jpeg" alt="" class="nft-image">
+                                <img src="/img/nfts/image3.jpeg" alt="" class="nft-image">
                             </div>
                             <div class="nft-detail">
                                 <div class="nft-status">
                                     <p>Highest bid</p>
-                                    <h4>0.56 ETH</h4>
+                                    <h4 class="nft-price">0.56 ETH</h4>
                                 </div>
                                 <div class="nft-time">
-                                    <span>04:45:32</span>
+                                    <span class="countdown">04:45:32</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+    
                 </div>
-
+    
             </div>
         </section>
     </main>
@@ -484,6 +518,11 @@
                         <li><a href="#"><i class="fa-brands fa-discord"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li>
+                            <div id="theme-toggle">
+                                <i class="fa-solid fa-moon"></i>
+                            </div>
+                        </li>
                     </ul>
                     <div class="footer-rights">
                         <p>2024. all right Reserved.</p>
